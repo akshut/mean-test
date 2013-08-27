@@ -1,11 +1,11 @@
 function HeaderController($scope, $location, Global) {
     $scope.global = Global;
     $scope.menu = [{
-        "title": "Articles",
-        "link": "articles"
+        "title": "My Waiting Room",
+        "link": "waiting"
     }, {
-        "title": "Create New Article",
-        "link": "articles/create"
+        "title": "Quick Meeting",
+        "link": "waiting/create"
     }];
 
     $scope.init = function() {

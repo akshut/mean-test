@@ -2,6 +2,12 @@
 window.app.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
+        when('/waiting', {
+            templateUrl: 'views/waiting.html'
+        }).
+        when('/waiting/create', {
+            templateUrl: 'views/create.html'
+        }).
         when('/articles', {
             templateUrl: 'views/articles/list.html'
         }).

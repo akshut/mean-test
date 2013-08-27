@@ -1,0 +1,8 @@
+<div data-ng-controller="WaitingController">
+  <div class="container">
+    <h3>Currently Waiting...</h3>
+    <div class="videos">
+      <div class="vid" data-ng-repeat="room in rooms"><p ng-click="alert(room)">{{room}}</p></div>
+    </div>
+  </div>
+</div>
