@@ -66,6 +66,9 @@ module.exports = function(app, passport, auth) {
     var rooms = require('../app/controllers/rooms');
     app.get('/rooms', rooms.all);
 
+    // Rooms Api
+    app.get('/api', rooms.create);
+
     //Finish with setting up the articleId param
     app.param('articleId', articles.article);
 

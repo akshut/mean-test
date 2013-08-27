@@ -1,9 +1,15 @@
-function WaitingController($scope, $routeParams, $location, Global, Rooms) {
+function WaitingController($scope, $routeParams, $location, Global, Rooms, $http) {
     $scope.global = Global;
 
     $scope.find = function(query) {
         Rooms.query(query, function(rooms) {
             $scope.rooms = rooms;
+        });
+    };
+
+    $scope.create = function () {
+        $http.get('/api').success(function (data) {
+            $scope.rooms = data;
         });
     };
 
