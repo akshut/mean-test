@@ -7,9 +7,15 @@ function WaitingController($scope, $routeParams, $location, Global, Rooms, $http
         });
     };
 
-    $scope.create = function () {
+    $scope.create = function (obj) {
         $http.get('/api').success(function (data) {
             $scope.rooms = data;
+        });
+    };
+
+    $scope.delete = function (obj) {
+        $http.delete('/api/' + obj._id).success(function (data) {
+            $scope.find();
         });
     };
 

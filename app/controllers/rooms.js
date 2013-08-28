@@ -25,6 +25,19 @@ exports.create = function(req, res) {
 
 };
 
+// Delete a room
+exports.delete = function (req, res) {
+    Room.remove({_id: req.params._id}, function (err) {
+      if(!err) {
+        console.log('no delete room error');
+        res.json(true);
+      } else {
+        console.log('delete room error');
+        res.json(false);
+      }
+    });
+};
+
 function sendDrClarkResponse(sessionId, res, req) {
     token = OpenTokObject.generateToken({ session_id:sessionId, role:"publisher", connection_data: sessionId});
     data = {dr:req.params.room, sessionId:sessionId, token:token, apiKey:OTKEY};

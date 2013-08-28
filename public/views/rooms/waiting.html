@@ -2,7 +2,12 @@
   <div class="container">
     <h3>Currently Waiting...</h3>
     <div class="videos">
-      <div class="vid" data-ng-repeat="room in rooms"><p ng-click="create()">{{room}}</p></div>
+      <div class="well" data-ng-repeat="room in rooms">
+        <p>{{room}}</p>
+        <div class="btn btn-primary" ng-click="create(this)">Conntect</div>
+        <div class="btn" ng-click="delete(room)">Delete</div>
+        <div class="well" ng-show="result">{{result}}</div>
+      </div>
     </div>
   </div>
 </div>
