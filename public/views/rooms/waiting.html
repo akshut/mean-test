@@ -3,7 +3,7 @@
     <h3>Patients Currently Waiting...</h3>
     <div class="videos">
       <div class="well" data-ng-repeat="room in rooms">
-        <p>{{room}}</p>
+        <div class="l-box" id="{{room.sessionId}}"></div>
         <div class="btn btn-primary" ng-click="connect(room)">Connect</div>
         <div class="btn" ng-click="delete(room)">Delete</div>
         <div class="well" ng-show="result">{{result}}</div>

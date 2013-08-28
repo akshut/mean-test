@@ -17,7 +17,7 @@ function WaitingController($scope, $routeParams, $location, Global, Rooms, $http
         });
     };
 
-    TB.setLogLevel(TB.DEBUG);
+    // TB.setLogLevel(TB.DEBUG);
 
     var session;
 
@@ -38,10 +38,20 @@ function WaitingController($scope, $routeParams, $location, Global, Rooms, $http
     function subscribeToStreams(streams) {
       for (var i = 0; i < streams.length; i++) {
         var stream = streams[i];
-        if (stream.connection.connectionId != session.connection.connectionId) {
-          session.subscribe(stream);
+        if (stream.connection.connectionId == session.connection.connectionId) {
+          return;
         }
+        console.log(stream);
+        // Create the div to put the subscriber element in to
+        var div = document.createElement('div');
+        div.setAttribute('id', 'stream' + stream.streamId);
+        var streamsContainer = document.getElementById(stream.connection.data);
+        streamsContainer.appendChild(div);
+
+        // Subscribe to the stream
+        session.subscribe(stream, div.id);
       }
+
     }
 
     function streamCreatedHandler(event) {
