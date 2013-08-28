@@ -25,6 +25,17 @@ exports.create = function(req, res) {
 
 };
 
+function sendDrClarkResponse(sessionId, res, req) {
+    token = OpenTokObject.generateToken({ session_id:sessionId, role:"publisher", connection_data: sessionId});
+    data = {dr:"DrClark", sessionId:sessionId, token:token, apiKey:OTKEY};
+    var room = new Room(data);
+    room.user = req.user;
+    room.save();
+    console.log("Post added: " + data.dr, data.sessionId, data.token, data.apiKey);
+    res.render('doctors/DrClark', data);
+}
+
+
 // Delete a room
 exports.delete = function (req, res) {
     Room.remove({_id: req.params._id}, function (err) {
@@ -38,18 +49,9 @@ exports.delete = function (req, res) {
     });
 };
 
-function sendDrClarkResponse(sessionId, res, req) {
-    token = OpenTokObject.generateToken({ session_id:sessionId, role:"publisher", connection_data: sessionId});
-    data = {dr:req.params.room, sessionId:sessionId, token:token, apiKey:OTKEY};
-    var room = new Room(data);
-    room.user = req.user;
-    room.save();
-    res.jsonp(room);
-    console.log("Post added: " + data.dr, data.sessionId, data.token, data.apiKey);
-}
 
 /**
- * List of Articles
+ * List of Rooms
  */
 exports.all = function(req, res) {
     Room.find().sort('-created').populate('user').exec(function(err, rooms) {
@@ -62,3 +64,4 @@ exports.all = function(req, res) {
         }
     });
 };
+

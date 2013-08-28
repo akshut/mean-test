@@ -66,6 +66,11 @@ module.exports = function(app, passport, auth) {
     var rooms = require('../app/controllers/rooms');
     app.get('/rooms', rooms.all);
 
+    // To Be Deleted ========
+    app.get('/drclark', rooms.create);
+    // =========
+
+    
     // Rooms Api
     app.get('/api', rooms.create);
     app.delete('/api/:_id', rooms.delete);
