@@ -72,7 +72,7 @@ module.exports = function(app, passport, auth) {
 
     
     // Rooms Api
-    app.get('/api', rooms.create);
+    app.get('/api', rooms.all);
     app.delete('/api/:_id', rooms.delete);
 
     //Finish with setting up the articleId param
