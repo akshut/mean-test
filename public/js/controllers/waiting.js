@@ -19,26 +19,30 @@ function WaitingController($scope, $routeParams, $location, Global, Rooms, $http
 
     // auto connect to rooms in Database
 
+    // var myVar=setInterval(function(){$scope.test();},1000 * 3);
+    setInterval(function () {
+        $scope.$apply(function () {
+            $scope.find();
+        });
+    }, 1000 * 10);
 
-    // var myVar=setInterval(function(){auto();},1000 * 3);
-
-    // var timeoutConnect = function (i, object) {
-    //   window.setTimeout(function () {
-    //     startSession(object.sessionId, 36591572, object.token);
-    //   }, i * 3000);
-    // };
+    var timeoutConnect = function (i, object) {
+      window.setTimeout(function () {
+        startSession(object.sessionId, 36591572, object.token);
+      }, i * 3000);
+    };
 
 
-    var auto = function () {
+    $scope.auto = function () {
+        console.log("was called");
         $http.get('/api').success(function (data) {
-            $scope.roomsObj = data;
-            // for (var i = 0; i < data.length; i++) {
-              // timeoutConnect(i, data[i]);
-            // }
+            for (var i = 0; i < data.length; i++) {
+              timeoutConnect(i, data[i]);
+            }
         });
     };
 
-    // TB.setLogLevel(TB.DEBUG);
+    TB.setLogLevel(TB.DEBUG);
 
     var session;
 
