@@ -57,7 +57,7 @@ module.exports = {
         }
     },
     production: {
-        db: 'mongodb://localhost/mean',
+        db: process.env.MONGOLAB_URI || 'mongodb://localhost/mean-dev',
         root: rootPath,
         app: {
             name: 'Secure.Doxy.me- Production'
