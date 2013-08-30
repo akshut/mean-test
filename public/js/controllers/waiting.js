@@ -26,23 +26,27 @@ function WaitingController($scope, $routeParams, $location, Global, Rooms, $http
         });
     }, 1000 * 10);
 
-    var timeoutConnect = function (i, object) {
-      window.setTimeout(function () {
-        startSession(object.sessionId, 36591572, object.token);
-      }, i * 3000);
-    };
+    // Is the whole window.setTimeout.. wrong with angular? 
+    // var timeoutConnect = function (i, object) {
+    //   window.setTimeout(function () {
+    //     startSession(object.sessionId, 36591572, object.token);
+    //   }, i * 3000);
+    // };
 
 
-    $scope.auto = function () {
-        console.log("was called");
-        $http.get('/api').success(function (data) {
-            for (var i = 0; i < data.length; i++) {
-              timeoutConnect(i, data[i]);
-            }
-        });
-    };
+    // $scope.auto = function () {
+    //     console.log("was called");
+    //     $http.get('/api').success(function (data) {
+    //         $scope.rooms = data;
+    //         for (var i = 0; i < data.length; i++) {
+    //           timeoutConnect(i, data[i]);
+    //         }
+    //     });
+    // };
 
-    TB.setLogLevel(TB.DEBUG);
+
+    // Tokbox session and connection code. Probably should get rid of the session global?
+    // TB.setLogLevel(TB.DEBUG);
 
     var session;
 

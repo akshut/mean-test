@@ -1,15 +1,16 @@
 <div data-ng-controller="WaitingController" data-ng-init="find()">
-  <div class="container">
+  <div class="container-fluid">
     <h3>Patients Currently Waiting...</h3>
-    <div class="videos row">
-      <div class="well span3" ng-repeat="room in rooms track by room._id">
-        <div class="l-box" id="{{room.sessionId}}"></div>
-        <div class="btn btn-primary" ng-click="connect(room)">Connect</div>
-        <div class="btn" ng-click="delete(room)">Delete</div>
-        <div class="well" ng-show="result">{{result}}</div>
+    <div class="row-fluid">
+      <div class="videos span3">
+        <div class="well" ng-repeat="room in rooms track by room._id">
+          <div class="l-box" id="{{room.sessionId}}"></div>
+          <p>Waiting since: {{room.created | date:'hh:mm:ss a'}}</p>
+          <div class="btn btn-primary" ng-click="connect(room)">Connect</div>
+          <div class="btn" ng-click="delete(room)">Delete</div>
+        </div>
       </div>
     </div>
-    <div class="btn" ng-click="test()">Testing</div>
   </div>
 </div>
 
