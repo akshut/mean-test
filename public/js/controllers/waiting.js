@@ -8,6 +8,7 @@ function WaitingController($scope, $routeParams, $location, Global, Rooms, $http
     };
 
     $scope.connect = function (obj) {
+        if(!ppublisher) { publish(); }
         startSession(obj.sessionId, 36591572, obj.token);
     };
 
@@ -47,6 +48,20 @@ function WaitingController($scope, $routeParams, $location, Global, Rooms, $http
 
     // Tokbox session and connection code. Probably should get rid of the session global?
     // TB.setLogLevel(TB.DEBUG);
+
+    // Publishing logic
+
+    var ppublisher;
+
+    function connectToStream () {
+      session.publish(ppublisher);
+    }
+
+    function publish () {
+      ppublisher = TB.initPublisher(36591572, 'myPublisherDiv');
+    }
+
+    // end of publishing logic
 
     var session;
 
