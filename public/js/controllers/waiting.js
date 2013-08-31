@@ -7,12 +7,20 @@ function WaitingController($scope, $routeParams, $location, Global, Rooms, $http
         });
     };
 
-    $scope.connect = function (obj) {
-        if(!ppublisher) { publish(); }
+    $scope.connect = function (obj, thing) {
+        // check to see if Dr is publish then publish
+        // if(!ppublisher) { publish(); }
+        // disconnect from any current session
+        if(session) {
+            session.disconnect();
+        }
         startSession(obj.sessionId, 36591572, obj.token);
     };
 
     $scope.delete = function (obj) {
+        if (session) {
+            session.disconnect();
+        }
         $http.delete('/api/' + obj._id).success(function (data) {
             $scope.find();
         });
@@ -53,13 +61,13 @@ function WaitingController($scope, $routeParams, $location, Global, Rooms, $http
 
     var ppublisher;
 
-    function connectToStream () {
-      session.publish(ppublisher);
-    }
+    // function connectToStream () {
+    //   session.publish(ppublisher);
+    // }
 
-    function publish () {
-      ppublisher = TB.initPublisher(36591572, 'myPublisherDiv');
-    }
+    // function publish () {
+    //   ppublisher = TB.initPublisher(36591572, 'myPublisherDiv');
+    // }
 
     // end of publishing logic
 
@@ -70,13 +78,20 @@ function WaitingController($scope, $routeParams, $location, Global, Rooms, $http
 
       session.addEventListener("sessionConnected", sessionConnectedHandler);
       session.addEventListener("streamCreated", streamCreatedHandler);
-
+      session.addEventListener("sessionDisconnectEvent", sessionDisconnectHandler);
       session.connect(apiKey, token);
       
     }
 
+    // disconnect handler
+    function sessionDisconnectHandler (event) {
+        console.log(event);
+    }
+
     function sessionConnectedHandler (event) {
-      subscribeToStreams(event.streams);
+        ppublisher = TB.initPublisher(36591572, 'myPublisherDiv');
+        session.publish(ppublisher);
+        subscribeToStreams(event.streams);
     }
 
     function subscribeToStreams(streams) {
