@@ -6,3 +6,9 @@
   overflow-x: hidden;
   height: 500px;
 }
+
+#myPublisherDiv {
+  position: absolute;
+  right: 0;
+  top: 40px;
+}
