@@ -1,7 +1,7 @@
 {
     "name": "secure-doxy",
     "description": "Mongo",
-    "version": "1.0.0",
+    "version": "1.0.0-1",
     "private": true,
     "author": "Mean.io and dylntnr",
     "engines": {
@@ -9,8 +9,8 @@
         "npm": "1.2.x"
     },
     "subdomain": "secure-doxy",
-        "domains": [
-            "secure.doxy.me"
+    "domains": [
+        "secure.doxy.me"
     ],
     "scripts": {
         "start": "node server.js",
