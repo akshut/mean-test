@@ -35,12 +35,8 @@ var app = express();
 //express settings
 require('./config/express')(app, config, passport);
 
-//Bootstrap routes
-require('./config/routes')(app, passport, auth);
-
 // production only
 if ('production' == app.get('env')) {
-  app.use(express.errorHandler());
   app.get('*',function(req,res,next){
     if(req.headers['x-forwarded-proto']!='https')
       res.redirect('https://' + req.get('Host') + req.url)
@@ -49,12 +45,15 @@ if ('production' == app.get('env')) {
   });
 }
 
+//Bootstrap routes
+require('./config/routes')(app, passport, auth);
+
 //Start the app by listening on <port>
 var port = process.env.PORT || 3000;
 app.listen(port);
 console.log('Express app started on port ' + port);
 
-//Initializing logger 
+//Initializing logger
 logger.init(app, passport, mongoose);
 
 //expose app
