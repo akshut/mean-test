@@ -4,11 +4,26 @@
 
 .videos {
   overflow-x: hidden;
-  height: 500px;
+  position: absolute;
+  height: 350px;
+  left: 0px;
+  bottom: 0px;
+  z-index:10000000;
 }
 
 #myPublisherDiv {
   position: absolute;
   right: 0;
   top: 40px;
+  z-index:100000000;
+  border:solid 4px #fff;
+}
+
+#theirPublisherDiv {
+  height: 45em;
+  width: 100%;
+  z-index:-90000000;
+  position:absolute;
+  bottom:0;
+  right:0;
 }
