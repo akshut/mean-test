@@ -35,7 +35,7 @@ function WaitingController($scope, $routeParams, $location, Global, Rooms, $http
         });
     }, 1000 * 10);
 
-    // Is the whole window.setTimeout.. wrong with angular? 
+    // Is the whole window.setTimeout.. wrong with angular?
     // var timeoutConnect = function (i, object) {
     //   window.setTimeout(function () {
     //     startSession(object.sessionId, 36591572, object.token);
@@ -80,7 +80,7 @@ function WaitingController($scope, $routeParams, $location, Global, Rooms, $http
       session.addEventListener("streamCreated", streamCreatedHandler);
       session.addEventListener("sessionDisconnectEvent", sessionDisconnectHandler);
       session.connect(apiKey, token);
-      
+
     }
 
     // disconnect handler
@@ -89,7 +89,7 @@ function WaitingController($scope, $routeParams, $location, Global, Rooms, $http
     }
 
     function sessionConnectedHandler (event) {
-        ppublisher = TB.initPublisher(36591572, 'myPublisherDiv');
+        ppublisher = TB.initPublisher(36591572, 'myPublisherDiv', {height: "135px", width: "180px"});
         session.publish(ppublisher);
         subscribeToStreams(event.streams);
     }
@@ -103,11 +103,11 @@ function WaitingController($scope, $routeParams, $location, Global, Rooms, $http
         // Create the div to put the subscriber element in to
         var div = document.createElement('div');
         div.setAttribute('id', 'stream' + stream.streamId);
-        var streamsContainer = document.getElementById(stream.connection.data);
+        var streamsContainer = document.getElementById('theirPublisherDiv');
         streamsContainer.appendChild(div);
 
         // Subscribe to the stream
-        session.subscribe(stream, div.id);
+        session.subscribe(stream, div.id, {height: '100%', width: '100%'});
       }
 
     }
