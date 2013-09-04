@@ -78,7 +78,7 @@ function WaitingController($scope, $routeParams, $location, Global, Rooms, $http
 
       session.addEventListener("sessionConnected", sessionConnectedHandler);
       session.addEventListener("streamCreated", streamCreatedHandler);
-      session.addEventListener("sessionDisconnectEvent", sessionDisconnectHandler);
+      session.addEventListener("sessionDisconnected", sessionDisconnectHandler);
       session.connect(apiKey, token);
 
     }
