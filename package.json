@@ -9,9 +9,9 @@
         "npm": "1.2.x"
     },
     "scripts": {
-        "start": "NODE_ENV=development ./node_modules/.bin/nodemon server.js",
+        "start": "NODE_ENV=development ./node_modules/.bin/forever -m 5 server.js",
         "test": "NODE_ENV=test ./node_modules/.bin/mocha --reporter spec test/test-*.js",
-        "postinstall": "./node_modules/bower/bin/bower install"
+        "postinstall": "node_modules/bower/bin/bower install"
     },
     "dependencies": {
         "express": "latest",
@@ -30,7 +30,8 @@
         "view-helpers": "latest",
         "mean-logger": "latest",
         "bower": "latest",
-        "opentok": "0.3.x"
+        "opentok": "0.3.x",
+        "forever": "latest"
     },
     "devDependencies": {
         "supertest": "latest",
