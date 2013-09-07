@@ -64,13 +64,13 @@ module.exports = function(app, passport, auth) {
 
     // Rooms Routes
     var rooms = require('../app/controllers/rooms');
-    app.get('/rooms', rooms.all);
+    app.get('/rooms', auth.requiresLogin,  rooms.room);
 
     // To Be Deleted ========
     app.get('/drclark', rooms.create);
     // =========
 
-    
+
     // Rooms Api
     app.get('/api', rooms.all);
     app.delete('/api/:_id', rooms.delete);

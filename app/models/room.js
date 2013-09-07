@@ -17,6 +17,7 @@ var RoomSchema = new Schema({
     },
     dr: {
         type: String,
+        lowercase: true,
         default: 'DrX',
         trim: true
     },
