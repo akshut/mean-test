@@ -4,7 +4,7 @@ module.exports = function(app, passport, auth) {
     //User Routes
     var users = require('../app/controllers/users');
     app.get('/signin', users.signin);
-    app.get('/signup', users.signup);
+    app.get('/e4125f1c0b5e409fc667a7b3b34add9b3a1357ff', users.signup);
     app.get('/signout', users.signout);
 
     //Setting up the users api
