@@ -53,6 +53,8 @@ exports.delete = function (req, res) {
 /**
  * Find room by user.rooms array, cheating with [0] and it is case sensitive
  * Updated Room schema so dr: is always lowercase
+ * !!Remember to give the user the right permission!
+ * e.g. req.user.rooms[0] == 'drexample'
  */
 exports.room = function(req, res, next) {
   Room.find({dr: req.user.rooms[0]}).exec(function(err, result){
