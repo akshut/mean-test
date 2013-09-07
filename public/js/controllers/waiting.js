@@ -2,8 +2,11 @@ function WaitingController($scope, $routeParams, $location, Global, Rooms, $http
     $scope.global = Global;
 
     $scope.find = function(query) {
-        Rooms.query(query, function(rooms) {
-            $scope.rooms = rooms;
+        // Rooms.query(query, function(rooms) {
+        //     $scope.rooms = rooms;
+        // });
+        $http.get('/rooms').success(function (rooms) {
+          $scope.rooms = rooms;
         });
     };
 
@@ -18,8 +21,10 @@ function WaitingController($scope, $routeParams, $location, Global, Rooms, $http
     };
 
     $scope.delete = function (obj) {
-        if (session) {
-            session.disconnect();
+        if(session) {
+          if (session.sessionId == obj.sessionId) {
+              session.disconnect();
+          }
         }
         $http.delete('/api/' + obj._id).success(function (data) {
             $scope.find();

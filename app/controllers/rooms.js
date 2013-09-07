@@ -27,7 +27,7 @@ exports.create = function(req, res) {
 
 function sendDrClarkResponse(sessionId, res, req) {
     token = OpenTokObject.generateToken({ session_id:sessionId, role:"publisher", connection_data: sessionId});
-    data = {dr:"DrClark", sessionId:sessionId, token:token, apiKey:OTKEY};
+    data = {dr: req.path.substring(1), sessionId:sessionId, token:token, apiKey:OTKEY};
     var room = new Room(data);
     room.user = req.user;
     room.save();
@@ -50,6 +50,19 @@ exports.delete = function (req, res) {
 };
 
 
+/**
+ * Find room by user.rooms array, cheating with [0] and it is case sensitive
+ * Updated Room schema so dr: is always lowercase
+ */
+exports.room = function(req, res, next) {
+  Room.find({dr: req.user.rooms[0]}).exec(function(err, result){
+    if(err) {
+      res.jsonp(err);
+    } else {
+      res.jsonp(result);
+    }
+  });
+};
 
 /**
  * List of Rooms
