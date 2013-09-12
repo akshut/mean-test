@@ -3,6 +3,12 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         watch: {
+            jade: {
+                files: ['app/views/**'],
+                options: {
+                    livereload: true,
+                },
+            },
             html: {
                 files: ['public/views/**'],
                 options: {
@@ -25,7 +31,7 @@ module.exports = function(grunt) {
             }
         },
         jshint: {
-            all: ['gruntfile.js']
+             all: ['gruntfile.js', 'public/js/**/*.js', 'test/**/*.js', 'app/**/*.js']
         },
         compass: { //Task
             dist: { //Target
@@ -60,7 +66,7 @@ module.exports = function(grunt) {
             },
             exec: {
                 options: {
-                    exec: 'less'
+                    exec: 'less'                    
                 }
             }
         },

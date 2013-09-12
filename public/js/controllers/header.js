@@ -1,5 +1,6 @@
-function HeaderController($scope, $location, Global) {
+angular.module('mean.system').controller('HeaderController', ['$scope', 'Global', function ($scope, Global) {
     $scope.global = Global;
+
     $scope.menu = [{
         "title": "My Waiting Room",
         "link": "rooms/waiting"
@@ -7,14 +8,4 @@ function HeaderController($scope, $location, Global) {
         "title": "Quick Meeting",
         "link": "rooms/create"
     }];
-
-    $scope.init = function() {
-
-    };
-
-    $scope.isSelected = function(item) {        
-        if ($location.path() == "/"+item.link) {
-            return "active"
-        } else return ""
-    }
-}
+}]);
