@@ -1,5 +1,4 @@
 {
-    "db": "I had to change this to my mongodb://username:",
     "app": {
         "name": "secure.doxy.me - a place for clinicians"
     },
