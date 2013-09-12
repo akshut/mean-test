@@ -46,7 +46,7 @@ module.exports = function(app, passport) {
         app.use(express.session({
             secret: 'doxy',
             store: new mongoStore({
-                url: config.db,
+                url: process.env.MONGOLAB_URI,
                 collection: 'sessions'
             })
         }));
