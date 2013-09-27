@@ -43,8 +43,8 @@ h2 {
 
 .meetingNav {
   position:absolute;
-  top:140px;
-  left:0;
+  top:40px;
+  left:70px;
   z-index:100000000000;
   transition: left 0.5s ease-in-out;
   -webkit-transition: left 0.5s ease-in-out;
@@ -57,30 +57,50 @@ h2 {
 }
 li.meetingLi:nth-child(1) {
   position:relative;
-  left:-110px;
+  left:-240px;
 }
 li.meetingLi:nth-child(1):hover {
   left:-40px;
 }
-li.meetingLi:nth-child(2) {
+/*li.meetingLi:nth-child(2) {
   position:relative;
-  left:-120px;
+  left:-215px;
 }
 li.meetingLi:nth-child(2):hover {
   left:-30px;
 }
 li.meetingLi:nth-child(3) {
   position:relative;
-  left:-145px;
+  left:-215px;
 }
 li.meetingLi:nth-child(3):hover {
   left:-5px;
+}*/
+@keyframes roomsslider {
+  from {left:-40px;}
+  to {left:-330px;}
 }
-li.meetingLi:nth-child(4) {
+@-webkit-keyframes roomsslider {
+  from {left:-40px;}
+  to {left:-330px;}
+}
+@keyframes roomssliderno {
+  from{left:-40px;}
+  to{left:-40px;}
+}
+@-webkit-keyframes roomssliderno {
+  from{left:-40px;}
+  to{left:-40px;}
+}
+li.meetingLi:nth-child(2) {
   position:relative;
-  left:-113px;
+  left:-330px;
+  animation: roomssliderno 2s, roomsslider 0.5s ease-in-out;
+  -webkit-animation: roomssliderno 2s, roomsslider 0.5s ease-in-out;
+  animation-delay: 0s, 2s;
+  -webkit-animation-delay: 0s, 2s;
 }
-li.meetingLi:nth-child(4):hover {
+li.meetingLi:nth-child(2):hover {
   left:-40px;
 }
 .meetingNav a.nav {

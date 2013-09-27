@@ -2,16 +2,23 @@
   <div class="container">
     <div id="myPublisherDiv"></div>
     <div id="theirPublisherDiv"></div>
-    <!-- <div class="meetingNav">
+    <div class="meetingNav">
       <ul>
-        <li class="meetingLi"><a class="side-nav" href="#">Text <i class="iconShow iconNav"> &#8962;</i></a></li>
-        <li class="meetingLi"><a class="side-nav" href="#">Text <i class="iconShow iconNav"> &#8962;</i></a></li>
-        <li class="meetingLi"><a class="side-nav" href="#">Text <i class="iconShow iconNav"> &#8962;</i></a></li>
-        <li class="meetingLi"><a class="side-nav" href="#">Text <i class="iconShow iconNav"> &#8962;</i></a></li>
+        <li class="meetingLi"><a class="side-nav" href="#">Need Help? <i class="iconShow iconNav"> &#59140;</i></a></li>
+        <!-- <li class="meetingLi"><a class="side-nav" href="#">Text <i class="iconShow iconNav"> &#8962;</i></a></li>
+        <li class="meetingLi"><a class="side-nav" href="#">Text <i class="iconShow iconNav"> &#8962;</i></a></li> -->
+        <li class="meetingLi"><a class="side-nav" href="#">Patients Currently in Your Waiting Room <i class="iconShow iconNav"> &#128101;</i></a>
+        <div class="well" ng-repeat="room in rooms track by room._id">
+          <div class="l-box" id="{{room.sessionId}}"></div>
+          <p>Joined at: {{room.created | date:'hh:mm:ss a'}}</p>
+          <div class="btn btn-sm btn-primary" ng-click="connect(room)">Connect</div>
+          <div class="btn btn-sm" ng-click="delete(room)">Delete</div>
+        </div>
+      </li>
         
       </ul>
-    </div> -->
-    <div class="row">
+    </div>
+    <!-- <div class="row">
       <div class="videos col-md-2">
         <div class="well" ng-repeat="room in rooms track by room._id">
           <div class="l-box" id="{{room.sessionId}}"></div>
@@ -20,7 +27,7 @@
           <div class="btn btn-sm" ng-click="delete(room)">Delete</div>
         </div>
       </div>
-     </div>
+     </div> -->
     </div>
   </div>
 </div>
