@@ -1,7 +1,7 @@
 {
     "name": "secure-doxy",
     "description": "Mongo",
-    "version": "1.0.0-16",
+    "version": "1.0.0-17",
     "private": true,
     "author": "Mean.io and dylntnr",
     "engines": {
