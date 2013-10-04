@@ -61,10 +61,11 @@ h2 {
 }
 li.meetingLi:nth-child(1) {
   position:relative;
-  left:-1385px;
+  left:-1015px;
   text-align:right;
   overflow-y:hidden;
   height:200px;
+  width:1000px;
 }
 li.meetingLi:nth-child(1):hover {
   left:-40px;
