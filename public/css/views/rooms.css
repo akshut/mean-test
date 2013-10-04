@@ -54,13 +54,33 @@ h2 {
   margin:20px 0;
   transition: left 0.5s ease-in-out;
   -webkit-transition: left 0.5s ease-in-out;
+  border: 1px solid #759b2f;
+  border-radius:4px;
+  padding:0 10px;
 }
 li.meetingLi:nth-child(1) {
   position:relative;
-  left:-240px;
+  left:-1290px;
+  text-align:right;
+  overflow-y:scroll;
+  height:400px;
 }
 li.meetingLi:nth-child(1):hover {
   left:-40px;
+}
+.helpinfo {
+  text-align:left;
+  width:70%;
+  margin:0 0 0 6em;
+}
+.tips-list {
+  list-style:disc;
+  text-align:left;
+  display:block;
+  margin-left:10px;
+}
+.tips-list li:first-of-type {
+  margin-left:9px;
 }
 /*li.meetingLi:nth-child(2) {
   position:relative;
@@ -110,6 +130,9 @@ li.meetingLi:nth-child(2):hover {
 }
 i.iconNav {
   display:inline;
+}
+.side-nav:hover {
+  text-decoration:none;
 }
 .meetingFooter {
   position:absolute;
