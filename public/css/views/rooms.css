@@ -7,13 +7,13 @@ html {
 }
 body {
   color: #262523;
-  background: white url('secure-doxy_bg.png') no-repeat top center fixed;
+  background: white url('secure-doxy_bg.png') no-repeat top center;
   background-size: 100%;
-  background-size: cover;
+  /*background-size: cover;*/
   padding-top: 10px;
   /*font: 1rem 'Steagal-Re', Helvetica, Arial, sans-serif;*/
   margin:0;
-  overflow: hidden;
+  /*overflow: hidden;*/
   animation:fadein 0.5s;
   -webkit-animation:fadein 0.5s;
 }
