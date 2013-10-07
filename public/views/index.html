@@ -1,57 +1,59 @@
 <div data-ng-controller="IndexController">
+  <!-- Sign in form and info header -->
   <div data-ng-hide="global.authenticated">
-    <h1>Welcome to your account portal</h1>
-    <div class="container">
-      <div class="row">
+      <div class="banner">
+        <div class="container">
+        <h1>Welcome to your account portal</h1>
+        <div class="row">
 
-        <div class="col-md-6">
+          <div class="col-md-6">
 
-          <form action="/users/session" method="post" class="signin form-horizontal">
+            <form action="/users/session" method="post" class="signin form-horizontal">
 
-            <p class="error"></p>
+              <p class="error"></p>
 
-            <div class="form-group">
-              <label for="email" class="control-label col-lg-2">Email
-              </label>
+              <div class="form-group">
+                <label for="email" class="control-label col-lg-2">Email
+                </label>
 
-              <div class="col-lg-10">
-                <input id="email" type="email" name="email" placeholder="Email" class="form-control">
+                <div class="col-lg-10">
+                  <input id="email" type="email" name="email" placeholder="Email" class="form-control">
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label for="password" class="control-label col-lg-2">Password
-              </label>
+              <div class="form-group">
+                <label for="password" class="control-label col-lg-2">Password
+                </label>
 
-              <div class="col-lg-10">
-                <input id="password" type="password" name="password" placeholder="Password" class="form-control">
+                <div class="col-lg-10">
+                  <input id="password" type="password" name="password" placeholder="Password" class="form-control">
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
+              <div class="form-group">
 
-              <div class="col-lg-offset-2 col-lg-10"><button type="submit" class="btn btn-signin">Sign in</button>
+                <div class="col-lg-offset-2 col-lg-10"><button type="submit" class="btn btn-signin">Sign in</button>
+                </div>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
+          <!-- end first col -->
+          <div class="col-md-6">
+            <h4>
+              Secure.doxy.me is the place for our partnering clinicians to manage their rooms, see their patients, and get support for doxy.me products
+            </h4>
+          </div>
+          <!-- end second col -->
         </div>
-        <!-- end first col -->
-        <div class="col-md-6">
-          <h4>
-            Secure.doxy.me is the place for our partnering clinicians to manage their rooms, see their patients, and get support for doxy.me products
-          </h4>
-        </div>
-        <!-- end second col -->
+        <!-- end row -->
       </div>
-      <!-- end row -->
+      <!-- end container -->
+    </div> <!-- end banner -->
+  </div> <!-- end ng-hide -->
+    <div data-ng-show="global.authenticated" >
+      <p>Welcome {{global.user.name}}!</p>
     </div>
-    <!-- end container -->
-  </div>
-  <!-- end ng-hide -->
-  <div data-ng-show="global.authenticated" >
-    <p>Welcome {{global.user.name}}!</p>
-  </div>
-
+  <!-- End of sign in  form and info header -->
   <!-- this is where i am going to start putting in marketing stuff -->
   <div class="container marketing">
       <!-- Three columns of text below the carousel-->
