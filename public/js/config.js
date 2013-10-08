@@ -2,8 +2,8 @@
 window.app.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
-        when('/rooms/waiting', {
-            templateUrl: 'views/rooms/waiting.html'
+        when('/dashboard', {
+            templateUrl: 'views/dashboard.html'
         }).
         when('/rooms/create', {
             templateUrl: 'views/rooms/create.html'
