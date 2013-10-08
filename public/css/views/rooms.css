@@ -9,7 +9,7 @@ body {
   color: #262523;
   /*background-size: cover;*/
   /* padding-top: 10px; */
-  /*font: 1rem 'Steagal-Re', Helvetica, Arial, sans-serif;*/
+  font: 1rem 'Steagal-Re', Helvetica, Arial, sans-serif;
   /* margin:0; */
   /*overflow: hidden;*/
   animation:fadein 0.5s;
@@ -22,7 +22,7 @@ body {
   background: transparent  url('secure-doxy_bg.png') 0 0 no-repeat fixed;
   text-align: center;
   background-size: cover;
-  height: 350px;
+  height: 600px;
   width: 100%;
   margin-bottom: 3em;
 }
@@ -47,6 +47,25 @@ h2 {
 .navbar-doxy {
   background-color: #262523;
   border-color: #080808;
+}
+
+
+
+/*---index page styles---*/
+.introtext1 {
+  background-color:rgba(255,255,255,0.5);
+  border-radius:6px;
+  padding:4em 2em;
+  /*position:fixed;
+  x-index:-1000;*/
+}
+.signin label {
+  display:none;
+}
+.btn-signin {
+  color: #fff;
+  background-color: #759b2f;
+  border-color: #759b2f;
 }
 
 
@@ -209,11 +228,7 @@ i {
   display:none;
 }
 
-.btn-signin {
-  color: #fff;
-  background-color: #759b2f;
-  border-color: #759b2f;
-}
+
 
 
 .l-box {
