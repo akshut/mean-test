@@ -19,7 +19,7 @@ body {
 .banner {
   /* background: white url('secure-doxy_bg.png') no-repeat top center; */
   /* background-size: 100%; */
-  background: transparent  url('secure-doxy_bg.png') 0 0 no-repeat fixed;
+  background: transparent  url('secure-doxy_bgsm.png') 0 0 no-repeat fixed;
   text-align: center;
   background-size: cover;
   height: 600px;
@@ -55,7 +55,7 @@ h2 {
 .introtext1 {
   background-color:rgba(255,255,255,0.5);
   border-radius:6px;
-  padding:4em 2em;
+  padding:6em 2em;
   /*position:fixed;
   x-index:-1000;*/
 }
