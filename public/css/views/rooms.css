@@ -16,6 +16,8 @@ body {
   -webkit-animation:fadein 0.5s;
 }
 
+/* We should probably move this stuff into common.css or something */
+
 .banner {
   /* background: white url('secure-doxy_bg.png') no-repeat top center; */
   /* background-size: 100%; */
@@ -25,6 +27,17 @@ body {
   height: 600px;
   width: 100%;
   margin-bottom: 3em;
+}
+
+.banner-head {
+  font-size: 4em;
+  color: white;
+  font-weight: 500;
+  text-shadow: 0 1px 1px black;
+}
+
+.banner-row {
+  margin-top: 9em;
 }
 
 h1 {
