@@ -260,13 +260,13 @@ i {
 #myPublisherDiv {
   position: absolute;
   right: 0;
-  top: 10px;
+  top: 50px;
   z-index:100000000;
   border:solid 4px #fff;
 }
 
 #theirPublisherDiv {
-  height: 45em;
+  height: 80em;
   width: 100%;
   z-index:-90000000;
   position:absolute;
