@@ -3,7 +3,7 @@
     "description": "Mongo",
     "version": "1.0.0-20",
     "private": true,
-    "author": "Mean.io and dylntnr",
+    "author": "Doxy.me",
     "engines": {
         "node": "0.10.x",
         "npm": "1.2.x"
@@ -25,10 +25,6 @@
         "connect-flash": "latest",
         "passport": "latest",
         "passport-local": "latest",
-        "passport-facebook": "latest",
-        "passport-twitter": "latest",
-        "passport-github": "latest",
-        "passport-google-oauth": "latest",
         "underscore": "latest",
         "async": "latest",
         "view-helpers": "latest",

@@ -30,10 +30,11 @@ body {
 }
 
 .banner-head {
-  font-size: 4em;
+  font-size: 3em;
   color: white;
   font-weight: 500;
   text-shadow: 0 1px 1px black;
+  line-height:1;
 }
 
 .banner-row {
@@ -260,13 +261,13 @@ i {
 #myPublisherDiv {
   position: absolute;
   right: 0;
-  top: 10px;
+  top: 50px;
   z-index:100000000;
   border:solid 4px #fff;
 }
 
 #theirPublisherDiv {
-  height: 45em;
+  height: 80em;
   width: 100%;
   z-index:-90000000;
   position:absolute;
