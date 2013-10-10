@@ -4,16 +4,27 @@ html {
   margin:0;
   padding:0;
   border:0;
+  font-size:16px;
 }
 body {
   color: #262523;
   /*background-size: cover;*/
   /* padding-top: 10px; */
-  font: 1rem 'Steagal-Re', Helvetica, Arial, sans-serif;
+  font: 1rem 'freight-sans-pro', Helvetica, Arial, sans-serif;
   /* margin:0; */
   /*overflow: hidden;*/
   animation:fadein 0.5s;
   -webkit-animation:fadein 0.5s;
+}
+a {
+  color: #262523;
+  text-decoration:none;
+  transition:background-color 0.35s;
+  -webkit-transition:background-color 0.35s;
+}
+a:hover {
+  color: #262523;
+  text-decoration:none;
 }
 
 /* We should probably move this stuff into common.css or something */
@@ -21,19 +32,22 @@ body {
 .banner {
   /* background: white url('secure-doxy_bg.png') no-repeat top center; */
   /* background-size: 100%; */
-  background: transparent  url('secure-doxy_bgsm.png') 0 0 no-repeat fixed;
+  background: transparent  url('/img/secure-doxy_bg2.png') 0 0 no-repeat fixed;
   text-align: center;
   background-size: cover;
-  height: 600px;
+  height: 700px;
   width: 100%;
   margin-bottom: 3em;
+  margin-top:0px;
 }
 
 .banner-head {
-  font-size: 4em;
-  color: white;
-  font-weight: 500;
-  text-shadow: 0 1px 1px black;
+  font-size: 2em;
+  color: #262523;
+  font-weight: 400;
+  /*text-shadow: 0 1px 1px black;*/
+  line-height:1;
+  margin-bottom:1em;
 }
 
 .banner-row {
@@ -58,19 +72,33 @@ h2 {
   }
 
 .navbar-doxy {
-  background-color: #262523;
-  border-color: #080808;
+  /*background-color: #262523;*/
+  background-color:#fff;
+  border-color: #eee;
+}
+.logotab {
+  position:fixed;
+  top:0;
+  background-color:#eee;
+  padding:1em;
+  transition:background-color 0.35s;
+  -webkit-transition:background-color 0.35s;
+}
+.logotab:hover {
+  background-color:#759b2f;
 }
 
 
 
 /*---index page styles---*/
 .introtext1 {
-  background-color:rgba(255,255,255,0.5);
+  background-color:rgba(255,255,255,0.2);
+  border:2px solid white;
   border-radius:6px;
-  padding:6em 2em;
+  padding:3em 2em 5em;
   /*position:fixed;
   x-index:-1000;*/
+  margin-top:20px;
 }
 .signin label {
   display:none;
@@ -79,6 +107,12 @@ h2 {
   color: #fff;
   background-color: #759b2f;
   border-color: #759b2f;
+}
+.nav>li>a {
+  background-color:#eee;
+}
+.nav>li>a:hover {
+  background-color:#759b2f;
 }
 
 
