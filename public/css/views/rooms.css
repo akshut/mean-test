@@ -19,6 +19,8 @@ body {
 a {
   color: #262523;
   text-decoration:none;
+  transition:background-color 0.35s;
+  -webkit-transition:background-color 0.35s;
 }
 a:hover {
   color: #262523;
@@ -74,6 +76,17 @@ h2 {
   background-color:#fff;
   border-color: #eee;
 }
+.logotab {
+  position:fixed;
+  top:0;
+  background-color:#eee;
+  padding:1em;
+  transition:background-color 0.35s;
+  -webkit-transition:background-color 0.35s;
+}
+.logotab:hover {
+  background-color:#759b2f;
+}
 
 
 
@@ -94,6 +107,12 @@ h2 {
   color: #fff;
   background-color: #759b2f;
   border-color: #759b2f;
+}
+.nav>li>a {
+  background-color:#eee;
+}
+.nav>li>a:hover {
+  background-color:#759b2f;
 }
 
 
