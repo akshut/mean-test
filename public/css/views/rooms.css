@@ -83,8 +83,8 @@ h2 {
   padding:1em;
   transition:background-color 0.35s;
   -webkit-transition:background-color 0.35s;
-  animation:drop 0.25s ease-in-out;
-  -webkit-animation:drop 0.15s ease-in-out;
+  animation:slideInDown 1s ease-in-out;
+  -webkit-animation:slideInDown 1s ease-in-out;
 }
 .logotab:hover {
   background-color:#759b2f;
@@ -96,6 +96,16 @@ h2 {
 @-webkit-keyframes drop {
   0%{-webkit-transform:translateY(-50px);}
   100%{-webkit-transform:translateY(0px);}
+}
+@-webkit-keyframes slideInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+  }
 }
 
 
