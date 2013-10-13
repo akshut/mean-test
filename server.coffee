@@ -22,42 +22,50 @@ config.resolve (user, room, DB_URL, PORT, passport) ->
         return res.redirect "https://#{req.get('Host')}#{req.url}"
       next()
 
-  app.use express.favicon()
-  app.use express.static "#{__dirname}/public"
+  # General configure
+  app.configure ->
+    app.use express.favicon()
+    app.use express.static "#{__dirname}/public"
 
-  app.set 'views', "#{__dirname}/views"
-  app.set 'view engine', 'jade'
+    app.set 'views', "#{__dirname}/views"
+    app.set 'view engine', 'jade'
 
-  app.use express.cookieParser()
-  app.use express.bodyParser()
-  app.use express.methodOverride()
-  app.use express.session
-    secret: 'doxy'
-    store: new mongoStore url: DB_URL, collection: 'sessions'
+    app.use express.cookieParser()
+    app.use express.bodyParser()
+    app.use express.methodOverride()
+    app.use express.session
+      secret: 'doxy'
+      store: new mongoStore url: DB_URL, collection: 'sessions'
+    app.use express.csrf()
 
-  app.use helpers 'Doxy.me'
+    app.use (req, res, next) ->
+      res.locals.csrf_token = req.csrfToken()
+      next()
 
-  app.use passport.initialize()
-  app.use passport.session()
+    app.use helpers 'Doxy.me'
 
-  app.use (err, req, res, next) ->
-    console.log """
-      Error occurred:
+    app.use passport.initialize()
+    app.use passport.session()
 
-      #{err.stack}
+    app.use (err, req, res, next) ->
+      console.log """
+        Error occurred:
 
-    """
-    res.send 500, 'An error occurred'
+        #{err.stack}
 
-  # Home page
-  app.get '/', (req, res, next) ->
-    res.render 'index'
+      """
+      res.send 500, 'An error occurred'
 
   ###
   #
   # R O U T E S
   #
   ###
+
+  # Home page
+  app.get '/', (req, res, next) ->
+    res.render 'index'
+
 
   ###
   # Sign-up flow
