@@ -3,9 +3,11 @@ extends ../layout
 block content
   h1 Sign Up
 
-  form(name="signup", action="users", method="post")
-    label Name:
-    input(type="text", name="name")
+  form(name="signup", action="/i/users", method="post")
+    label First Name:
+    input(type="text", name="firstName")
+    label Last Name:
+    input(type="text", name="lastName")
     label Email:
     input(type="text", name="email")
     label Password:

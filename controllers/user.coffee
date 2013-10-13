@@ -1,3 +1,5 @@
+async = require 'async'
+
 module.exports = (User) ->
 
   signUp: (req, res, next) ->
@@ -7,7 +9,7 @@ module.exports = (User) ->
     res.render 'users/signin', title: 'Sign in'
 
   logIn: (req, res, next) ->
-    res.redirect '/dashboard'
+    res.redirect '/i/dashboard'
 
   signOut: (req, res, next) ->
     req.logout()
@@ -21,4 +23,15 @@ module.exports = (User) ->
 
       req.login user, (err) ->
         return next err if err
-        res.redirect '/dashboard'
+        res.redirect '/i/dashboard'
+
+  buildDashboard: (req, res, next) ->
+
+    user = req.user
+
+    async.parallel {
+      rooms: (cb) ->user.getRooms cb
+      sessions: (cb) ->user.getSessions cb
+    }, (err, data) ->
+
+      res.render 'dashboard/dashboard', {data}

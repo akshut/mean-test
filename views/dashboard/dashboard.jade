@@ -1,0 +1,20 @@
+extends ../../layout
+include ./session
+
+block content
+  h1 Dashboard
+
+  ul#session
+    +session
+    +session
+    +session
+    +session
+    +session
+
+  script.
+    var eventSource = new EventSource('/lol/events')
+
+    eventSource.addEventListener('message', function(e) {
+      console.log(e.data)
+    })
+

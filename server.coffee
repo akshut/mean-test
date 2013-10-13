@@ -1,8 +1,11 @@
-express    = require 'express'
-config     = require './config'
-helpers    = require 'view-helpers'
-mongoStore = require('connect-mongo')(express)
-app        = express()
+require 'coffee-trace'
+
+express       = require 'express'
+config        = require './config'
+helpers       = require 'view-helpers'
+mongoStore    = require('connect-mongo')(express)
+app           = express()
+loginRequired = require './middleware/requires-login'
 
 config.resolve (user, room, DB_URL, PORT, passport) ->
 
@@ -50,18 +53,38 @@ config.resolve (user, room, DB_URL, PORT, passport) ->
   app.get '/', (req, res, next) ->
     res.render 'index'
 
-  # Routes
+  ###
+  #
+  # R O U T E S
+  #
+  ###
+
+  ###
+  # Sign-up flow
+  ###
   app.get '/e4125f1c0b5e409fc667a7b3b34add9b3a1357ff', user.signUp
 
-  app.get '/signin', user.signIn
+  app.get '/i/signin', user.signIn
 
-  app.post '/signin',
-    passport.authenticate('local', {failureRedirect: '/signin'}),
-    user.logIn
+  app.post '/i/signin', passport.authenticate('local',
+      failureRedirect: '/i/signin'
+      failurFlash: 'Invalid email or password'
+    ), user.logIn
 
-  app.get '/signout', user.signOut
+  app.get '/i/signout', user.signOut
 
-  app.post '/users', user.create
+  app.post '/i/users', user.create
+
+  ###
+  # Room things
+  ###
+  app.get '/i/dashboard', loginRequired, user.buildDashboard
+  app.post '/i/rooms', room.create
+
+  # This route must always stay as low as possible, to catch any possible room
+  app.get '/:roomName', room.joinRoomByName
+
+  app.get '/:roomName/events', loginRequired, room.eventsForRoom
 
   # 404 route
   app.get '*', (req, res, next) ->

@@ -1,0 +1,8 @@
+extends ../layout
+
+block content
+  h1 Room
+
+  script(src='/js/session.js')
+  script.
+    callDoctor("!{sessionId}", "!{token}", "!{API_KEY}")

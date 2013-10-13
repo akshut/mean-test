@@ -1,5 +1,6 @@
 module.exports = (req, res, next) ->
   if not req.isAuthenticated()
-    return res.send 401, 'User is not authorized'
+    console.log "User is not authenticated"
+    return res.redirect '/i/signin'
 
   next()
