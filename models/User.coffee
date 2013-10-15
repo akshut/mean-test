@@ -2,7 +2,7 @@ crypto   = require 'crypto'
 mongoose = require 'mongoose'
 Schema   = mongoose.Schema
 
-module.exports = (db, SALT) ->
+module.exports = (db, SALT, Room) ->
 
   encryptPassword = (password) ->
     crypto.createHmac('sha1', SALT).update(password).digest('hex')
@@ -19,9 +19,9 @@ module.exports = (db, SALT) ->
   UserSchema.methods.authenticate = (password) -> @password is encryptPassword password
 
   UserSchema.methods.getRooms = (cb) ->
-    cb null, []
-
-  UserSchema.methods.getSessions = (cb) ->
-    cb null, []
+    Room.find({acl: @email})
+        .lean()
+        .select('name slug')
+        .exec cb
 
   db.model 'User', UserSchema

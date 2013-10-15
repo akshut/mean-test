@@ -12,7 +12,7 @@ block content
     +session
 
   script.
-    var eventSource = new EventSource('/lol/events')
+    var eventSource = new EventSource('/lol/sessions')
 
     eventSource.addEventListener('message', function(e) {
       console.log(e.data)

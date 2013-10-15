@@ -6,3 +6,5 @@ block content
   script(src='/js/session.js')
   script.
     callDoctor("!{sessionId}", "!{token}", "!{API_KEY}")
+    
+    new EventSource('/session/!{_id}')

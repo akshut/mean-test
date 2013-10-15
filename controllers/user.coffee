@@ -29,9 +29,7 @@ module.exports = (User) ->
 
     user = req.user
 
-    async.parallel {
-      rooms: (cb) ->user.getRooms cb
-      sessions: (cb) ->user.getSessions cb
-    }, (err, data) ->
+    user.getRooms (err, rooms) ->
+      return next err if err
 
-      res.render 'dashboard/dashboard', {data}
+      res.render 'dashboard/dashboard', {rooms}

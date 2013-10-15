@@ -2,7 +2,7 @@ OpenTok  = require 'opentok'
 mongoose = require 'mongoose'
 Schema   = mongoose.Schema
 
-module.exports = (db, API_KEY, SECRET) ->
+module.exports = (db, API_KEY, SECRET, Session) ->
 
   opentok = new OpenTok.OpenTokSDK API_KEY, SECRET
 
@@ -39,6 +39,8 @@ module.exports = (db, API_KEY, SECRET) ->
       opentok.createSession null, {'p2p.preference': 'enabled'}, (sessionId) ->
         token = opentok.generateToken {session_id: sessionId}
 
-        cb null, {sessionId, token, API_KEY}
+        session = new Session {sessionId, token, roomSlug: slug, API_KEY}
+        session.save (err) ->
+          cb err, session
 
   db.model 'Room', RoomSchema

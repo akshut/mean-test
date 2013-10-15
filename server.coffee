@@ -3,11 +3,12 @@ require 'coffee-trace'
 express       = require 'express'
 config        = require './config'
 helpers       = require 'view-helpers'
-mongoStore    = require('connect-mongo')(express)
+sse           = require 'connect-sse'
+RedisStore    = require('connect-redis')(express)
 app           = express()
 loginRequired = require './middleware/requires-login'
 
-config.resolve (user, room, DB_URL, PORT, passport) ->
+config.resolve (user, room, DB_URL, PORT, passport, REDIS_URL, REDIS_PORT, REDIS_DB, REDIS_PASS, session, Room) ->
 
   # Development set up
   app.configure 'development', ->
@@ -35,7 +36,7 @@ config.resolve (user, room, DB_URL, PORT, passport) ->
     app.use express.methodOverride()
     app.use express.session
       secret: 'doxy'
-      store: new mongoStore url: DB_URL, collection: 'sessions'
+      store: new RedisStore host: REDIS_URL, port: REDIS_PORT, db: REDIS_DB, pass: REDIS_PASS
     app.use express.csrf()
 
     app.use (req, res, next) ->
@@ -89,10 +90,18 @@ config.resolve (user, room, DB_URL, PORT, passport) ->
   app.get '/i/dashboard', loginRequired, user.buildDashboard
   app.post '/i/rooms', room.create
 
+  app.get '/session/:id', sse(), session.open
+
   # This route must always stay as low as possible, to catch any possible room
   app.get '/:roomName', room.joinRoomByName
 
-  app.get '/:roomName/events', loginRequired, room.eventsForRoom
+  app.get '/:roomSlug/sessions', loginRequired, (req, res, next) ->
+    slug = req.param 'roomSlug'
+    Room.findOne {slug, acl: req.user.email}, (err, room) ->
+      return next err if err
+      return res.send '403', "Unauthorized for room #{name}" if not room
+      next()
+  , sse(), room.openSessions
 
   # 404 route
   app.get '*', (req, res, next) ->

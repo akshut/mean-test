@@ -2,8 +2,16 @@ Schema = require('mongoose').Schema
 
 module.exports = (db) ->
 
-  roomName: type: String, required: true
+  SessionSchema = new Schema
+    roomSlug: type: String, required: true
 
-  token: String
+    token: String
 
-  sessionId: String
+    API_KEY: String
+
+    sessionId: String
+
+    # Expire sessions after 6 hours
+    createdAt: type: Date, default: Date.now, expires: 60 * 60 * 6
+
+  db.model 'Session', SessionSchema
