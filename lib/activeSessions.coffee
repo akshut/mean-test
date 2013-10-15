@@ -11,5 +11,4 @@ module.exports = ->
     client.hdel session.roomSlug, session._id
 
   getSessionsForRoom: (room, cb) ->
-    client.hgetall room, (err, sessions) ->
-      cb err, sessions or []
+    client.hgetall room, cb
