@@ -1,3 +1,36 @@
 mixin session(session)
-  li.patient
+  li.session(id=session._id)
     img(src="//lorempixel.com/125/125", alt="patient")
+
+    script.
+      (function(session) {
+        function sessionConnectedHandler(event) {
+          session.publish(publisher)
+          subscribeToStreams(event.streams)
+        }
+
+        function subscribeToStreams(streams) {
+          for (var i = 0; i < streams.length; i++) {
+            var stream = streams[i];
+            if (stream.connection.connectionId 
+                   != session.connection.connectionId) {
+                session.subscribe(stream);
+            }
+          }
+        }
+
+        function streamCreatedHandler(event) {
+          subscribeToStreams(event.streams);
+        }
+       
+        var publisher = TB.initPublisher(session.API_KEY);
+        var session   = TB.initSession(session.sessionId);
+       
+        session.connect(session.API_KEY, session.token);
+
+        session.addEventListener("sessionConnected", 
+                                 sessionConnectedHandler);
+       
+        session.addEventListener("streamCreated", 
+                                 streamCreatedHandler);
+      })(!{JSON.stringify(session)})

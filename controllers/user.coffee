@@ -29,7 +29,7 @@ module.exports = (User) ->
 
     user = req.user
 
-    user.getRooms (err, rooms) ->
+    user.getRoomsWithSessions (err, rooms) ->
       return next err if err
 
       res.render 'dashboard/dashboard', {rooms}

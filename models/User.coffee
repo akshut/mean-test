@@ -1,8 +1,9 @@
 crypto   = require 'crypto'
+async    = require 'async'
 mongoose = require 'mongoose'
 Schema   = mongoose.Schema
 
-module.exports = (db, SALT, Room) ->
+module.exports = (db, SALT, Room, activeSessions) ->
 
   encryptPassword = (password) ->
     crypto.createHmac('sha1', SALT).update(password).digest('hex')
@@ -23,5 +24,15 @@ module.exports = (db, SALT, Room) ->
         .lean()
         .select('name slug')
         .exec cb
+
+  UserSchema.methods.getRoomsWithSessions = (cb) ->
+    @getRooms (err, rooms) ->
+      return cb err if err
+
+      async.map rooms, (room, cb) ->
+        activeSessions.getSessionsForRoom room.slug, (err, sessions) ->
+          room.sessions = sessions
+          cb null, room
+      , cb
 
   db.model 'User', UserSchema

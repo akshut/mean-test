@@ -9,7 +9,6 @@ module.exports = (activeSessions, Session) ->
 
       activeSessions.addSession session, (err) ->
         return next err if err
-        console.log session
 
       req.on 'close', ->
         activeSessions.removeSession session, (err) -> console.log err if err

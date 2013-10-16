@@ -2,19 +2,18 @@ extends ../layout
 include ./session
 
 block content
+  script(src="/js/dashboard.js")
   h1 Dashboard
 
-  ul#session
-    +session
-    +session
-    +session
-    +session
-    +session
+  #rooms
+    for room in rooms
+      .room(id=room.slug)
+        h2= room.name
+        h4 Waiting Patients
+        ul.session-list
+          if room.sessions
+            for session in room.sessions
+              +session(session)
 
-  script.
-    var eventSource = new EventSource('/lol/sessions')
-
-    eventSource.addEventListener('message', function(e) {
-      console.log(e.data)
-    })
-
+      script.
+        listenForSessionsOnRoom(!{JSON.stringify(room)})

@@ -37,6 +37,7 @@
     "redis": "~0.8.6",
     "hiredis": "~0.1.15",
     "connect-redis": "~1.4.5",
-    "connect-sse": "~1.0.5"
+    "connect-sse": "~1.0.5",
+    "templatizer": "~0.2.3"
   }
 }
