@@ -75,54 +75,7 @@ h2 {
        url('webfonts/entypo.svg#svgFontName') format('svg'); /* Legacy iOS */
   }
 
-.navbar-doxy {
-  /*background-color: #262523;*/
-  background-color:#fff;
-  border-color: #eee;
-  height:90px;
-}
-.logotab {
-  position:fixed;
-  top:0;
-  /*background-color:#eee;*/
-  padding:0 1em;
-  transition:background-color 0.35s;
-  -webkit-transition:background-color 0.35s;
-  animation:slideInDown 1s ease-in-out;
-  -webkit-animation:slideInDown 1s ease-in-out;
-}
-.logotab:hover {
-  background-color:#759b2f;
-}
-@keyframes drop {
-  0%{transform:translateY(-50px);}
-  100%{transform:translateY(0px);}
-}
-@-webkit-keyframes drop {
-  0%{-webkit-transform:translateY(-50px);}
-  100%{-webkit-transform:translateY(0px);}
-}
-@-webkit-keyframes slideInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-2000px);
-  }
 
-  100% {
-    -webkit-transform: translateY(0);
-  }
-}
-.logoimage {
-  height:60px;
-  padding-top:5px;
-}
-.navbar-nav>li>a {
-  height:90px;
-  padding:33px 30px 15px;
-}
-.navbar-nav>li>a:hover {
-  color:white;
-}
 
 
 
@@ -140,6 +93,18 @@ h2 {
   font-weight:500;
   font-size:20px;
 }
+
+
+/*--- auth page ---*/
+.logintitle {
+  text-transform:uppercase;
+  margin-bottom:1em;
+  padding-bottom:0.5em;
+  border-bottom:1px solid #333;
+}
+.authform {
+  margin-top:50px;
+}
 .signin label {
   display:none;
 }
@@ -147,19 +112,16 @@ h2 {
   color: #fff;
   background-color: #759b2f;
   border-color: #759b2f;
-}
-.nav>li>a {
-  background-color:#eee;
-}
-.nav>li>a:hover {
-  background-color:#759b2f;
+  margin-top:30px;
+  padding:1em;
+  width:100%;
 }
 
 
-
+/*--- Dashboard ---*/
 .meetingNav {
   position:absolute;
-  top:40px;
+  top:100px;
   left:70px;
   z-index:100000000000;
   transition: left 0.5s ease-in-out;
