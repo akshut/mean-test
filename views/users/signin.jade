@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  h1 Sign In
+
+  form(name="signin", action="/i/signin", method="post")
+    input(type='hidden', name='_csrf', value=csrf_token)
+    label Email:
+    input(type="text", name="email")
+    label Password:
+    input(type="password", name="password")
+    input(type="submit", value="Create Account")
