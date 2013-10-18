@@ -10,10 +10,20 @@
           h1
             img(src='/img/doxyme-logo-blk.png', height='60', alt='Doxy.me')
       .navbar-collapse.collapse
-        form.navbar-form.navbar-right(name="signin", action='/i/signin', method='post')
-          input(type='hidden', name='_csrf', value=csrf_token)
-          .form-group
-            input.form-control(type='email', name='email', placeholder='Email')
-          .form-group
-            input.form-control(type='password', name='password', placeholder='Password')
-          button.btn.btn-signin(type='submit') Sign in
+        if rooms
+          ul.nav.navbar-nav.pull-right
+            li.dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown')
+                | User 
+                b.caret
+              ul.dropdown-menu
+                li
+                  a(href='/i/signout') Sign Out
+        else
+          form.navbar-form.navbar-right(name="signin", action='/i/signin', method='post')
+            input(type='hidden', name='_csrf', value=csrf_token)
+            .form-group
+              input.form-control(type='email', name='email', placeholder='Email')
+            .form-group
+              input.form-control(type='password', name='password', placeholder='Password')
+            button.btn.btn-signin(type='submit') Sign in
