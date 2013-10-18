@@ -75,3 +75,12 @@ body {
 .bigp {
   font-size: 18px;
 }
+
+#promo {
+  font-size: 26px;
+  margin: auto;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
