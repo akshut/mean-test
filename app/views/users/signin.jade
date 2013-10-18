@@ -1,0 +1,25 @@
+extends auth
+
+block auth
+  .col-lg-4.col-lg-offset-4
+        h1.logintitle.text-center Log In
+        form.signin.form-horizontal(action="/users/session", method="post")
+          p.error= message
+          .form-group
+            label.control-label.col-lg-2(for='email') Email
+            .col-lg-12
+              input#email.form-control(type='email', name="email", placeholder='Email')
+    
+          .form-group
+            label.control-label.col-lg-2(for='password') Password
+            .col-lg-12 
+              input#password.form-control(type='password', name="password", placeholder='Password')
+              
+          .checkbox
+              input(type='checkbox', name='rememberme', value='Remember Me')
+              p Remember Me
+          
+          button.btn.btn-signin(type='submit') Sign In
+          //- &nbsp;
+          //- | or&nbsp;
+          //- a.show-signup(href="/signup") Sign up

@@ -20,7 +20,7 @@
                 li
                   a(href='/i/signout') Sign Out
         else
-          form.navbar-form.navbar-right(name="signin", action='/i/signin', method='post')
+          form.nav-margin.navbar-form.navbar-right(name="signin", action='/i/signin', method='post')
             input(type='hidden', name='_csrf', value=csrf_token)
             .form-group
               input.form-control(type='email', name='email', placeholder='Email')
