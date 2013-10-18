@@ -14,7 +14,8 @@ block content
                   | Secure.doxy.me is the place for our partnering clinicians to manage their rooms, see their patients, and get support for doxy.me products
             .row
               .col-md-12.introsignin
-                form.signin.form-inline(action='/i/signin', method='post')
+                form.signin.form-inline(name="signin", action='/i/signin', method='post')
+                  input(type='hidden', name='_csrf', value=csrf_token)
                   p.error
                   .form-group
                     label.control-label.sr-only(for='email')
