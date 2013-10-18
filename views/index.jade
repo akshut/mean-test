@@ -1,6 +1,7 @@
 extends ./layout
 
 block content
+  include ./includes/navbar
   .banner
     .container
         .row.banner-row
@@ -48,7 +49,7 @@ block content
         iframe(height='300', frameborder='0', src='http://a.tiles.mapbox.com/v3/theonlypat.map-7832skhy.html#14/40.76789919751926/-111.87146186828612', style='width: 100%;')
     //
        START THE FEATURETTES
-    hr#code.featurette-divider
+    hr#free.featurette-divider
     .featurette
       img.featurette-image.img-circle.pull-right(src='http://lorempixel.com/512/512/sports', style='height: 512px; width: 512px;')
       h2.featurette-heading
@@ -56,7 +57,7 @@ block content
         span.text-muted Connect with your Dr 1-to-1 free forever.
       p.lead
         | More text here?
-    hr#play.featurette-divider
+    hr#simple.featurette-divider
     .featurette
       img.featurette-image.img-circle.pull-left(src='http://lorempixel.com/512/512/technics')
       h2.featurette-heading
@@ -64,7 +65,7 @@ block content
         span.text-muted Go to a website and be connected.
       p.lead
         | More text here?
-    hr#learn.featurette-divider
+    hr#secure.featurette-divider
     .featurette
       img.featurette-image.img-circle.pull-right(src='http://lorempixel.com/g/512/512/nightlife')
       h2.featurette-heading
