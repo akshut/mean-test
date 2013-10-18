@@ -1,4 +1,92 @@
 extends ./layout
 
 block content
-  h1 Welcome
+  .banner
+    .container
+        .row.banner-row
+          .col-md-6.introtext1
+            .row
+              .col-md-12
+                h2.banner-head.tk-freight-sans-pro This should be short and sweet and make people want to use doxy.me
+            .row
+              .col-md-12
+                h4
+                  | Secure.doxy.me is the place for our partnering clinicians to manage their rooms, see their patients, and get support for doxy.me products
+            .row
+              .col-md-12.introsignin
+                form.signin.form-inline(action='/i/signin', method='post')
+                  p.error
+                  .form-group
+                    label.control-label.sr-only(for='email')
+                      | Email
+                    input#email.form-control(type='email', name='email', placeholder='Email')
+                  .form-group
+                    label.control-label.sr-only(for='password')
+                      | Password
+                    input#password.form-control(type='password', name='password', placeholder='Password')
+                  button.btn.btn-signin(type='submit') Sign in
+  //
+     this is where i am going to start putting in marketing stuff 
+  .container.marketing
+    //
+       Three columns of text below the carousel
+    .row
+      .col-md-4
+        a(href='#code')
+          img.img-circle(src='/img/doxy-freeimage.jpg', height='150', width='150')
+        h2
+          | Free
+        p.bigp
+          | Doxy.me will always support free 1-to-1
+      .col-md-4
+        a(href='#play')
+          img.img-circle(src='/img/doxy-simpleimage.jpg', height='150', width='150')
+        h2
+          | Simple
+        p.bigp
+          | No plugins, no downloads, no signup.
+      .col-md-4
+        a(href='#learn')
+          img.img-circle(src='/img/doxy-secureimage.jpg', height='150', width='150')
+        h2
+          | Secure
+        p.bigp
+          | HIPPA Compliant*, Encypted end-to-end.
+    //
+       Promo
+    .row
+      #promo.col-me-12
+        p
+          | Currently in use in a clinical trial at The University of Utah
+        iframe(height='300', frameborder='0', src='http://a.tiles.mapbox.com/v3/theonlypat.map-7832skhy.html#14/40.76789919751926/-111.87146186828612', style='width: 100%;')
+    //
+       START THE FEATURETTES
+    hr#code.featurette-divider
+    .featurette
+      img.featurette-image.img-circle.pull-right(src='http://lorempixel.com/512/512/sports', style='height: 512px; width: 512px;')
+      h2.featurette-heading
+        | Free.
+        span.text-muted Connect with your Dr 1-to-1 free forever.
+      p.lead
+        | More text here?
+    hr#play.featurette-divider
+    .featurette
+      img.featurette-image.img-circle.pull-left(src='http://lorempixel.com/512/512/technics')
+      h2.featurette-heading
+        | Simple.
+        span.text-muted Go to a website and be connected.
+      p.lead
+        | More text here?
+    hr#learn.featurette-divider
+    .featurette
+      img.featurette-image.img-circle.pull-right(src='http://lorempixel.com/g/512/512/nightlife')
+      h2.featurette-heading
+        | Secure.
+        span.text-muted HIPPA Compliant and Encrypted.
+      p.lead
+        | More text here?
+    hr#support.featurette-divider
+    .featurette
+      h2.featurette-heading
+        | Interested?
+        span.text-muted Contact us today!
