@@ -1,4 +1,9 @@
 
+/* navbar override */
+.navbar {
+  margin-bottom: 0px !important;
+}
+
 /*--- Begin Universal Styles --*/
 html {
   margin:0;

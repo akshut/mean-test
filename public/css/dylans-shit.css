@@ -69,93 +69,9 @@
 }
 
 body {
-  padding-top: 50px;
   padding-bottom: 30px;
 }
 
-body, h2, h1 {
-  /*font-family: 'exo-regular';*/
-}
-
-.pad-body {
-  margin-top: 20px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/*
-#navbar-index {
-  background-color: #eee;
-  border-color: #eee;
-}
-*/
-
-#icon-nav {
-  padding:0;
-  margin-top:0px;
-  margin-bottom:0px;
-  margin-right: 10px;
-  max-height: 60px;
-  overflow: visible;
-  float: left;
-}
-
-#navbar-index-tittle{
-    font-size:26px;
-    line-height:30px;
-}
-.navbar-index-right{
-    line-height:30px;
-}
-/*
-.exo-black-tittle {
-  font-family: 'exo-black';
-}
-.exo-bold-tittle h1 {
-  font-weight: bold;
-}
-*/
-.newrocker-tittle {
-  font-family: 'newrocker';
-}
-#jumb-cover{
-  background: white url('../images/portada.png'); right no-repeat;
-  background-size: cover;
-  border-radius: 0px;
-}
-
-/*
-@media screen and (max-width: 1024px) { 
-  #jumb-cover {
-    //left: 50%;
-    margin-left: -512px;   
-  }
-  #jumb-cont {
-    padding-left: 524px;
-    margin-right:auto;
-  }
-}
-*/
 .bigp {
-    font-size:18px;
+  font-size: 18px;
 }
- /* http://support.addthis.com/customer/portal/questions/1136093-share-buttons-in-center-position */      
-div.addthis_toolbox {
-    width:180px;
-    margin: 0 auto;
-}
-
-#promo {
-  font-size: 26px;
-  margin: auto;
-  width: 100%;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.pointer {
-  cursor: pointer;
-}
-
-#mc_embed_signup{background:#fff; clear:left; font:14px; max-width:500px}
