@@ -10,20 +10,15 @@
           h1
             img(src='/img/doxyme-logo-blk.png', height='60', alt='Doxy.me')
       .navbar-collapse.collapse
-        ul.nav.navbar-nav.pull-right
-          //
-             This will be the Signup button eventually 
-          li.divider-vertical
-          li
-            form.signin.form-inline(name="signin", action='/i/signin', method='post')
-              input(type='hidden', name='_csrf', value=csrf_token)
-              p.error
-              .form-group
-                label.control-label.sr-only(for='email')
-                  | Email
-                input#email.form-control(type='email', name='email', placeholder='Email')
-              .form-group
-                label.control-label.sr-only(for='password')
-                  | Password
-                input#password.form-control(type='password', name='password', placeholder='Password')
-              button.btn.btn-signin(type='submit') Sign in
+        form.navbar-form.navbar-right.signin.form-inline(name="signin", action='/i/signin', method='post')
+          input(type='hidden', name='_csrf', value=csrf_token)
+          p.error
+          .form-group
+            label.control-label.sr-only(for='email')
+              | Email
+            input#email.form-control(type='email', name='email', placeholder='Email')
+          .form-group
+            label.control-label.sr-only(for='password')
+              | Password
+            input#password.form-control(type='password', name='password', placeholder='Password')
+          button.btn.btn-signin(type='submit') Sign in
