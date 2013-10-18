@@ -2,7 +2,7 @@
   "name": "angularJS-IL",
   "version": "1.0.0",
   "dependencies": {
-    "bootstrap": "2.3.2",
+    "bootstrap": "~3.0.0",
     "angular": "1.2.0-rc.1",
     "angular-resource": "1.2.0-rc.1",
     "angular-cookies": "1.2.0-rc.1",
