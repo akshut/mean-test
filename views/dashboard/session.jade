@@ -1,11 +1,14 @@
 mixin session(session)
   li.session(id=session._id)
-    img(src="//lorempixel.com/125/125", alt="patient")
+    p.name Patient
+    img(src="//lorempixel.com/125/125", alt="patient", width="100", height="70px")
+  video(id= 'video-' + session._id, width="4px", height="4px", style="position:absolute;left:-9999999px")
 
     script.
       (function(session) {
+
         function sessionConnectedHandler(event) {
-          session.publish(publisher)
+          //session.publish(publisher)
           subscribeToStreams(event.streams)
         }
 
@@ -13,8 +16,16 @@ mixin session(session)
           for (var i = 0; i < streams.length; i++) {
             var stream = streams[i];
             if (stream.connection.connectionId 
-                   != session.connection.connectionId) {
-                session.subscribe(stream);
+                   != tokSession.connection.connectionId) {
+
+                var subscriber = tokSession.subscribe(
+                                    stream
+                                  , 'video-' + session._id, 
+                                    {
+                                      subscribeToVideo: false
+                                    , subscribeToAudio: false                
+                                    }
+                                 );
             }
           }
         }
@@ -23,14 +34,36 @@ mixin session(session)
           subscribeToStreams(event.streams);
         }
        
-        var publisher = TB.initPublisher(session.API_KEY);
-        var session   = TB.initSession(session.sessionId);
-       
-        session.connect(session.API_KEY, session.token);
+        //var publisher = TB.initPublisher(session.API_KEY);
+        var tokSession   = TB.initSession(session.sessionId);
 
-        session.addEventListener("sessionConnected", 
+       
+        tokSession.connect(session.API_KEY, session.token);
+
+        tokSession.addEventListener("sessionConnected", 
                                  sessionConnectedHandler);
        
-        session.addEventListener("streamCreated", 
+        tokSession.addEventListener("streamCreated", 
                                  streamCreatedHandler);
+
+        var avatar = [];
+
+        tokSession.on('signal:image-begin', function() {
+          avatar = [];
+        })
+
+        tokSession.on('signal:image-chunk', function(e) {
+          avatar.push(e.data.img)
+        })
+
+        tokSession.on('signal:image-end', function() {
+          $('li.session#' + session._id + ' img')
+          .attr('src', 'data:image/png;base64,' + avatar.join(''))
+        })
+
+        tokSession.on('signal:name', function(e) {
+          $('li.session#' + session._id + ' p')
+          .text(e.data.name)
+        })
+
       })(!{JSON.stringify(session)})
