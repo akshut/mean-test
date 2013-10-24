@@ -2,9 +2,29 @@ extends ../layout
 
 block content
   h1 Room
+    #mirror
+    button.sendAvatar Take Picture
 
-  script(src='/js/session.js')
+    br
+    br
+    input.name(type="text", placeholder="Type your name here")
+    button.sendName Tell the doctor your name
+
+    #doctor
+
+  script(src='/js/room.js')
   script.
-    callDoctor("!{sessionId}", "!{token}", "!{API_KEY}")
+    callDoctor(
+      "!{sessionId}"
+    , "!{token}"
+    , "!{API_KEY}"
+    , 'mirror'
+    , 'doctor'
+    , function(sendAvatar, sendName) {
+      $('button.sendAvatar').click(sendAvatar)
+      $('button.sendName').click(function() {
+        sendName($('input.name').val())
+      })
+    })
     
     new EventSource('/session/!{_id}')
