@@ -1,0 +1,52 @@
+/* Bootstrap Overrides */
+.navbar {
+  margin-bottom: 0px !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+/*--- Begin Universal Styles --*/
+a {
+  color: #262523;
+  text-decoration:none;
+  transition:background-color 0.35s;
+  -webkit-transition:background-color 0.35s;
+}
+a:hover {
+  color: #262523;
+  text-decoration:none;
+}
+
+/* Banner - the background img and Quick Meeting / schedule Meeting form */
+.banner {
+  background: transparent  url('/img/secure-doxy_bg2.png') 0 0 no-repeat fixed;
+  text-align: center;
+  background-size: cover;
+  height: 650px;
+  width: 100%;
+  margin-bottom: 1em;
+  margin-top:0;
+}
+
+.banner-head {
+  font-size: 2em;
+  color: #262523;
+  font-weight: 500;
+  line-height:1;
+  margin-bottom:1em;
+}
+
+.banner-row {
+  margin-top: 9em;
+}
+
+/*---index page styles---*/
+.introtext1 {
+  background-color:rgba(255,255,255,0.2);
+  border:2px solid white;
+  border-radius:6px;
+  padding:1em 2em 4em;
+  /*position:fixed;
+  x-index:-1000;*/
+  margin-top:0px;
+}
