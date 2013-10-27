@@ -8,6 +8,9 @@ module.exports = (User) ->
   signIn: (req, res, next) ->
     res.render 'users/signin', title: 'Sign in'
 
+  request: (req, res, next) ->
+    res.render 'users/request', title: 'Request'
+
   logIn: (req, res, next) ->
     res.redirect '/i/dashboard'
 

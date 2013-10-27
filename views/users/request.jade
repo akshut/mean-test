@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  .col-lg-4.col-lg-offset-4
+    h1.logintitle.text-center Request Access
+    p
+      | Currently we are only accepting reqest for access
+      | please send us your name and email and we will contact you
+      form.signin.form-horizontal(action="/i/signup", method="post")
+        p.error= message
+        input(type='hidden', name='_csrf', value=csrf_token)
+        .form-group
+          label.control-label.col-lg-2(for='email') Email
+          .col-lg-12
+            input#email.form-control(type='email', name="email", placeholder='Email')
+
+        .form-group
+          label.control-label.col-lg-2(for='name') Full Name
+          .col-lg-12
+            input#fullname.form-control(type='text', name="fullname", placeholder='Full Name')
+
+        button.btn.btn-signin(type='submit') Request Access

@@ -74,6 +74,7 @@ config.resolve (user, room, DB_URL, PORT, passport, REDIS_URL, REDIS_PORT, REDIS
   app.get '/e4125f1c0b5e409fc667a7b3b34add9b3a1357ff', user.signUp
 
   app.get '/i/signin', user.signIn
+  app.get '/i/request', user.request
 
   app.post '/i/signin', passport.authenticate('local',
       failureRedirect: '/i/signin'
