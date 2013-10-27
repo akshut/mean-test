@@ -1,6 +1,7 @@
 TB = window.TB
 
 window.callDoctor = (sessionId, token, API_KEY, mirror, doctor, cb) ->
+  TB.setLogLevel(0)
   publisher = TB.initPublisher API_KEY, mirror
   session = TB.initSession sessionId
 
