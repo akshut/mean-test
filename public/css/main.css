@@ -50,3 +50,12 @@ a:hover {
   x-index:-1000;*/
   margin-top:0px;
 }
+
+/* marketing blocks */
+.m-block {
+  position: relative;
+  top: -110px;
+  background-color: white;
+  margin: 15px;
+  width: 30%;
+}

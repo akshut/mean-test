@@ -19,38 +19,40 @@ block content
                 p Schedule a meeting for later
                 form.form-horizontal
                   .form-group
-                    input.form-control(type='text', id='roomId', placeholder='Date')
+                    input.form-control(type='text', id='date-and-time', placeholder='ex. Tuesday the 24th @ 5pm')
                   .form-group
-                    input.form-control(type='password', id='password', placeholder='Password')
+                    input.form-control(type='password', id='password', placeholder='Password to get in the room')
                   .form-group
                     button.btn.btn-default(type='submit') Schedule Meeting
+                  .form-group
+                    a.text-muted(href='#') Already have a meeting? Click here
   //
      this is where i am going to start putting in marketing stuff 
   .container.marketing
     //
        Three columns of text below the carousel
     .row
-      .col-md-4
+      .col-lg-3.m-block.text-center
         a(href='#free')
           img.img-circle(src='/img/doxy-freeimage.jpg', height='150', width='150')
         h2
           | Free
         p.bigp
-          | Doxy.me will always support free 1-to-1
-      .col-md-4
+          | Doxy.me started with the need for a free telemedicine solution. Today, that option is still available to you. Simply start a quick meeting or schedule a meeting above. No cost, no registration, no kidding. If you desire enhanced capabilities such as personalized URLs, virtual waiting room, shared access, and analytics, a low-cost version is available.
+      .col-lg-3.m-block.text-center
         a(href='#simple')
           img.img-circle(src='/img/doxy-simpleimage.jpg', height='150', width='150')
         h2
           | Simple
         p.bigp
-          | No plugins, no downloads, no signup.
-      .col-md-4
+          |  Doctors and patients have enough to worry about and remember, we don’t want to add to this. Doxy.me works automatically in supported browsers and most computers available today. There is no specialized hardware to purchase, no additional software downloads or plugins, and no registration required for patients. You can start a telemedicine meeting in seconds.
+      .col-lg-3.m-block.text-center
         a(href='#Secure')
           img.img-circle(src='/img/doxy-secureimage.jpg', height='150', width='150')
         h2
           | Secure
         p.bigp
-          | HIPPA Compliant*, Encypted end-to-end.
+          | Security in health care is of utmost importance. As such, Doxy.me provides a secure, HIPAA-compliant communication tunnel between the doctor and the patient which uses 128-bit /*is this right?*/ AES encryption and [anything else?]. Furthermore, data is never recorded or made accessible to others. You can rest assured that the doctor and patient are the only ones who know what is going on during the Doxy.me call.
     //
        Promo
     .row
@@ -58,3 +60,14 @@ block content
         p
           | Currently in use in a clinical trial at The University of Utah
         iframe(height='300', frameborder='0', src='http://a.tiles.mapbox.com/v3/theonlypat.map-7832skhy.html#14/40.76789919751926/-111.87146186828612', style='width: 100%;')
+    .row
+      #footer.col-me-12
+        a(href='#') Quick Meeting |
+        a(href='#') Schedule A Meeting |
+        a(href='#') Sign In |
+        a(href='#') About |
+        a(href='#') Contact |
+        a(href='#') Pricing
+    .row
+      #copyright.col-me-12
+        Copyright 2013 Doxy.me All Rights Reserverd
