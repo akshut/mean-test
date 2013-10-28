@@ -14,6 +14,7 @@ window.callDoctor = (sessionId, token, API_KEY, mirror, doctor, cb) ->
 
   streamCreatedHandler = (event) ->
     subscribeToStreams event.streams
+    $('#promptArrow').remove()
 
   sessionConnectedHandler = (event) ->
     subscribeToStreams event.streams
