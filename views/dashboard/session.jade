@@ -15,15 +15,15 @@ mixin session(session)
         function subscribeToStreams(streams) {
           for (var i = 0; i < streams.length; i++) {
             var stream = streams[i];
-            if (stream.connection.connectionId 
+            if (stream.connection.connectionId
                    != tokSession.connection.connectionId) {
 
                 var subscriber = tokSession.subscribe(
                                     stream
-                                  , 'video-' + session._id, 
+                                  , 'video-' + session._id,
                                     {
                                       subscribeToVideo: false
-                                    , subscribeToAudio: false                
+                                    , subscribeToAudio: false
                                     }
                                  );
             }
@@ -33,17 +33,17 @@ mixin session(session)
         function streamCreatedHandler(event) {
           subscribeToStreams(event.streams);
         }
-       
+
         //var publisher = TB.initPublisher(session.API_KEY);
         var tokSession   = TB.initSession(session.sessionId);
 
-       
+
         tokSession.connect(session.API_KEY, session.token);
 
-        tokSession.addEventListener("sessionConnected", 
+        tokSession.addEventListener("sessionConnected",
                                  sessionConnectedHandler);
-       
-        tokSession.addEventListener("streamCreated", 
+
+        tokSession.addEventListener("streamCreated",
                                  streamCreatedHandler);
 
         var avatar = [];
