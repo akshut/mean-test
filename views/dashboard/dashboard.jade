@@ -15,6 +15,14 @@ block content
           if room.sessions
             for session in room.sessions
               +session(session)
-
       script.
         listenForSessionsOnRoom(!{JSON.stringify(room)})
+
+  .container
+    .row
+      .col-lg-12
+        form
+          textarea.js-st-instance
+
+  script.
+    new SirTrevor.Editor({ el: $('.js-st-instance') })
