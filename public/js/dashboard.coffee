@@ -1,5 +1,6 @@
 window.listenForSessionsOnRoom = (room) ->
 
+  TB.setLogLevel(0)
   if room.sessions
     openSessionIds = Object.keys room.sessions
   else

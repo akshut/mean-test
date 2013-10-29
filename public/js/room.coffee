@@ -58,5 +58,5 @@ window.callDoctor = (sessionId, token, API_KEY, mirror, doctor, cb) ->
 
     cb sendAvatar, sendName
 
-  session.addEventListener("sessionConnected", sessionConnectedHandler)
-  session.addEventListener("streamCreated", streamCreatedHandler)
+  session.on("sessionConnected", sessionConnectedHandler)
+  session.on("streamCreated", streamCreatedHandler)

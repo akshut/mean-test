@@ -40,16 +40,17 @@ mixin session(session)
 
         tokSession.connect(session.API_KEY, session.token);
 
-        tokSession.addEventListener("sessionConnected",
+        tokSession.on("sessionConnected",
                                  sessionConnectedHandler);
 
-        tokSession.addEventListener("streamCreated",
+        tokSession.on("streamCreated",
                                  streamCreatedHandler);
 
         var avatar = [];
 
         tokSession.on('signal:image-begin', function() {
           avatar = [];
+          console.log("image commin");
         })
 
         tokSession.on('signal:image-chunk', function(e) {

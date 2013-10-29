@@ -4,25 +4,23 @@ include ./session
 block content
   include ../includes/navbar
   script(src="/js/dashboard.js")
-  h1 Dashboard
 
   #rooms
-    for room in rooms
-      .room(id=room.slug)
-        h2= room.name
-        h4 Waiting Patients
-        ul.session-list
-          if room.sessions
-            for session in room.sessions
-              +session(session)
-      script.
-        listenForSessionsOnRoom(!{JSON.stringify(room)})
-
-  .container
     .row
-      .col-lg-12
+      for room in rooms
+        .room(id=room.slug)
+          .col-md-2
+            h2= room.name
+            h4 Waiting Patients
+            ul.session-list
+              if room.sessions
+                for session in room.sessions
+                  +session(session)
+            script.
+              listenForSessionsOnRoom(!{JSON.stringify(room)})
+      .col-md-10
         form
           textarea.js-st-instance
 
   script.
-    new SirTrevor.Editor({ el: $('.js-st-instance') })
+    new SirTrevor.Editor({ el: $('.js-st-instance'), blockTypes: ["Text", "Image", "Video"] })
