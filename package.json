@@ -41,7 +41,8 @@
     "connect-redis": "~1.4.5",
     "connect-sse": "~1.0.5",
     "templatizer": "~0.2.3",
-    "node-dev": "~2.0.2"
+    "node-dev": "~2.0.2",
+    "bower": "~1.2.7"
   },
   "subdomain": "george-doxy",
   "domains": [
