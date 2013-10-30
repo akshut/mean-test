@@ -8,7 +8,7 @@ mixin session(session)
       (function(session) {
 
         function sessionConnectedHandler(event) {
-          //session.publish(publisher)
+          // session.publish(publisher)
           subscribeToStreams(event.streams)
         }
 
@@ -34,7 +34,7 @@ mixin session(session)
           subscribeToStreams(event.streams);
         }
 
-        //var publisher = TB.initPublisher(session.API_KEY);
+        // var publisher = TB.initPublisher(session.API_KEY, 'myPublisherDiv', {height: "135px", width: "180px"});
         var tokSession   = TB.initSession(session.sessionId);
 
 

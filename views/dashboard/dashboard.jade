@@ -5,6 +5,9 @@ block content
   include ../includes/navbar
   script(src="/js/dashboard.js")
 
+  #video
+    #theirPublisherDiv
+
   #rooms
     .row
       for room in rooms
@@ -18,9 +21,13 @@ block content
                   +session(session)
             script.
               listenForSessionsOnRoom(!{JSON.stringify(room)})
-      .col-md-10
+      .col-md-8
         form
+          .errors
           textarea.js-st-instance
+      .col-md-2
+        #myPublisherDiv
 
   script.
+    SirTrevor.DEBUG = true
     new SirTrevor.Editor({ el: $('.js-st-instance'), blockTypes: ["Text", "Image", "Video"] })
