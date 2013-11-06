@@ -5,5 +5,8 @@
     "bootstrap": "~3.0.0",
     "sir-trevor-js": "0.3.0",
     "jquery": "~1.9.1"
+  },
+  "resolutions": {
+    "sir-trevor-js": "~0.3.0"
   }
 }

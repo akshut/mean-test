@@ -1,0 +1,49 @@
+#chatbox
+  #hideShowMessages.button toggle chat
+  #messages
+  input#chatinput(type='text', placeholder='Message:')
+
+script.
+  var input = document.getElementById("chatinput");
+  var toggleHideShow = document.getElementById("hideShowMessages");
+  var color = "#" + ((1 << 24) * Math.random() | 0).toString(16);
+
+  toggleHideShow.addEventListener('click', function() {
+    var element = document.getElementById("messages");
+
+    if(element.style.display === "block") {
+      element.style.display = "none";
+    }
+    else {
+      element.style.display = "block";
+    }
+
+  });
+
+  function addToChat(msg, color) {
+    var messages = document.getElementById('messages');
+    // msg = sanitize(msg);
+    if(color) {
+      msg = '<span style="color: ' + color + '; padding-left: 15px">' + msg + '</span>';
+    } else {
+      msg = '<strong style="padding-left: 15px">' + msg + '</strong>';
+    }
+    messages.innerHTML = messages.innerHTML + msg + '<br>';
+    messages.scrollTop = 10000;
+  }
+
+  input.addEventListener('keydown', function(event) {
+      var key = event.which || event.keyCode;
+      if(key === 13) {
+        // chat.send(JSON.stringify({
+        //   "eventName": "chat_msg",
+        //   "data": {
+        //     "messages": input.value,
+        //     "room": room,
+        //     "color": color
+        //   }
+        // }));
+        addToChat(input.value);
+        input.value = "";
+      }
+  }, false);
