@@ -8,7 +8,7 @@ RedisStore    = require('connect-redis')(express)
 app           = express()
 loginRequired = require './middleware/requires-login'
 
-config.resolve (user, room, DB_URL, PORT, passport, REDIS_URL, REDIS_PORT, REDIS_DB, REDIS_PASS, session, Room) ->
+config.resolve (user, room, DB_URL, PORT, passport, REDIS_HOST, REDIS_PORT, REDIS_PASS, session, Room) ->
 
   # Development set up
   app.configure 'development', ->
@@ -36,7 +36,7 @@ config.resolve (user, room, DB_URL, PORT, passport, REDIS_URL, REDIS_PORT, REDIS
     app.use express.methodOverride()
     app.use express.session
       secret: 'doxy'
-      store: new RedisStore host: REDIS_URL, port: REDIS_PORT, db: REDIS_DB, pass: REDIS_PASS
+      store: new RedisStore host: REDIS_HOST, port: REDIS_PORT, pass: REDIS_PASS
     app.use express.csrf()
 
     app.use (req, res, next) ->
