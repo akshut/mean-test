@@ -142,3 +142,39 @@ a:hover {
   padding: 5px 10px;
   width: 255px;
 }
+
+span.chat-notification {
+  font-size: 25px;
+  margin-left: 5px;
+  color: black;
+}
+
+.chat-box {
+  display: none;
+  width: 200px;
+}
+
+.chat-box.open {
+  display: block;
+}
+
+.chat-box ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.chat-box ul li p {
+  margin: 0;
+  padding: 5px;
+}
+
+.chat-box li.patient {
+  background-color: #6ED8F0;
+  text-align: right;
+}
+
+.chat-box li.doctor {
+  background-color: #82E882;
+  text-align: left;
+}

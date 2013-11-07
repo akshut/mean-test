@@ -1,7 +1,11 @@
+include ./chat
 mixin session(session)
   li.session(id=session._id)
     p.name Patient
     img(src="//lorempixel.com/125/125", alt="patient", width="100", height="70px")
+    span.chat-notification
+      i.fa.fa-comment
+    +chat()
   video(id= 'video-' + session._id, width="4px", height="4px", style="position:absolute;left:-9999999px")
 
     script.
@@ -66,5 +70,40 @@ mixin session(session)
           $('li.session#' + session._id + ' p')
           .text(e.data.name)
         })
+
+        var chatLog = []
+          , $chatNotification = $('li.session#' + session._id + ' span.chat-notification')
+          , $chat = $('li.session#' + session._id + ' .chat-box')
+
+        tokSession.on('signal:chat', function(e) {
+          $chatNotification.find('i').css('color', 'red')
+          chatLog.push(e.data.message)
+        })
+
+        $chat.click(function() {
+          $chatNotification.find('i').css('color', 'black')
+        })
+
+        function openChat() {
+          $chatNotification.find('i').removeClass('fa-comment').addClass('fa-comment-o')
+          $chat.addClass('open')
+        }
+
+        function closeChat() {
+          $chatNotification.find('i').addClass('fa-comment').removeClass('fa-comment-o')
+          $chat.removeClass('open')
+        }
+
+        $chatNotification.click(function() {
+          $chatNotification.find('i').css('color', 'black')
+          openChat()
+        })
+
+        $(document).mouseup(function (e) {
+          if (!$chat.is(e.target) // if the target of the click isn't the container...
+            && $chat.has(e.target).length === 0){ // ... nor a descendant of the container
+              closeChat()
+          }
+        });
 
       })(!{JSON.stringify(session)})
