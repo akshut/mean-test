@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "start": "coffee server.coffee",
+    "start": "./node_modules/.bin/coffee -c ./public/js; ./node_modules/.bin/coffee server.coffee",
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "node_modules/bower/bin/bower install"
   },
