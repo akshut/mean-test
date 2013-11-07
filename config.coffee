@@ -7,7 +7,7 @@ mongoose = require 'mongoose'
 if process.env.DB_URL
   MONGODB_URL = process.env.DB_URL
 else if process.env.MONGOLAB_URI
-  MONGODB_URL = "#{process.env.MONGOLAB_URI}/doxyme"
+  MONGODB_URL = "#{process.env.MONGOLAB_URI}"
 else
   MONGODB_URL= "mongodb://localhost/doxyme"
 
