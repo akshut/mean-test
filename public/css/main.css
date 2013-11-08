@@ -6,13 +6,17 @@
 }
 .navbar-doxy {
   background-color:#fff;
-  border-color:none;
+  border:none;
+}
+.navbar-form {
+  margin-top:0!important;
 }
 .btn-signin {
   background:transparent;
   border: 1px solid #759b2f;
   color:#759b2f;
   transition: background-color 0.25s, color 0.25s;
+  margin:1rem 0 0;
 }
 .btn-signin:hover {
   background-color:#759b2f;
@@ -22,7 +26,7 @@
   box-shadow:none;
   -webkit-box-shadow:none;
   border:solid 1px #ddd;
-  margin:1rem 0;
+  margin:1rem 0 0;
 }
 .form-group {
   margin:0 0.5rem 0 0;
@@ -71,11 +75,11 @@ a:hover {
 }
 .banner-head {
   color:#fff;
-  font-size:3rem;
+  font-size:4rem;
   line-height:1.5;
   margin:0 0 5rem!important;
   letter-spacing:0.25rem;
-  font-weight:300;
+  font-weight:500;
 }
 .banner-row {
   margin-top:10rem;
@@ -102,16 +106,19 @@ a:hover {
 }
 #quickmeetingtext {
   color:#fff;
-  font-size:1.75rem;
+  font-size:2rem;
+  font-weight:200;
+  /*letter-spacing:0.1em;*/
 }
 .btn-quickmeet {
   width:100%;
   color:#fff;
   background-color:#759b2f;
   text-transform:uppercase;
-  font-weight:200;
-  letter-spacing:0.15rem;
-  padding:1.20rem 1.75rem 1.05rem;
+  font-weight:300;
+  letter-spacing:0.1rem;
+  padding:1.20rem 1.75rem;
+  font-size:1.8rem;
 }
 
 .btn-schedule {
@@ -119,7 +126,13 @@ a:hover {
   color:#333;
   background-color:#eee;
   text-transform:uppercase;
-  font-weight:400;
+  font-weight:500;
+  font-size:1.5rem;
+  margin:1rem 0;
+}
+.btn-schedule:hover {
+  background-color:#ddd;
+  color:#759b2f;
 }
 /*Remove the 'Click here' part*/
 #meetingtext1 {
