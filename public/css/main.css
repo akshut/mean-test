@@ -149,13 +149,16 @@ span.chat-notification {
   color: black;
 }
 
-.chat-box {
+.chat {
   display: none;
-  width: 200px;
 }
 
-.chat-box.open {
+.chat.open {
   display: block;
+}
+
+.chat-box {
+  width: 200px;
 }
 
 .chat-box ul {
