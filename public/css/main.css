@@ -17,6 +17,7 @@
   color:#759b2f;
   transition: background-color 0.25s, color 0.25s;
   margin:1rem 0 0;
+  font-size:1.6rem;
 }
 .btn-signin:hover {
   background-color:#759b2f;
@@ -27,6 +28,7 @@
   -webkit-box-shadow:none;
   border:solid 1px #ddd;
   margin:1rem 0 0;
+  font-size:1.6rem;
 }
 .form-group {
   margin:0 0.5rem 0 0;
@@ -41,11 +43,11 @@
   text-decoration:underline;
 }
 #forgot-link {
-  font-size:1.05rem;
+  font-size:1.3rem;
   padding:0 1rem 0 0;
 }
 #signup-link {
-  font-size:1.05rem;
+  font-size:1.3rem;
 }
 
 /*--- Begin Universal Styles --*/
@@ -62,7 +64,7 @@ a:hover {
 
 /* Banner - the background img and Quick Meeting / schedule Meeting form */
 .banner {
-  background: transparent  url('/img/secure-doxy_bg2.png') 0 0 no-repeat fixed;
+  background: transparent url('/img/secure-doxy_bg2.png') 0 0 no-repeat fixed;
   text-align: center;
   background-size: cover;
   height: 600px;
@@ -99,6 +101,7 @@ a:hover {
 }
 .introcol2 {
   padding: 0 0.5rem;
+  font-size:1.6rem;
 }
 .introcol2>p {
   text-align:left;
@@ -123,15 +126,17 @@ a:hover {
   letter-spacing:0.1rem;
   padding:1.20rem 1.75rem;
   font-size:1.8rem;
+  transition: color 0.25s;
 }
 
 .btn-schedule {
   width:100%;
-  color:#333;
+  color:#000;
   background-color:#eee;
   text-transform:uppercase;
   font-weight:500;
-  font-size:1.5rem;
+  font-size:1.6rem;
+  letter-spacing:0.05rem;
   margin:1rem 0;
   transition: background-color 0.25s, color 0.25s;
 }
@@ -145,16 +150,52 @@ a:hover {
   padding:0;
   margin:0;
   text-decoration: underline;
-  font-size:1.25rem;
+  font-size:1.4rem;
+  transition: color 0.25s;
+}
+#meetingtext1:hover {
+  color:#fff;
+  text-decoration:none;
 }
 
 /* marketing blocks */
 .m-block {
   position: relative;
-  top: -110px;
+  top: -11rem;
   background-color: white;
-  margin: 15px;
+  margin: 1.5rem;
   width: 30%;
+  padding:4rem 2rem 0;
+  font-size:1.7rem;
+}
+.m-block h2 {
+  font-size:4rem;
+}
+.bigp {
+  text-align:left;
+}
+
+#promo {
+  text-transform:uppercase;
+  font-size:2.5rem;
+  font-weight:300;
+  margin:0 0 1.5rem;
+}
+
+#footer a {
+  padding: 0 1rem;
+  font-weight:300;
+  text-transform:uppercase;
+  font-size:2rem;
+}
+#footer a:hover {
+  background-color:#ddd;
+  color:#444;
+}
+
+#copyright {
+  font-weight:300;
+  font-size:2rem;
 }
 /*--- Begin Meeting Prompt Arrow styles ---*/
 @keyframes arrow {
