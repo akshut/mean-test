@@ -65,7 +65,7 @@ a:hover {
   background: transparent  url('/img/secure-doxy_bg2.png') 0 0 no-repeat fixed;
   text-align: center;
   background-size: cover;
-  height: 650px;
+  height: 600px;
   width: 100%;
   margin-bottom: 1em;
   margin-top:0;
@@ -82,7 +82,7 @@ a:hover {
   font-weight:500;
 }
 .banner-row {
-  margin-top:10rem;
+  margin-top:8rem;
 }
 
 /*---index page styles---*/
@@ -103,6 +103,10 @@ a:hover {
 .introcol2>p {
   text-align:left;
   color:#fff;
+  font-size:1.6rem;
+  margin:0;
+  padding:0;
+  visibility: hidden;
 }
 #quickmeetingtext {
   color:#fff;
@@ -129,10 +133,11 @@ a:hover {
   font-weight:500;
   font-size:1.5rem;
   margin:1rem 0;
+  transition: background-color 0.25s, color 0.25s;
 }
 .btn-schedule:hover {
-  background-color:#ddd;
-  color:#759b2f;
+  background-color:#759b2f;
+  color:#fff;
 }
 /*Remove the 'Click here' part*/
 #meetingtext1 {
