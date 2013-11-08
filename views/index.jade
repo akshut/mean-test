@@ -5,25 +5,23 @@ block content
   .banner
     .container
         .row.banner-row
-          .col-md-6
-            h2.banner-head.tk-freight-sans-pro Free. Simple. Secure.
+          .col-md-6.banner-col
+            h2.banner-head.tk-freight-sans-pro Free, Simple, Secure.
         .row
-          .introtext1.col-md-6
+          .introbox.col-md-6
             .row
-              .col-md-5
-                p Start a Meeting Now! Free Forever
-                button.btn.btn-default Quick Meeting
-              .col-md-1
-                p or
-              .col-md-6
+              .col-md-5.introcol1
+                p#quickmeetingtext Start a Meeting Now! Free Forever
+                button.btn.btn-quickmeet Quick Meeting
+              .col-md-5.introcol2
                 p Schedule a meeting for later
                 form.form-horizontal
                   .form-group
                     input.form-control(type='text', id='date-and-time', placeholder='ex. Tuesday the 24th @ 5pm')
                   .form-group
-                    button.btn.btn-default(type='submit') Schedule Meeting
+                    button.btn.btn-schedule(type='submit') Schedule Meeting
                   .form-group
-                    a.text-muted(href='#') Already have a meeting? Click here
+                    a.text-muted#meetingtext1(href='#') Already have a meeting?
   //
      this is where i am going to start putting in marketing stuff 
   .container.marketing

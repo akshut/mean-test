@@ -1,8 +1,47 @@
 /* Bootstrap Overrides */
 .navbar {
   margin-bottom: 0px !important;
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
+  padding-top:1.25rem!important;
+  padding-bottom:0.3125rem!important;
+}
+.navbar-doxy {
+  background-color:#fff;
+  border-color:none;
+}
+.btn-signin {
+  background:transparent;
+  border: 1px solid #759b2f;
+  color:#759b2f;
+  transition: background-color 0.25s, color 0.25s;
+}
+.btn-signin:hover {
+  background-color:#759b2f;
+  color:#fff;
+}
+.form-control {
+  box-shadow:none;
+  -webkit-box-shadow:none;
+  border:solid 1px #ddd;
+  margin:1rem 0;
+}
+.form-group {
+  margin:0 0.5rem 0 0;
+}
+/* NAVBAR MUTHA FUCKA */
+/*Add these ids and adjust the html around them*/
+.help-links {
+  float:right!important;
+  padding:0 0.625rem 0 0;
+}
+.help-links a {
+  text-decoration:underline;
+}
+#forgot-link {
+  font-size:1.05rem;
+  padding:0 1rem 0 0;
+}
+#signup-link {
+  font-size:1.05rem;
 }
 
 /*--- Begin Universal Styles --*/
@@ -27,28 +66,68 @@ a:hover {
   margin-bottom: 1em;
   margin-top:0;
 }
-
-.banner-head {
-  font-size: 2em;
-  color: #262523;
-  font-weight: 500;
-  line-height:1;
-  margin-bottom:1em;
+.banner-col {
+  margin-left:4.5rem;
 }
-
+.banner-head {
+  color:#fff;
+  font-size:3rem;
+  line-height:1.5;
+  margin:0 0 5rem!important;
+  letter-spacing:0.25rem;
+  font-weight:300;
+}
 .banner-row {
-  margin-top: 9em;
+  margin-top:10rem;
 }
 
 /*---index page styles---*/
-.introtext1 {
-  background-color:rgba(255,255,255,0.2);
-  border:2px solid white;
-  border-radius:6px;
-  padding:1em 2em 4em;
-  /*position:fixed;
-  x-index:-1000;*/
-  margin-top:0px;
+.introbox {
+  padding: 3rem 1rem;
+  background-color: rgba(255,255,255,0.2);
+  border: 2px solid white;
+  border-radius: 6px;
+  margin-left:45px;
+}
+.introcol1 {
+  margin:25px;
+  border-right:1px #fff solid;
+}
+.introcol2 {
+  padding: 0 0.5rem;
+}
+.introcol2>p {
+  text-align:left;
+  color:#fff;
+}
+#quickmeetingtext {
+  color:#fff;
+  font-size:1.75rem;
+}
+.btn-quickmeet {
+  width:100%;
+  color:#fff;
+  background-color:#759b2f;
+  text-transform:uppercase;
+  font-weight:200;
+  letter-spacing:0.15rem;
+  padding:1.20rem 1.75rem 1.05rem;
+}
+
+.btn-schedule {
+  width:100%;
+  color:#333;
+  background-color:#eee;
+  text-transform:uppercase;
+  font-weight:400;
+}
+/*Remove the 'Click here' part*/
+#meetingtext1 {
+  color:#666;
+  padding:0;
+  margin:0;
+  text-decoration: underline;
+  font-size:1.25rem;
 }
 
 /* marketing blocks */
@@ -142,3 +221,18 @@ a:hover {
   padding: 5px 10px;
   width: 255px;
 }
+
+
+
+
+
+
+/*NEW STUFF*/
+/*The biggest and badest stylesheet uyou have ever seen for Doxy.me*/
+
+
+
+
+
+
+
