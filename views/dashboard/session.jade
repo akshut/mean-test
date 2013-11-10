@@ -1,7 +1,7 @@
 mixin session(session)
   li.session(id=session._id)
     p.name Patient
-    img(src="//lorempixel.com/125/125", alt="patient", width="100", height="70px")
+    img.avatar(src="//lorempixel.com/125/125", alt="patient", width="100", height="70px")
     span.chat-notification
       i.fa.fa-comment
     .chat
@@ -109,5 +109,10 @@ mixin session(session)
               closeChat()
           }
         });
+
+        // Handle initiating of conference call
+        $('li.session#' + session._id + ' img.avatar').click(function() {
+          activateSession(tokSession)
+        })
 
       })(!{JSON.stringify(session)})
