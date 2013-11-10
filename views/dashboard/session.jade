@@ -5,13 +5,13 @@ mixin session(session)
     span.chat-notification
       i.fa.fa-comment
     .chat
-  video(id= 'video-' + session._id, width="4px", height="4px", style="position:absolute;left:-9999999px")
 
     script.
       (function(session) {
 
+        var subscriber = null
+
         function sessionConnectedHandler(event) {
-          // session.publish(publisher)
           subscribeToStreams(event.streams)
         }
 
@@ -21,10 +21,15 @@ mixin session(session)
             if (stream.connection.connectionId
                    != tokSession.connection.connectionId) {
 
-                var subscriber = tokSession.subscribe(
+                var $subscriber = $('<div/>', {
+                  class: 'patient-video', 
+                  id: 'video-' + session._id
+                }).addClass('invisible').appendTo('#theirPublisherDiv')
+
+                subscriber = tokSession.subscribe(
                                     stream
-                                  , 'video-' + session._id,
-                                    {
+                                  , 'video-' + session._id
+                                  , {
                                       subscribeToVideo: false
                                     , subscribeToAudio: false
                                     }
@@ -37,8 +42,7 @@ mixin session(session)
           subscribeToStreams(event.streams);
         }
 
-        // var publisher = TB.initPublisher(session.API_KEY, 'myPublisherDiv', {height: "135px", width: "180px"});
-        var tokSession   = TB.initSession(session.sessionId);
+        var tokSession = TB.initSession(session.sessionId);
 
 
         tokSession.connect(session.API_KEY, session.token);
@@ -76,7 +80,6 @@ mixin session(session)
         
         var chatTemplate = templatizer.public.chat.chat('doctor', tokSession)
 
-        console.log(chatTemplate)
         $chat.html(chatTemplate)
 
         tokSession.on('signal:chat-patient', function(e) {
@@ -110,9 +113,13 @@ mixin session(session)
           }
         });
 
-        // Handle initiating of conference call
+        //Handle initiating of conference call
         $('li.session#' + session._id + ' img.avatar').click(function() {
-          activateSession(tokSession)
+          var publisher = TB.initPublisher( session.API_KEY, 'myPublisherDiv'
+                                        , { height: "135px", width: "180px" })
+          subscriber.subscribeToVideo(true)
+          subscriber.subscribeToAudio(true)
+          window.activateSession(tokSession, $('#video-' + session._id), subscriber, publisher)
         })
 
       })(!{JSON.stringify(session)})
