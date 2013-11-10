@@ -52,7 +52,9 @@ block content
         sendAvatar();
       })
 
-      templatizer.public.chat.chat('patient', $('.chat'), session)
+      var chatTemplate = templatizer.public.chat.chat('patient', session)
+      
+      $('.chat').html(chatTemplate)
 
     })
 

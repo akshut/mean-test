@@ -5,7 +5,7 @@ module.exports = (REDIS_PORT, REDIS_HOST, REDIS_PASS)->
   client = redis.createClient(REDIS_PORT, REDIS_HOST)
   client.auth REDIS_PASS, (err) ->
     console.log err if err
-    client.flushdb()
+    client.flushdb(console.log)
 
   addSession: (session, cb) ->
     client.hset session.roomSlug, session._id , JSON.stringify(session)

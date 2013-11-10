@@ -72,12 +72,14 @@ mixin session(session)
 
         var $chatNotification = $('li.session#' + session._id + ' span.chat-notification')
           , $chat = $('li.session#' + session._id + ' .chat')
-        
-        templatizer.public.chat.chat('doctor', $chat, tokSession)
 
+        
+        var chatTemplate = templatizer.public.chat.chat('doctor', tokSession)
+
+        console.log(chatTemplate)
         $chat.html(chatTemplate)
 
-        tokSession.on('signal:chat', function(e) {
+        tokSession.on('signal:chat-patient', function(e) {
           $chatNotification.find('i').css('color', 'red')
         })
 
@@ -96,6 +98,7 @@ mixin session(session)
         }
 
         $chatNotification.click(function() {
+          console.log("YOLO")
           $chatNotification.find('i').css('color', 'black')
           openChat()
         })
