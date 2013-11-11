@@ -34,12 +34,7 @@ module.exports = (db, API_KEY, SECRET, Session) ->
     @findOne {slug}, (err, room) ->
       return cb err if err
       if not room?
-        opentok.createSession null, {'p2p.preference': 'enabled'}, (sessionId) ->
-          token = opentok.generateToken {session_id: sessionId}
-
-          session = new Session {sessionId, token, roomSlug: slug, API_KEY}
-          session.save (err) ->
-            cb err, session
+        return cb new Error "No room exists under name #{name}"
 
       opentok.createSession null, {'p2p.preference': 'enabled'}, (sessionId) ->
         token = opentok.generateToken {session_id: sessionId}
