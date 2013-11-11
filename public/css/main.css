@@ -219,16 +219,6 @@ a:hover {
   color:#fff;
   border-color:#759b2f;
 }
-#hideShowMessages:active {
-  background-color:#759b2f;
-  color:#fff;
-  border-color:#759b2f;
-}
-#hideShowMessages:visited {
-  background-color:#759b2f;
-  color:#fff;
-  border-color:#759b2f;
-}
 #chatbox {
   position: fixed;
   right: 0px;
@@ -260,7 +250,33 @@ a:hover {
   width: 100%;
 }
 
+/*SESSION*/
 
+
+/*DASHBOARD*/
+#rooms {
+  margin:2rem 0 0;
+}
+#rooms .row {
+  margin:0;
+}
+.roomBox {
+  background-color:#eee;
+  text-align:center;
+  margin-bottom:1rem;
+}
+.room h2 {
+  color:#759b2f;
+  font-family:'freight-sans-pro';
+  font-weight:500;
+}
+.room h4 {
+  color:#444;
+  font-family:'freight-sans-pro';
+  font-weight:300;
+  border-bottom:1px solid #aaa;
+  padding-bottom:.5rem;
+}
 
 
 /*--- Begin Meeting Prompt Arrow styles ---*/
