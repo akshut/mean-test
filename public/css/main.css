@@ -11,6 +11,10 @@
 .navbar-form {
   margin-top:0!important;
 }
+.caret {
+  border-top-color:#759b2f!important;
+  border-bottom-color:#759b2f!important;
+}
 .btn-signin {
   background:transparent;
   border: 1px solid #759b2f;
@@ -227,6 +231,7 @@ a:hover {
   width:18%;
 }
 #messages {
+  display:none;
   overflow-y: scroll;
   background: none repeat scroll 0 0 #F9F9F9;
   border: 1px solid #ddd;
@@ -261,14 +266,25 @@ a:hover {
   margin:0;
 }
 .roomBox {
-  background-color:#eee;
+  border-right:1px solid #ddd;
   text-align:center;
   margin-bottom:1rem;
+  padding-bottom:1rem;
+  transition:background-color 0.5s;
+}
+.roomBox:hover {
+  background-color:#eee;
+}
+.drglyph {
+  top:0px!important;
+  margin:0 1rem 0 0!important;
+  font-size: 2rem!important;
 }
 .room h2 {
   color:#759b2f;
   font-family:'freight-sans-pro';
   font-weight:500;
+  display: inline;
 }
 .room h4 {
   color:#444;
