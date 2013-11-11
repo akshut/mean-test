@@ -197,6 +197,72 @@ a:hover {
   font-weight:300;
   font-size:2rem;
 }
+
+
+/*-- Dashbaord Styles yo --*/
+
+/*CHATBOX*/
+#hideShowMessages {
+  background-color:#ddd;
+  border: 1px solid #ccc;
+  text-transform:uppercase;
+  margin:0;
+  padding:0.5rem 1rem;
+  text-align:center;
+  color:#777;
+  width:100%;
+  cursor:pointer;
+  transition:background-color 0.25s, color 0.25s, border-color 0.25s;
+}
+#hideShowMessages:hover {
+  background-color:#759b2f;
+  color:#fff;
+  border-color:#759b2f;
+}
+#hideShowMessages:active {
+  background-color:#759b2f;
+  color:#fff;
+  border-color:#759b2f;
+}
+#hideShowMessages:visited {
+  background-color:#759b2f;
+  color:#fff;
+  border-color:#759b2f;
+}
+#chatbox {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  z-index: 1;
+  width:18%;
+}
+#messages {
+  overflow-y: scroll;
+  background: none repeat scroll 0 0 #F9F9F9;
+  border: 1px solid #ddd;
+  border-radius: 0px;
+  height: 40rem;
+  letter-spacing: .1rem;
+  margin-bottom: 0px;
+  padding: .5rem 1rem;
+  width: 100%;
+  color:#444;
+  font-weight:300;
+}
+#chatinput {
+  background: none repeat scroll 0 0 #F9F9F9;
+  border: 1px solid #ddd;
+  border-radius: 0px;
+  height: 4rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0px;
+  padding: .5rem 1rem;
+  width: 100%;
+}
+
+
+
+
 /*--- Begin Meeting Prompt Arrow styles ---*/
 @keyframes arrow {
   0% {top:0;}
@@ -249,37 +315,6 @@ a:hover {
   border-radius:.25em;
 }
 
-#chatbox {
-  position: absolute;
-  right: 20px;
-  bottom: 0px;
-  z-index: 1;
-}
-
-#chatinput {
-  background: none repeat scroll 0 0 #F9F9F9;
-  border: 1px solid #CCCCCC;
-  border-radius: 0px 0px 5px 5px;
-  font: 300 18px/40px 'light','Helvetica Neue',Arial,Helvetica,sans-serif;
-  height: 40px;
-  letter-spacing: 1px;
-  margin-bottom: 0px;
-  padding: 5px 10px;
-  width: 277px;
-}
-
-#messages {
-  overflow: scroll;
-  background: none repeat scroll 0 0 #F9F9F9;
-  border: 1px solid #CCCCCC;
-  border-radius: 5px 5px 0px 0px;
-  font: 300 18px/40px 'light','Helvetica Neue',Arial,Helvetica,sans-serif;
-  height: 400px;
-  letter-spacing: 1px;
-  margin-bottom: 0px;
-  padding: 5px 10px;
-  width: 255px;
-}
 
 
 
