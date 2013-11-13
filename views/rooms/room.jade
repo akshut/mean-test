@@ -5,6 +5,7 @@ block content
     #mirror
     input.name(type="text", placeholder="Type your name here")
     button.sendName Check in
+    .chat.open
 
   #doctor
 
@@ -44,11 +45,17 @@ block content
     , "!{API_KEY}"
     , 'mirror'
     , 'doctor'
-    , function(sendAvatar, sendName) {
+    , function(sendAvatar, sendName, session) {
+
       $('button.sendName').click(function() {
         sendName($('input.name').val());
         sendAvatar();
       })
+
+      var chatTemplate = templatizer.public.chat.chat('patient', session)
+      
+      $('.chat').html(chatTemplate)
+
     })
 
     new EventSource('/session/!{_id}')
