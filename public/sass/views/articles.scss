@@ -1,9 +1,9 @@
 h1 {
-	text-align: center;
+  text-align: center;
 }
-     
+
 ul.articles {
-	li:not(:last-child) {
-		border-bottom: 1px solid #ccc;
-	}
+  li:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+  }
 }
