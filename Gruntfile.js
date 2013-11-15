@@ -2,28 +2,18 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    livereload: 35728,
     watch: {
       jade: {
-          files: ['views/**'],
-          options: {
-              livereload: true
-          }
+          files: ['views/**']
       },
       css: {
           files: ['public/sass/**'],
-          tasks: ['compass'],
-          options: {
-              livereload: true,
-              force: true
-          }
+          tasks: ['compass']
       },
       coffee: {
         files: ['public/js/*.coffee'],
-        tasks: 'coffee',
-        options: {
-          livereload: true,
-          debounceDelay: 2000
-        }
+        tasks: 'coffee'
       }
     },
     coffee: {
