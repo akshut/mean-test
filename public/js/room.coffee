@@ -36,24 +36,28 @@ window.callDoctor = (sessionId, token, API_KEY, mirror, doctor, cb) ->
       itr = -500
       imgChunks.push imgData[itr...(itr+500)] while (itr += 500) <= imgLength
 
-      imgData = imgData.slice(0, 500)
-
       sendChunk = (index) ->
         if index <= imgChunks.length
           session.signal
             type: 'image-chunk'
-            data: img: imgChunks[index]
-          , (err) -> sendChunk ++index
+            data: img: imgChunks[index], index: index
+          , (err) ->
+            return console.error err if err
+            sendChunk ++index
         else
           session.signal
             type: 'image-end'
             data: msg: "Imgae sent"
-          , (err) -> console.log "Done!"
+          , (err) ->
+            return console.error err if err
+            console.log "Done!"
 
       session.signal
         type: 'image-begin'
         data: msg: "Begin image transition"
-        , (err) -> sendChunk 0
+        , (err) ->
+          return console.error err if err
+          sendChunk 0
 
 
     cb sendAvatar, sendName, session

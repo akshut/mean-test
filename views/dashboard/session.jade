@@ -61,7 +61,7 @@ mixin session(session)
         })
 
         tokSession.on('signal:image-chunk', function(e) {
-          avatar.push(e.data.img)
+          avatar[e.data.index] = e.data.img
         })
 
         tokSession.on('signal:image-end', function() {
