@@ -5,14 +5,11 @@ block content
   include ../includes/navbar
   script(src="/js/dashboard.js")
 
-  #video
-    #theirPublisherDiv
-
-  #rooms
-    .row
+  .row
+    #rooms.col-lg-2
       for room in rooms
-        .room(id=room.slug)
-          .col-md-2
+        .row
+          .room(id=room.slug)
             h2= room.name
             h4 Waiting Patients
             ul.session-list
@@ -21,17 +18,13 @@ block content
                   +session(session)
             script.
               listenForSessionsOnRoom(!{JSON.stringify(room)})
-      .col-md-8
-        form
-          .errors
-          textarea.js-st-instance
-      .col-md-2
-        #myPublisherDiv
-
-  #diagnostic
-    img(src='http://www.uh.edu/engines/sound-wave.jpg', width='125px')
-
-  include ../includes/chatbox
+    .col-lg-8
+      form
+        .errors
+        textarea.js-st-instance
+  #myPublisherDiv
+  #theirPublisherDiv
+  #active-chat
 
   script.
     SirTrevor.DEBUG = true

@@ -1,0 +1,64 @@
+mixin chat(type, session)
+  .chat-box(class="session-" + session.id)
+    ul.messages
+      li.doctor
+        p What seems to be the problem?
+      li.patient
+        p Everything hurts.
+    .message-entry
+      input.entry(type="text")
+      button.send Send
+    //- Kind of hack, store the chat session for later
+    - window.chatSessions = window.chatSessions || {}
+    - window.chatSessions[session.id] = session
+
+    script.
+      var session = window.chatSessions['!{session.id}']
+        , me = '!{type}'
+        , them = (me === 'patient') ? 'doctor' : 'patient'
+        , $chatBox = $('.chat-box.session-' + session.id)
+        , $messages = $chatBox.find('ul.messages')
+        , $chatButton = $chatBox.find('button.send')
+        , $input = $chatBox.find('input.entry')
+        , entities = {
+            '<' : '&lt;',
+            '>' : '&gt;',
+            '&' : '&amp;'
+          };
+
+      function addMessage(message, role) {
+        console.log("YO DOG", message, role)
+        message = message.replace(/[<>&]/g, function (m) { return entities[m]; })
+        $messages.prepend('<li class="' + role + '">' + message + '</li>')
+      }
+
+      session.on('signal:chat-' + them, function(e) {
+        message = e.data.message
+        addMessage(message, them)
+      })
+
+      $input.keyup(function(e) {
+        if(e.which === 13)
+          $chatButton.click()
+      })
+
+      $chatButton.click(function() {
+        message = $input.val()
+
+        if(!message)
+          return
+
+        $input.val('')
+        addMessage(message, me)
+
+        session.signal({
+          type: 'chat-' + me,
+          data: {message: message}
+        }, function(err) {
+          if(err)
+            console.log(err)
+        })
+
+      })
+
+

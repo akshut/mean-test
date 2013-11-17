@@ -56,7 +56,7 @@ window.callDoctor = (sessionId, token, API_KEY, mirror, doctor, cb) ->
         , (err) -> sendChunk 0
 
 
-    cb sendAvatar, sendName
+    cb sendAvatar, sendName, session
 
   session.on("sessionConnected", sessionConnectedHandler)
   session.on("streamCreated", streamCreatedHandler)

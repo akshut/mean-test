@@ -22,7 +22,6 @@ window.listenForSessionsOnRoom = (room) ->
     $sessionList.find("##{id}").remove()
     console.log "Removed a session bro"
 
-
   listener.addEventListener 'message', (message) ->
 
     data = JSON.parse message.data
@@ -40,3 +39,11 @@ window.listenForSessionsOnRoom = (room) ->
 
     if oldSessionIds.length
       oldSessionIds.forEach (id) -> removeSession id
+
+window.activateSession = (tokSession, $patientVideo, subscriber, publisher) ->
+  $patientVideo.css('width', '600px').css('height', '450px')
+  $patientVideo.css('left', '0px')
+  $patientVideo.removeClass('invisible')
+  tokSession.publish(publisher)
+
+  window.activeSession = {session: tokSession, publisher: publisher, subscriber: subscriber}

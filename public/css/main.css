@@ -11,6 +11,10 @@
 .navbar-form {
   margin-top:0!important;
 }
+.caret {
+  border-top-color:#759b2f!important;
+  border-bottom-color:#759b2f!important;
+}
 .btn-signin {
   background:transparent;
   border: 1px solid #759b2f;
@@ -197,6 +201,100 @@ a:hover {
   font-weight:300;
   font-size:2rem;
 }
+
+
+/*-- Dashbaord Styles yo --*/
+
+/*CHATBOX*/
+#hideShowMessages {
+  background-color:#ddd;
+  border: 1px solid #ccc;
+  text-transform:uppercase;
+  margin:0;
+  padding:0.5rem 1rem;
+  text-align:center;
+  color:#777;
+  width:100%;
+  cursor:pointer;
+  transition:background-color 0.25s, color 0.25s, border-color 0.25s;
+}
+#hideShowMessages:hover {
+  background-color:#759b2f;
+  color:#fff;
+  border-color:#759b2f;
+}
+#chatbox {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  z-index: 1;
+  width:18%;
+}
+#messages {
+  display:none;
+  overflow-y: scroll;
+  background: none repeat scroll 0 0 #F9F9F9;
+  border: 1px solid #ddd;
+  border-radius: 0px;
+  height: 40rem;
+  letter-spacing: .1rem;
+  margin-bottom: 0px;
+  padding: .5rem 1rem;
+  width: 100%;
+  color:#444;
+  font-weight:300;
+}
+#chatinput {
+  background: none repeat scroll 0 0 #F9F9F9;
+  border: 1px solid #ddd;
+  border-radius: 0px;
+  height: 4rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0px;
+  padding: .5rem 1rem;
+  width: 100%;
+}
+
+/*SESSION*/
+
+
+/*DASHBOARD*/
+#rooms {
+  margin:2rem 0 0;
+}
+#rooms .row {
+  margin:0;
+}
+.roomBox {
+  border-right:1px solid #ddd;
+  text-align:center;
+  margin-bottom:1rem;
+  padding-bottom:1rem;
+  transition:background-color 0.5s;
+}
+.roomBox:hover {
+  background-color:#eee;
+}
+.drglyph {
+  top:0px!important;
+  margin:0 1rem 0 0!important;
+  font-size: 2rem!important;
+}
+.room h2 {
+  color:#759b2f;
+  font-family:'freight-sans-pro';
+  font-weight:500;
+  display: inline;
+}
+.room h4 {
+  color:#444;
+  font-family:'freight-sans-pro';
+  font-weight:300;
+  border-bottom:1px solid #aaa;
+  padding-bottom:.5rem;
+}
+
+
 /*--- Begin Meeting Prompt Arrow styles ---*/
 @keyframes arrow {
   0% {top:0;}
@@ -249,37 +347,6 @@ a:hover {
   border-radius:.25em;
 }
 
-#chatbox {
-  position: absolute;
-  right: 20px;
-  bottom: 0px;
-  z-index: 1;
-}
-
-#chatinput {
-  background: none repeat scroll 0 0 #F9F9F9;
-  border: 1px solid #CCCCCC;
-  border-radius: 0px 0px 5px 5px;
-  font: 300 18px/40px 'light','Helvetica Neue',Arial,Helvetica,sans-serif;
-  height: 40px;
-  letter-spacing: 1px;
-  margin-bottom: 0px;
-  padding: 5px 10px;
-  width: 277px;
-}
-
-#messages {
-  overflow: scroll;
-  background: none repeat scroll 0 0 #F9F9F9;
-  border: 1px solid #CCCCCC;
-  border-radius: 5px 5px 0px 0px;
-  font: 300 18px/40px 'light','Helvetica Neue',Arial,Helvetica,sans-serif;
-  height: 400px;
-  letter-spacing: 1px;
-  margin-bottom: 0px;
-  padding: 5px 10px;
-  width: 255px;
-}
 
 
 
@@ -295,3 +362,79 @@ a:hover {
 
 
 
+#messages {
+  overflow: scroll;
+  background: none repeat scroll 0 0 #F9F9F9;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px 5px 0px 0px;
+  font: 300 18px/40px 'light','Helvetica Neue',Arial,Helvetica,sans-serif;
+  height: 400px;
+  letter-spacing: 1px;
+  margin-bottom: 0px;
+  padding: 5px 10px;
+  width: 255px;
+}
+
+span.chat-notification {
+  font-size: 25px;
+  margin-left: 5px;
+  color: black;
+}
+
+.chat {
+  display: none;
+}
+
+.chat.open {
+  display: block;
+}
+
+.chat-box {
+  width: 200px;
+}
+
+.chat-box ul.messages {
+  background: #f5f5f5;
+  height: 200px;
+  overflow: scroll;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.chat-box ul.messages li p {
+  margin: 0;
+  padding: 5px;
+}
+
+.chat-box li.patient {
+  background-color: #6ED8F0;
+  text-align: right;
+}
+
+.chat-box li.doctor {
+  background-color: #82E882;
+  text-align: left;
+}
+
+#dashboard {
+  height: 100px;
+  width: 100px;
+}
+
+#myPublisherDiv {
+  position: absolute;
+  top: 50px;
+  right: 0px;
+}
+
+#theirPublisherDiv .patient-video {
+  position: absolute;
+  top: 50px;
+  width:500px;
+  height: 500px;
+}
+
+#theirPublisherDiv .patient-video.invisible {
+  left: -999999px;
+}
