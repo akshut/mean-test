@@ -9,7 +9,7 @@
   "scripts": {
     "start": "./node_modules/.bin/coffee -c ./public/js; ./node_modules/.bin/coffee server.coffee",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preinstall": "node_modules/.bin/coffee ./lib/templates.coffee"
+    "preinstall": "node_modules/.bin/coffee ./lib/templates.coffee",
     "postinstall": "node_modules/bower/bin/bower install"
   },
   "repository": {
