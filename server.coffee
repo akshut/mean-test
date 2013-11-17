@@ -88,6 +88,7 @@ config.resolve (user, room, DB_URL, PORT, passport, REDIS_HOST, REDIS_PORT, REDI
   ###
   # Room things
   ###
+  app.get '/i/demo/:roomId', user.buildDemoDash
   app.get '/i/dashboard', loginRequired, user.buildDashboard
   app.post '/i/rooms', room.create
 

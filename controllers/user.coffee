@@ -28,6 +28,11 @@ module.exports = (User) ->
         return next err if err
         res.redirect '/i/dashboard'
 
+  buildDemoDash: (req, res, next) ->
+    User.getDemoRoom req.param('roomSlug'), (err, room) ->
+      return next err if err
+      res.render 'dashboard/dashboard', {room}
+
   buildDashboard: (req, res, next) ->
 
     user = req.user

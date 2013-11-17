@@ -35,4 +35,9 @@ module.exports = (db, SALT, Room, activeSessions) ->
           cb null, room
       , cb
 
+  UserSchema.statics.getDemoRoom = (roomSlug, cb) ->
+    Room.findOne({slug: roomSlug, acl: {$ne: '*'}}).exec (err, room) ->
+      return cb new Error("Room already exists and is in use")
+      Room.update {slug: roomSlug}, {$set: {slug: roomSlug, name: roomSlug, acl: ['*']}}, {multi: false, upsert: true}, cb
+
   db.model 'User', UserSchema
