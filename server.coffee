@@ -68,6 +68,23 @@ config.resolve (user, room, DB_URL, PORT, passport, REDIS_HOST, REDIS_PORT, REDI
     res.render 'index'
 
 
+  # When user goes to meeting directory, redirect them to a room (timestamp)
+  app.get '/quick', (req, res, next) ->
+    res.redirect( RandomRoom() )
+
+  # Random Room Generator - inspired by webrtcio guys on github
+  RandomRoom = ->
+    chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz"
+    length_of_string = 9
+    randomstring = ""
+    i = 0
+
+    while i < length_of_string
+      random_num = Math.floor(Math.random() * chars.length)
+      randomstring += chars.substring(random_num, random_num + 1)
+      i++
+    randomstring
+
   ###
   # Sign-up flow
   ###

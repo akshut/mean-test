@@ -1,7 +1,7 @@
-#chatbox
-  #hideShowMessages.button toggle chat
+#chatbox.tk-freight-sans-pro
+  #hideShowMessages toggle chat &equiv;
   #messages
-  input#chatinput(type='text', placeholder='Message:')
+  input#chatinput(type='text', placeholder='Send a message...')
 
 script.
   var input = document.getElementById("chatinput");
@@ -24,9 +24,9 @@ script.
     var messages = document.getElementById('messages');
     // msg = sanitize(msg);
     if(color) {
-      msg = '<span style="color: ' + color + '; padding-left: 15px">' + msg + '</span>';
+      msg = '<span style="color: ' + color + '; padding-left: .5rem">' + msg + '</span>';
     } else {
-      msg = '<strong style="padding-left: 15px">' + msg + '</strong>';
+      msg = '<span style="padding-left: .5rem">' + msg + '</span>';
     }
     messages.innerHTML = messages.innerHTML + msg + '<br>';
     messages.scrollTop = 10000;
