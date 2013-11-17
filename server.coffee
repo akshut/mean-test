@@ -10,6 +10,15 @@ loginRequired = require './middleware/requires-login'
 
 config.resolve (user, room, DB_URL, PORT, passport, REDIS_HOST, REDIS_PORT, REDIS_PASS, session, Room) ->
 
+  roomExists = (req, res, next) ->
+    slug = req.param 'roomSlug'
+    query = {slug, acl: req.user?.email || '*'}
+
+    Room.findOne query, (err, room) ->
+      return next err if err
+      return res.send '403', "Unauthorized for room #{room.name}" if not room
+      next()
+
   # Development set up
   app.configure 'development', ->
     app.use express.logger('dev')
@@ -70,7 +79,8 @@ config.resolve (user, room, DB_URL, PORT, passport, REDIS_HOST, REDIS_PORT, REDI
 
   # When user goes to meeting directory, redirect them to a room (timestamp)
   app.get '/quick', (req, res, next) ->
-    res.redirect( RandomRoom() )
+    req.session.isDemo = true
+    res.redirect( "/i/demo/#{RandomRoom()}" )
 
   # Random Room Generator - inspired by webrtcio guys on github
   RandomRoom = ->
@@ -103,9 +113,14 @@ config.resolve (user, room, DB_URL, PORT, passport, REDIS_HOST, REDIS_PORT, REDI
   app.post '/i/users', user.create
 
   ###
+  # Demo
+  ###
+  app.get '/i/demo/:roomSlug', user.buildDemoDash
+  app.get '/i/demo/:roomSlug/sessions', roomExists, sse(), room.openSessions
+
+  ###
   # Room things
   ###
-  app.get '/i/demo/:roomId', user.buildDemoDash
   app.get '/i/dashboard', loginRequired, user.buildDashboard
   app.post '/i/rooms', room.create
 
@@ -114,13 +129,7 @@ config.resolve (user, room, DB_URL, PORT, passport, REDIS_HOST, REDIS_PORT, REDI
   # This route must always stay as low as possible, to catch any possible room
   app.get '/:roomName', room.joinRoomByName
 
-  app.get '/:roomSlug/sessions', loginRequired, (req, res, next) ->
-    slug = req.param 'roomSlug'
-    Room.findOne {slug, acl: req.user.email}, (err, room) ->
-      return next err if err
-      return res.send '403', "Unauthorized for room #{name}" if not room
-      next()
-  , sse(), room.openSessions
+  app.get '/:roomSlug/sessions', loginRequired, roomExists, sse(), room.openSessions
 
   # 404 route
   app.get '*', (req, res, next) ->

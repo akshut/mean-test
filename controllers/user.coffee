@@ -29,9 +29,9 @@ module.exports = (User) ->
         res.redirect '/i/dashboard'
 
   buildDemoDash: (req, res, next) ->
-    User.getDemoRoom req.param('roomSlug'), (err, room) ->
+    User.getDemoRoom req.param('roomSlug'), (err, rooms) ->
       return next err if err
-      res.render 'dashboard/dashboard', {room}
+      res.render 'dashboard/dashboard', {rooms, isDemo: req.session.isDemo}
 
   buildDashboard: (req, res, next) ->
 

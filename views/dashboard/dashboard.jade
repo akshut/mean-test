@@ -17,7 +17,7 @@ block content
                 for session in room.sessions
                   +session(session)
             script.
-              listenForSessionsOnRoom(!{JSON.stringify(room)})
+              listenForSessionsOnRoom(!{JSON.stringify(room)}, !{isDemo})
     .col-lg-8
       form
         .errors

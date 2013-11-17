@@ -1,4 +1,4 @@
-window.listenForSessionsOnRoom = (room) ->
+window.listenForSessionsOnRoom = (room, isDemo) ->
 
   TB.setLogLevel(0)
   if room.sessions
@@ -9,7 +9,11 @@ window.listenForSessionsOnRoom = (room) ->
   $room = $(".room##{room.slug}")
   $sessionList = $room.find '.session-list'
 
-  listener = new EventSource "/#{room.slug}/sessions"
+  if isDemo
+    listener = new EventSource "/i/demo/#{room.slug}/sessions"
+  else
+    listener = new EventSource "/#{room.slug}/sessions"
+
 
   addSession = (id, session) ->
     openSessionIds.push id

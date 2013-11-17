@@ -25,7 +25,7 @@ module.exports = (paramsValid, Room, API_KEY, SECRET, activeSessions) ->
       res.render 'rooms/room', data
 
   openSessions: (req, res, next) ->
-    slug = req.param('roomSlug')
+    slug = req.param('roomSlug').toLowerCase()
 
     interval = setInterval ->
       activeSessions.getSessionsForRoom slug, (err, sessions) ->
