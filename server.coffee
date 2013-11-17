@@ -32,16 +32,20 @@ config.resolve (user, room, DB_URL, PORT, passport, REDIS_HOST, REDIS_PORT, REDI
     app.set 'view engine', 'jade'
 
     app.use express.cookieParser()
-    app.use express.bodyParser()
+    app.use express.bodyParser(
+      keepExtensions: true
+      uploadDir: __dirname + "/tmp"
+      limit: "2mb"
+    )
     app.use express.methodOverride()
     app.use express.session
       secret: 'doxy'
       store: new RedisStore host: REDIS_HOST, port: REDIS_PORT, pass: REDIS_PASS
-    app.use express.csrf()
+    # app.use express.csrf()
 
-    app.use (req, res, next) ->
-      res.locals.csrf_token = req.csrfToken()
-      next()
+    # app.use (req, res, next) ->
+    #   res.locals.csrf_token = req.csrfToken()
+    #   next()
 
     app.use helpers 'Doxy.me'
 
@@ -85,6 +89,9 @@ config.resolve (user, room, DB_URL, PORT, passport, REDIS_HOST, REDIS_PORT, REDI
       i++
     randomstring
 
+  app.post '/attachments', (req, res, next) ->
+    console.log req.body
+    res.end()
   ###
   # Sign-up flow
   ###

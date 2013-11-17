@@ -42,7 +42,7 @@ module.exports = function(grunt) {
       dev: {
         options: {
           file: 'server.coffee',
-          ignoredFiles: ['README.md', 'node_modules/**', 'public/js/templates.js', '.DS_Store'],
+          ignoredFiles: ['README.md', '/tmp', 'node_modules/**', 'public/js/templates.js', '.DS_Store'],
           env: {
             PORT: '3000'
           }
