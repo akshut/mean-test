@@ -267,9 +267,11 @@
   height: 100%;
   padding-top:7.6rem;
 }
-
-#rooms {
+.droptop {
   margin:2rem 0 0;
+}
+#rooms {
+  /*margin:2rem 0 0;*/
   background-color:#414042;
   height:100%;
   padding:2rem 0 0;
@@ -290,14 +292,18 @@
 }
 .drglyph {
   top:0px!important;
-  margin:0 1rem 0 0!important;
+  margin:0 2rem 0 0!important;
   font-size: 2rem!important;
 }
 .room {
   .roomname {
     background-color:$green;
     width:100%;
-    padding:1rem 2rem;
+    padding:2rem;
+  }
+  #dricon {
+    font-size:2.3rem;
+    margin:0 1rem 0 0;
   }
   h2 {
     color:#231f20;
@@ -311,6 +317,12 @@
     font-weight:300;
     padding-bottom:.5rem;
     margin:2rem 0 0 2rem;
+    display:inline-block;
+  }
+  #waitingchev {
+    display:inline;
+    color:white;
+    margin:0 0 0 7rem;
   }
   ul {
     list-style: none;
@@ -340,6 +352,10 @@
         color:white;
         float:right;
         margin:1rem 0 0 1rem;
+        &:hover {
+          cursor:pointer;
+          color:#ddd;
+        }
 
         .fa-comment-o {
           
@@ -358,32 +374,34 @@
 
         .chat-box {
           width: 282px;
-          border:1px #58595b solid;
+          border-top:1rem #ccc solid;
+          border-left:1px #ccc solid;
 
           .messages {
             height: 200px;
             background: #f5f5f5;
             overflow-y: scroll;
-            padding: 0;
+            padding: .5rem 0 0;
             margin: 0;
             list-style: none;
 
             li {
-              p {
                 margin: 0;
-                padding: 5px;
-                color:#58595b;
-              }
+                padding: .5rem .8rem .2rem;
+                /*color:#58595b;*/
+              
             }
 
             .patient {
-              background-color: #ddd;
+              /*background-color: #fff;*/
               text-align: right;
+              color:#58595b;
             }
 
             .doctor {
-              background-color: #bbb;
+              /*background-color: #bbb;*/
               text-align: left;
+              color:$green;
             }
           }
 
@@ -405,7 +423,10 @@
               cursor:text;
               -webkit-appearance:none;
               &:focus {
-              border:none;
+                border:none;
+                box-shadow:none;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
               }
             }
           }
@@ -500,8 +521,8 @@
 
 span.chat-notification {
   font-size: 25px;
-  margin-left: 5px;
-  color: black;
+  /*margin-left: 5px;*/
+  /*color: black;*/
 }
 
 
@@ -513,16 +534,20 @@ span.chat-notification {
 
 #myPublisherDiv {
   position: absolute;
-  top: 50px;
-  right: 0px;
+  top: 7.6rem;
+  right: 0rem;
+
+  .OT_publisher {
+    border:.3rem solid #ddd;
+  }
 }
 
 #theirPublisherDiv {
   .patient-video {
     position: absolute;
-    top: 50px;
-    width:500px;
-    height: 500px;
+    top: 7.6rem;
+    width:50rem;
+    height: 50rem;
   }
 
   .patient-video.invisible {

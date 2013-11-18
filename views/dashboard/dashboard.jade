@@ -7,20 +7,22 @@ block content
   script(src="/js/dashboard.js")
 
   .row.dash
-    #rooms.col-lg-2
+    #rooms.col-lg-2.droptop
       for room in rooms
         .row
           .room(id=room.slug)
             .roomname
+              i.glyphicon.glyphicon-user#dricon
               h2= room.name
             h4 Waiting Patients
+            i.glyphicon.glyphicon-chevron-down#waitingchev
             ul.session-list
               if room.sessions
                 for session in room.sessions
                   +session(session)
             script.
               listenForSessionsOnRoom(!{JSON.stringify(room)}, !{isDemo})
-    .col-lg-8
+    .col-lg-8.droptop
       form
         .errors
         textarea.js-st-instance
