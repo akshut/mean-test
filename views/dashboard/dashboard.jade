@@ -2,6 +2,7 @@ extends ../layout
 include ./session
 
 block content
+  - isDemo = isDemo || false
   include ../includes/navbar
   script(src="/js/dashboard.js")
 
