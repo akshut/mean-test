@@ -12,7 +12,10 @@ module.exports = function(grunt) {
       },
       livereload: {
         options: {livereload: true },
-        files: ['public/**/*']
+        files: [
+          'public/css/*.css',
+          'views/**'
+        ]
       },
       coffee: {
         files: ['public/js/*.coffee'],
@@ -30,13 +33,6 @@ module.exports = function(grunt) {
       }
     },
     compass: { //Task
-        dist: { //Target
-            options: { //Target options
-                sassDir: 'public/sass',
-                cssDir: 'public/css',
-                environment: 'production'
-            }
-        },
         dev: { //Another target
             options: {
                 sassDir: 'public/sass',
@@ -48,7 +44,7 @@ module.exports = function(grunt) {
       dev: {
         options: {
           file: 'server.coffee',
-          ignoredFiles: ['README.md', 'node_modules/**', 'public/js/templates.js', '.DS_Store'],
+          ignoredFiles: ['README.md', 'node_modules/**', 'public/**', '.DS_Store'],
           env: {
             PORT: '3000'
           }
