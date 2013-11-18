@@ -1,0 +1,447 @@
+/*-- THE BIG CHEESE --*/
+
+/* _globals.scss */
+@import 'globals';
+
+/* Bootstrap Overrides */
+.navbar {
+  margin-bottom: 0px !important;
+  padding-top:1.25rem!important;
+  padding-bottom:0.3125rem!important;
+}
+.navbar-doxy {
+  background-color:#fff;
+  border:none;
+}
+.navbar-form {
+  margin-top:0!important;
+}
+.caret {
+  border-top-color:$green!important;
+  border-bottom-color:$green!important;
+}
+.btn-signin {
+  background:transparent;
+  border: 1px solid $green;
+  color:$green;
+  transition: background-color 0.25s, color 0.25s;
+  margin:1rem 0 0;
+  font-size:1.6rem;
+}
+.btn-signin:hover {
+  background-color:$green;
+  color:#fff;
+}
+.form-control {
+  box-shadow:none;
+  -webkit-box-shadow:none;
+  border:solid 1px #ddd;
+  margin:1rem 0 0;
+  font-size:1.6rem;
+}
+.form-group {
+  margin:0 0.5rem 0 0;
+}
+/* NAVBAR MUTHA FUCKA */
+/*Add these ids and adjust the html around them*/
+.help-links {
+  float:right!important;
+  padding:0 0.625rem 0 0;
+  
+  a {
+    text-decoration:underline;
+  }
+}
+#forgot-link {
+  font-size:1.3rem;
+  padding:0 1rem 0 0;
+}
+#signup-link {
+  font-size:1.3rem;
+}
+
+
+/* Banner - the background img and Quick Meeting / schedule Meeting form */
+.banner {
+  background: transparent url('/img/secure-doxy_bg2.png') 0 0 no-repeat fixed;
+  text-align: center;
+  background-size: cover;
+  height: 600px;
+  width: 100%;
+  margin-bottom: 1em;
+  margin-top:0;
+}
+.banner-col {
+  margin-left:4.5rem;
+}
+.banner-head {
+  color:#fff;
+  font-size:4rem;
+  line-height:1.5;
+  margin:0 0 5rem!important;
+  letter-spacing:0.25rem;
+  font-weight:500;
+}
+.banner-row {
+  margin-top:8rem;
+}
+
+/*---index page styles---*/
+.introbox {
+  padding: 3rem 1rem;
+  background-color: rgba(255,255,255,0.2);
+  border: 2px solid white;
+  border-radius: 6px;
+  margin-left:45px;
+}
+.introcol1 {
+  margin:25px;
+  border-right:1px #fff solid;
+}
+.introcol2 {
+  padding: 0 0.5rem;
+  font-size:1.6rem;
+}
+.introcol2>p {
+  text-align:left;
+  color:#fff;
+  font-size:1.6rem;
+  margin:0;
+  padding:0;
+  visibility: hidden;
+}
+#quickmeetingtext {
+  color:#fff;
+  font-size:2rem;
+  font-weight:200;
+  /*letter-spacing:0.1em;*/
+}
+.btn-quickmeet {
+  width:100%;
+  color:#fff;
+  background-color:$green;
+  text-transform:uppercase;
+  font-weight:300;
+  letter-spacing:0.1rem;
+  padding:1.20rem 1.75rem;
+  font-size:1.8rem;
+  transition: color 0.25s;
+}
+
+.btn-schedule {
+  width:100%;
+  color:#000;
+  background-color:#eee;
+  text-transform:uppercase;
+  font-weight:500;
+  font-size:1.6rem;
+  letter-spacing:0.05rem;
+  margin:1rem 0;
+  transition: background-color 0.25s, color 0.25s;
+  &:hover {
+  background-color:$green;
+  color:#fff;
+  }
+}
+/*Remove the 'Click here' part*/
+#meetingtext1 {
+  color:#666;
+  padding:0;
+  margin:0;
+  text-decoration: underline;
+  font-size:1.4rem;
+  transition: color 0.25s;
+  &:hover {
+  color:#fff;
+  text-decoration:none;
+  }
+}
+
+/* marketing blocks */
+.m-block {
+  position: relative;
+  top: -11rem;
+  background-color: white;
+  margin: 1.5rem;
+  width: 30%;
+  padding:4rem 2rem 0;
+  font-size:1.7rem;
+
+  h2 {
+  font-size:4rem;
+  }
+}
+
+.bigp {
+  text-align:left;
+}
+
+#promo {
+  text-transform:uppercase;
+  font-size:2.5rem;
+  font-weight:300;
+  margin:0 0 1.5rem;
+}
+
+#footer {
+  a {
+    padding: 0 1rem;
+    font-weight:300;
+    text-transform:uppercase;
+    font-size:2rem;
+    &:hover {
+    background-color:#ddd;
+    color:#444;
+    }
+  }
+}
+
+#copyright {
+  font-weight:300;
+  font-size:2rem;
+}
+
+
+/*-- Dashbaord Styles yo --*/
+
+/*CHATBOX*/
+#hideShowMessages {
+  background-color:#ddd;
+  border: 1px solid #ccc;
+  text-transform:uppercase;
+  margin:0;
+  padding:0.5rem 1rem;
+  text-align:center;
+  color:#777;
+  width:100%;
+  cursor:pointer;
+  transition:background-color 0.25s, color 0.25s, border-color 0.25s;
+  &:hover {
+  background-color:#759b2f;
+  color:#fff;
+  border-color:#759b2f;
+  }
+}
+
+#chatbox {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  z-index: 1;
+  width:18%;
+}
+#messages {
+  display:none;
+  overflow-y: scroll;
+  background: none repeat scroll 0 0 #F9F9F9;
+  border: 1px solid #ddd;
+  border-radius: 0px;
+  height: 40rem;
+  letter-spacing: .1rem;
+  margin-bottom: 0px;
+  padding: .5rem 1rem;
+  width: 100%;
+  color:#444;
+  font-weight:300;
+}
+#chatinput {
+  background: none repeat scroll 0 0 #F9F9F9;
+  border: 1px solid #ddd;
+  border-radius: 0px;
+  height: 4rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0px;
+  padding: .5rem 1rem;
+  width: 100%;
+}
+
+/*SESSION*/
+
+
+/*DASHBOARD*/
+#rooms {
+  margin:2rem 0 0;
+
+  .row {
+  margin:0;
+  }
+}
+.roomBox {
+  border-right:1px solid #ddd;
+  text-align:center;
+  margin-bottom:1rem;
+  padding-bottom:1rem;
+  transition:background-color 0.5s;
+  &:hover {
+  background-color:#eee;
+  }
+}
+.drglyph {
+  top:0px!important;
+  margin:0 1rem 0 0!important;
+  font-size: 2rem!important;
+}
+.room {
+  h2 {
+  color:#759b2f;
+  font-family:'freight-sans-pro';
+  font-weight:500;
+  display: inline;
+  }
+  h4 {
+  color:#444;
+  font-family:'freight-sans-pro';
+  font-weight:300;
+  border-bottom:1px solid #aaa;
+  padding-bottom:.5rem;
+  }
+}
+
+
+/*--- Begin Meeting Prompt Arrow styles ---*/
+@keyframes arrow {
+  0% {top:0;}
+  50% {top:10px;}
+  100% {top:0;}
+}
+@-webkit-keyframes arrow {
+  0% {top:0;}
+  50% {top:10px;}
+  100% {top:0;}
+}
+#promptArrow {
+  margin:0 auto;
+  position:absolute;
+  animation: arrow 0.75s ease 1s infinite;
+  -webkit-animation: arrow 0.75s ease 1s infinite;
+  top:0;
+  right:0;
+  width:140px;
+  z-index:1100000001;
+}
+.promptContainer {
+  background: none;
+  width: 70px;
+  height: 70px;
+  margin:0 35px!important;
+
+  p {
+  text-align:center;
+  margin:0 0 0 20px;
+  padding:10px 0;
+  background-color:#fff;
+  border-radius:.25em;
+  }
+}
+.triangle {
+  background: none;
+  width: 0;
+  height: 0;
+  border-bottom: 60px solid #759b2f; 
+  border-left: 34px solid transparent; 
+  border-right: 34px solid transparent;
+  display:block;
+  margin:0 0 0 45px;
+}
+.box {
+  width: 35px;
+  height: 55px;
+  background: #759b2f;
+  display:block;
+  margin:-25px 62px 0;
+}
+
+
+
+
+
+
+
+
+/*NEW STUFF*/
+/*The biggest and badest stylesheet uyou have ever seen for Doxy.me*/
+
+
+
+
+
+
+
+#messages {
+  overflow: scroll;
+  background: none repeat scroll 0 0 #F9F9F9;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px 5px 0px 0px;
+  font: 300 18px/40px 'light','Helvetica Neue',Arial,Helvetica,sans-serif;
+  height: 400px;
+  letter-spacing: 1px;
+  margin-bottom: 0px;
+  padding: 5px 10px;
+  width: 255px;
+}
+
+span.chat-notification {
+  font-size: 25px;
+  margin-left: 5px;
+  color: black;
+}
+
+.chat {
+  display: none;
+
+  .open {
+  display: block;
+  }
+}
+
+.chat-box {
+  width: 200px;
+
+  ul.messages {
+    background: #f5f5f5;
+    height: 200px;
+    overflow: scroll;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li p {
+      margin: 0;
+      padding: 5px;
+    }
+  }
+
+  li.patient {
+    background-color: #6ED8F0;
+    text-align: right;
+  }
+
+  li.doctor {
+    background-color: #82E882;
+    text-align: left;
+  }
+}
+
+#dashboard {
+  height: 100px;
+  width: 100px;
+}
+
+#myPublisherDiv {
+  position: absolute;
+  top: 50px;
+  right: 0px;
+}
+
+#theirPublisherDiv {
+  .patient-video {
+    position: absolute;
+    top: 50px;
+    width:500px;
+    height: 500px;
+  }
+
+  .patient-video.invisible {
+    left: -999999px;
+  }
+}
