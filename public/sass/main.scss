@@ -318,10 +318,10 @@
     background-color:#58595b;
     padding:1rem 0 4.5rem;
     
-    li {
+    .session {
       margin: 0 2rem 1.5rem;
 
-      p {
+      .name {
         background-color:none;
         color:white;
         float:left;
@@ -359,9 +359,9 @@
         .chat-box {
           width: 282px;
           border:1px #58595b solid;
-          height: 200px;
 
           .messages {
+            height: 200px;
             background: #f5f5f5;
             overflow-y: scroll;
             padding: 0;
@@ -372,17 +372,41 @@
               p {
                 margin: 0;
                 padding: 5px;
+                color:#58595b;
               }
             }
 
             .patient {
-              background-color: #6ED8F0;
+              background-color: #838942;
               text-align: right;
             }
 
             .doctor {
-              background-color: #82E882;
+              background-color: #629fde;
               text-align: left;
+            }
+          }
+
+          .message-entry {
+
+            button {
+              padding:1rem 1rem 1rem 0;
+              border:none;
+              background-color:transparent;
+              color:$green;
+              float:right;
+            }
+            input {
+              padding:1rem 0 1rem 1rem;
+              width:80%;
+              border:none;
+              background:transparent;
+              color:#444;
+              cursor:text;
+              -webkit-appearance:none;
+              &:focus {
+              border:none;
+              }
             }
           }
         }
