@@ -6,12 +6,13 @@ block content
   include ../includes/navbar
   script(src="/js/dashboard.js")
 
-  .row
+  .row.dash
     #rooms.col-lg-2
       for room in rooms
         .row
           .room(id=room.slug)
-            h2= room.name
+            .roomname
+              h2= room.name
             h4 Waiting Patients
             ul.session-list
               if room.sessions
@@ -30,3 +31,4 @@ block content
   script.
     SirTrevor.DEBUG = true
     new SirTrevor.Editor({ el: $('.js-st-instance'), blockTypes: ["Text", "Image", "Video"] })
+ 

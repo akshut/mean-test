@@ -1,9 +1,9 @@
 mixin session(session)
   li.session(id=session._id)
     p.name Patient
-    img.avatar(src="//lorempixel.com/125/125", alt="patient", width="100", height="70px")
     span.chat-notification
-      i.fa.fa-comment
+      i.glyphicon.glyphicon-comment
+    img.avatar(src="//lorempixel.com/125/125", alt="patient", width="50", height="50")
     .chat
 
     script.
@@ -91,12 +91,12 @@ mixin session(session)
         })
 
         function openChat() {
-          $chatNotification.find('i').removeClass('fa-comment').addClass('fa-comment-o')
+          //- $chatNotification.find('i').removeClass('fa-comment').addClass('fa-comment-o')
           $chat.addClass('open')
         }
 
         function closeChat() {
-          $chatNotification.find('i').addClass('fa-comment').removeClass('fa-comment-o')
+          //- $chatNotification.find('i').addClass('fa-comment').removeClass('fa-comment-o')
           $chat.removeClass('open')
         }
 
