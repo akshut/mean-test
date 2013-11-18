@@ -17,10 +17,13 @@ module.exports = function(grunt) {
       }
     },
     coffee: {
-      compile: {
-        files: {
-          'public/js/*.js': ['public/js/*.coffee'] // 1:1 compile
-        }
+      glob_to_multiple: {
+        expand: true,
+        flatten: true,
+        cwd: 'public/js',
+        src: ['*.coffee'],
+        dest: 'public/js/',
+        ext: '.js'
       }
     },
     compass: { //Task
