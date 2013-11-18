@@ -1,1 +1,621 @@
-html{height:100%}body{height:100%}a{color:#262523;text-decoration:none;transition:background-color 0.35s;-webkit-transition:background-color 0.35s}a:hover{color:#262523;text-decoration:none}.navbar{margin-bottom:0px !important;padding-top:1.25rem !important;padding-bottom:0.3125rem !important}.navbar-doxy{background-color:#fff;border:none}.navbar-form{margin-top:0 !important}.caret{border-top-color:#759b2f !important;border-bottom-color:#759b2f !important}.btn-signin{background:transparent;border:1px solid #759b2f;color:#759b2f;transition:background-color 0.25s, color 0.25s;margin:1rem 0 0;font-size:1.6rem}.btn-signin:hover{background-color:#759b2f;color:#fff}.form-control{box-shadow:none;-webkit-box-shadow:none;border:solid 1px #ddd;margin:1rem 0 0;font-size:1.6rem}.form-group{margin:0 0.5rem 0 0}.help-links{float:right !important;padding:0 0.625rem 0 0}.help-links a{text-decoration:underline}#forgot-link{font-size:1.3rem;padding:0 1rem 0 0}#signup-link{font-size:1.3rem}.banner{background:transparent url("/img/secure-doxy_bg2.png") 0 0 no-repeat fixed;text-align:center;background-size:cover;height:600px;width:100%;margin-bottom:1em;margin-top:0}.banner-col{margin-left:4.5rem}.banner-head{color:#fff;font-size:4rem;line-height:1.5;margin:0 0 5rem !important;letter-spacing:0.25rem;font-weight:500}.banner-row{margin-top:8rem}.introbox{padding:3rem 1rem;background-color:rgba(255,255,255,0.2);border:2px solid white;border-radius:6px;margin-left:45px}.introcol1{margin:25px;border-right:1px #fff solid}.introcol2{padding:0 0.5rem;font-size:1.6rem}.introcol2>p{text-align:left;color:#fff;font-size:1.6rem;margin:0;padding:0;visibility:hidden}#quickmeetingtext{color:#fff;font-size:2rem;font-weight:200}.btn-quickmeet{width:100%;color:#fff;background-color:#759b2f;text-transform:uppercase;font-weight:300;letter-spacing:0.1rem;padding:1.20rem 1.75rem;font-size:1.8rem;transition:color 0.25s}.btn-schedule{width:100%;color:#000;background-color:#eee;text-transform:uppercase;font-weight:500;font-size:1.6rem;letter-spacing:0.05rem;margin:1rem 0;transition:background-color 0.25s, color 0.25s}.btn-schedule:hover{background-color:#759b2f;color:#fff}#meetingtext1{color:#666;padding:0;margin:0;text-decoration:underline;font-size:1.4rem;transition:color 0.25s}#meetingtext1:hover{color:#fff;text-decoration:none}.m-block{position:relative;top:-11rem;background-color:white;margin:1.5rem;width:30%;padding:4rem 2rem 0;font-size:1.7rem}.m-block h2{font-size:4rem}.bigp{text-align:left}#promo{text-transform:uppercase;font-size:2.5rem;font-weight:300;margin:0 0 1.5rem}#footer a{padding:0 1rem;font-weight:300;text-transform:uppercase;font-size:2rem}#footer a:hover{background-color:#ddd;color:#444}#copyright{font-weight:300;font-size:2rem}#hideShowMessages{background-color:#ddd;border:1px solid #ccc;text-transform:uppercase;margin:0;padding:0.5rem 1rem;text-align:center;color:#777;width:100%;cursor:pointer;transition:background-color 0.25s, color 0.25s, border-color 0.25s}#hideShowMessages:hover{background-color:#759b2f;color:#fff;border-color:#759b2f}#chatbox{position:fixed;right:0px;bottom:0px;z-index:1;width:18%}#messages{display:none;overflow-y:scroll;background:none repeat scroll 0 0 #F9F9F9;border:1px solid #ddd;border-radius:0px;height:40rem;letter-spacing:.1rem;margin-bottom:0px;padding:.5rem 1rem;width:100%;color:#444;font-weight:300}#chatinput{background:none repeat scroll 0 0 #F9F9F9;border:1px solid #ddd;border-radius:0px;height:4rem;letter-spacing:0.1rem;margin-bottom:0px;padding:.5rem 1rem;width:100%}.dash{margin:-9.5rem 0 !important;height:100%;padding-top:7.6rem}#rooms{margin:2rem 0 0;background-color:#414042;height:100%;padding:2rem 0 0}#rooms .row{margin:0}.roomBox{border-right:1px solid #ddd;text-align:center;margin-bottom:1rem;padding-bottom:1rem;transition:background-color 0.5s}.roomBox:hover{background-color:#eee}.drglyph{top:0px !important;margin:0 1rem 0 0 !important;font-size:2rem !important}.room .roomname{background-color:#759b2f;width:100%;padding:1rem 2rem}.room h2{color:#231f20;font-family:'freight-sans-pro';font-weight:500;display:inline}.room h4{color:white;font-family:'freight-sans-pro';font-weight:300;padding-bottom:.5rem;margin:2rem 0 0 2rem}.room ul{list-style:none;margin:2rem 0 0;background-color:#58595b;padding:1rem 0 4.5rem}.room ul .session{margin:0 2rem 1.5rem}.room ul .session .name{background-color:none;color:white;float:left;padding:1.5rem 0 1rem;margin:0}.room ul .session img{border-radius:50%;display:inline;float:right;margin:0}.room ul .session .chat-notification{color:white;float:right;margin:1rem 0 0 1rem}.room ul .session .chat{display:none}.room ul .session .open{display:block;position:absolute;bottom:0;right:-500%}.room ul .session .open .chat-box{width:282px;border:1px #58595b solid}.room ul .session .open .chat-box .messages{height:200px;background:#f5f5f5;overflow-y:scroll;padding:0;margin:0;list-style:none}.room ul .session .open .chat-box .messages li p{margin:0;padding:5px;color:#58595b}.room ul .session .open .chat-box .messages .patient{background-color:#838942;text-align:right}.room ul .session .open .chat-box .messages .doctor{background-color:#629fde;text-align:left}.room ul .session .open .chat-box .message-entry button{padding:1rem 1rem 1rem 0;border:none;background-color:transparent;color:#759b2f;float:right}.room ul .session .open .chat-box .message-entry input{padding:1rem 0 1rem 1rem;width:80%;border:none;background:transparent;color:#444;cursor:text;-webkit-appearance:none}.room ul .session .open .chat-box .message-entry input:focus{border:none}@keyframes arrow{0%{top:0}50%{top:10px}100%{top:0}}@-webkit-keyframes arrow{0%{top:0}50%{top:10px}100%{top:0}}#promptArrow{margin:0 auto;position:absolute;animation:arrow 0.75s ease 1s infinite;-webkit-animation:arrow 0.75s ease 1s infinite;top:0;right:0;width:140px;z-index:1100000001}.promptContainer{background:none;width:70px;height:70px;margin:0 35px !important}.promptContainer p{text-align:center;margin:0 0 0 20px;padding:10px 0;background-color:#fff;border-radius:.25em}.triangle{background:none;width:0;height:0;border-bottom:60px solid #759b2f;border-left:34px solid transparent;border-right:34px solid transparent;display:block;margin:0 0 0 45px}.box{width:35px;height:55px;background:#759b2f;display:block;margin:-25px 62px 0}#messages{overflow:scroll;background:none repeat scroll 0 0 #F9F9F9;border:1px solid #CCCCCC;border-radius:5px 5px 0px 0px;font:300 18px/40px 'light','Helvetica Neue',Arial,Helvetica,sans-serif;height:400px;letter-spacing:1px;margin-bottom:0px;padding:5px 10px;width:255px}span.chat-notification{font-size:25px;margin-left:5px;color:black}#dashboard{height:100px;width:100px}#myPublisherDiv{position:absolute;top:50px;right:0px}#theirPublisherDiv .patient-video{position:absolute;top:50px;width:500px;height:500px}#theirPublisherDiv .patient-video.invisible{left:-999999px}
+/*-- THE BIG CHEESE --*/
+/* _globals.scss */
+/* GLOBALS */
+/* line 5, ../sass/globals.scss */
+html {
+  height: 100%;
+}
+
+/* line 8, ../sass/globals.scss */
+body {
+  height: 100%;
+}
+
+/* line 12, ../sass/globals.scss */
+a {
+  color: #262523;
+  text-decoration: none;
+  transition: background-color 0.35s;
+  -webkit-transition: background-color 0.35s;
+}
+
+/* line 18, ../sass/globals.scss */
+a:hover {
+  color: #262523;
+  text-decoration: none;
+}
+
+/* Bootstrap Overrides */
+/* line 7, ../sass/main.scss */
+.navbar {
+  margin-bottom: 0px !important;
+  padding-top: 1.25rem !important;
+  padding-bottom: 0.3125rem !important;
+}
+
+/* line 12, ../sass/main.scss */
+.navbar-doxy {
+  background-color: #fff;
+  border: none;
+}
+
+/* line 16, ../sass/main.scss */
+.navbar-form {
+  margin-top: 0 !important;
+}
+
+/* line 19, ../sass/main.scss */
+.caret {
+  border-top-color: #759b2f !important;
+  border-bottom-color: #759b2f !important;
+}
+
+/* line 23, ../sass/main.scss */
+.btn-signin {
+  background: transparent;
+  border: 1px solid #759b2f;
+  color: #759b2f;
+  transition: background-color 0.25s, color 0.25s;
+  margin: 1rem 0 0;
+  font-size: 1.6rem;
+}
+
+/* line 31, ../sass/main.scss */
+.btn-signin:hover {
+  background-color: #759b2f;
+  color: #fff;
+}
+
+/* line 35, ../sass/main.scss */
+.form-control {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  border: solid 1px #ddd;
+  margin: 1rem 0 0;
+  font-size: 1.6rem;
+}
+
+/* line 42, ../sass/main.scss */
+.form-group {
+  margin: 0 0.5rem 0 0;
+}
+
+/* NAVBAR MUTHA FUCKA */
+/*Add these ids and adjust the html around them*/
+/* line 47, ../sass/main.scss */
+.help-links {
+  float: right !important;
+  padding: 0 0.625rem 0 0;
+}
+/* line 51, ../sass/main.scss */
+.help-links a {
+  text-decoration: underline;
+}
+
+/* line 55, ../sass/main.scss */
+#forgot-link {
+  font-size: 1.3rem;
+  padding: 0 1rem 0 0;
+}
+
+/* line 59, ../sass/main.scss */
+#signup-link {
+  font-size: 1.3rem;
+}
+
+/* Banner - the background img and Quick Meeting / schedule Meeting form */
+/* line 65, ../sass/main.scss */
+.banner {
+  background: transparent url("/img/secure-doxy_bg2.png") 0 0 no-repeat fixed;
+  text-align: center;
+  background-size: cover;
+  height: 600px;
+  width: 100%;
+  margin-bottom: 1em;
+  margin-top: 0;
+}
+
+/* line 74, ../sass/main.scss */
+.banner-col {
+  margin-left: 4.5rem;
+}
+
+/* line 77, ../sass/main.scss */
+.banner-head {
+  color: #fff;
+  font-size: 4rem;
+  line-height: 1.5;
+  margin: 0 0 5rem !important;
+  letter-spacing: 0.25rem;
+  font-weight: 500;
+}
+
+/* line 85, ../sass/main.scss */
+.banner-row {
+  margin-top: 8rem;
+}
+
+/*---index page styles---*/
+/* line 90, ../sass/main.scss */
+.introbox {
+  padding: 3rem 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  border-radius: 6px;
+  margin-left: 45px;
+}
+
+/* line 97, ../sass/main.scss */
+.introcol1 {
+  margin: 25px;
+  border-right: 1px #fff solid;
+}
+
+/* line 101, ../sass/main.scss */
+.introcol2 {
+  padding: 0 0.5rem;
+  font-size: 1.6rem;
+}
+
+/* line 105, ../sass/main.scss */
+.introcol2 > p {
+  text-align: left;
+  color: #fff;
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
+}
+
+/* line 113, ../sass/main.scss */
+#quickmeetingtext {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 200;
+  /*letter-spacing:0.1em;*/
+}
+
+/* line 119, ../sass/main.scss */
+.btn-quickmeet {
+  width: 100%;
+  color: #fff;
+  background-color: #759b2f;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  padding: 1.20rem 1.75rem;
+  font-size: 1.8rem;
+  transition: color 0.25s;
+}
+
+/* line 131, ../sass/main.scss */
+.btn-schedule {
+  width: 100%;
+  color: #000;
+  background-color: #eee;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.6rem;
+  letter-spacing: 0.05rem;
+  margin: 1rem 0;
+  transition: background-color 0.25s, color 0.25s;
+}
+/* line 141, ../sass/main.scss */
+.btn-schedule:hover {
+  background-color: #759b2f;
+  color: #fff;
+}
+
+/*Remove the 'Click here' part*/
+/* line 147, ../sass/main.scss */
+#meetingtext1 {
+  color: #666;
+  padding: 0;
+  margin: 0;
+  text-decoration: underline;
+  font-size: 1.4rem;
+  transition: color 0.25s;
+}
+/* line 154, ../sass/main.scss */
+#meetingtext1:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* marketing blocks */
+/* line 161, ../sass/main.scss */
+.m-block {
+  position: relative;
+  top: -11rem;
+  background-color: white;
+  margin: 1.5rem;
+  width: 30%;
+  padding: 4rem 2rem 0;
+  font-size: 1.7rem;
+}
+/* line 170, ../sass/main.scss */
+.m-block h2 {
+  font-size: 4rem;
+}
+
+/* line 175, ../sass/main.scss */
+.bigp {
+  text-align: left;
+}
+
+/* line 179, ../sass/main.scss */
+#promo {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin: 0 0 1.5rem;
+}
+
+/* line 187, ../sass/main.scss */
+#footer a {
+  padding: 0 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+/* line 192, ../sass/main.scss */
+#footer a:hover {
+  background-color: #ddd;
+  color: #444;
+}
+
+/* line 199, ../sass/main.scss */
+#copyright {
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+/*-- Dashbaord Styles yo --*/
+/*CHATBOX*/
+/* line 208, ../sass/main.scss */
+#hideShowMessages {
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  color: #777;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+}
+/* line 219, ../sass/main.scss */
+#hideShowMessages:hover {
+  background-color: #759b2f;
+  color: #fff;
+  border-color: #759b2f;
+}
+
+/* line 226, ../sass/main.scss */
+#chatbox {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  z-index: 1;
+  width: 18%;
+}
+
+/* line 233, ../sass/main.scss */
+#messages {
+  display: none;
+  overflow-y: scroll;
+  background: none repeat scroll 0 0 #F9F9F9;
+  border: 1px solid #ddd;
+  border-radius: 0px;
+  height: 40rem;
+  letter-spacing: .1rem;
+  margin-bottom: 0px;
+  padding: .5rem 1rem;
+  width: 100%;
+  color: #444;
+  font-weight: 300;
+}
+
+/* line 247, ../sass/main.scss */
+#chatinput {
+  background: none repeat scroll 0 0 #F9F9F9;
+  border: 1px solid #ddd;
+  border-radius: 0px;
+  height: 4rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0px;
+  padding: .5rem 1rem;
+  width: 100%;
+}
+
+/*SESSION*/
+/* DASHBOARD */
+/* Doctor View */
+/* line 265, ../sass/main.scss */
+.dash {
+  margin: -9.5rem 0 !important;
+  height: 100%;
+  padding-top: 7.6rem;
+}
+
+/* line 271, ../sass/main.scss */
+#rooms {
+  margin: 2rem 0 0;
+  background-color: #414042;
+  height: 100%;
+  padding: 2rem 0 0;
+}
+/* line 277, ../sass/main.scss */
+#rooms .row {
+  margin: 0;
+}
+
+/* line 281, ../sass/main.scss */
+.roomBox {
+  border-right: 1px solid #ddd;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  transition: background-color 0.5s;
+}
+/* line 287, ../sass/main.scss */
+.roomBox:hover {
+  background-color: #eee;
+}
+
+/* line 291, ../sass/main.scss */
+.drglyph {
+  top: 0px !important;
+  margin: 0 1rem 0 0 !important;
+  font-size: 2rem !important;
+}
+
+/* line 297, ../sass/main.scss */
+.room .roomname {
+  background-color: #759b2f;
+  width: 100%;
+  padding: 1rem 2rem;
+}
+/* line 302, ../sass/main.scss */
+.room h2 {
+  color: #231f20;
+  font-family: 'freight-sans-pro';
+  font-weight: 500;
+  display: inline;
+}
+/* line 308, ../sass/main.scss */
+.room h4 {
+  color: white;
+  font-family: 'freight-sans-pro';
+  font-weight: 300;
+  padding-bottom: .5rem;
+  margin: 2rem 0 0 2rem;
+}
+/* line 315, ../sass/main.scss */
+.room ul {
+  list-style: none;
+  margin: 2rem 0 0;
+  background-color: #58595b;
+  padding: 1rem 0 4.5rem;
+}
+/* line 321, ../sass/main.scss */
+.room ul .session {
+  margin: 0 2rem 1.5rem;
+}
+/* line 324, ../sass/main.scss */
+.room ul .session .name {
+  background-color: none;
+  color: white;
+  float: left;
+  padding: 1.5rem 0 1rem;
+  margin: 0;
+}
+/* line 332, ../sass/main.scss */
+.room ul .session img {
+  border-radius: 50%;
+  display: inline;
+  float: right;
+  margin: 0;
+}
+/* line 339, ../sass/main.scss */
+.room ul .session .chat-notification {
+  color: white;
+  float: right;
+  margin: 1rem 0 0 1rem;
+}
+/* line 349, ../sass/main.scss */
+.room ul .session .chat {
+  display: none;
+}
+/* line 353, ../sass/main.scss */
+.room ul .session .open {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: -500%;
+}
+/* line 359, ../sass/main.scss */
+.room ul .session .open .chat-box {
+  width: 282px;
+  border: 1px #58595b solid;
+}
+/* line 363, ../sass/main.scss */
+.room ul .session .open .chat-box .messages {
+  height: 200px;
+  background: #f5f5f5;
+  overflow-y: scroll;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+/* line 372, ../sass/main.scss */
+.room ul .session .open .chat-box .messages li p {
+  margin: 0;
+  padding: 5px;
+  color: #58595b;
+}
+/* line 379, ../sass/main.scss */
+.room ul .session .open .chat-box .messages .patient {
+  background-color: #ddd;
+  text-align: right;
+}
+/* line 384, ../sass/main.scss */
+.room ul .session .open .chat-box .messages .doctor {
+  background-color: #bbb;
+  text-align: left;
+}
+/* line 392, ../sass/main.scss */
+.room ul .session .open .chat-box .message-entry button {
+  padding: 1rem 1rem 1rem 0;
+  border: none;
+  background-color: transparent;
+  color: #759b2f;
+  float: right;
+}
+/* line 399, ../sass/main.scss */
+.room ul .session .open .chat-box .message-entry input {
+  padding: 1rem 0 1rem 1rem;
+  width: 80%;
+  border: none;
+  background: transparent;
+  color: #444;
+  cursor: text;
+  -webkit-appearance: none;
+}
+/* line 407, ../sass/main.scss */
+.room ul .session .open .chat-box .message-entry input:focus {
+  border: none;
+}
+
+/*--- Begin Meeting Prompt Arrow styles ---*/
+@keyframes arrow {
+  /* line 421, ../sass/main.scss */
+  0% {
+    top: 0;
+  }
+
+  /* line 422, ../sass/main.scss */
+  50% {
+    top: 10px;
+  }
+
+  /* line 423, ../sass/main.scss */
+  100% {
+    top: 0;
+  }
+}
+
+@-webkit-keyframes arrow {
+  /* line 426, ../sass/main.scss */
+  0% {
+    top: 0;
+  }
+
+  /* line 427, ../sass/main.scss */
+  50% {
+    top: 10px;
+  }
+
+  /* line 428, ../sass/main.scss */
+  100% {
+    top: 0;
+  }
+}
+
+/* line 430, ../sass/main.scss */
+#promptArrow {
+  margin: 0 auto;
+  position: absolute;
+  animation: arrow 0.75s ease 1s infinite;
+  -webkit-animation: arrow 0.75s ease 1s infinite;
+  top: 0;
+  right: 0;
+  width: 140px;
+  z-index: 1100000001;
+}
+
+/* line 440, ../sass/main.scss */
+.promptContainer {
+  background: none;
+  width: 70px;
+  height: 70px;
+  margin: 0 35px !important;
+}
+/* line 446, ../sass/main.scss */
+.promptContainer p {
+  text-align: center;
+  margin: 0 0 0 20px;
+  padding: 10px 0;
+  background-color: #fff;
+  border-radius: .25em;
+}
+
+/* line 454, ../sass/main.scss */
+.triangle {
+  background: none;
+  width: 0;
+  height: 0;
+  border-bottom: 60px solid #759b2f;
+  border-left: 34px solid transparent;
+  border-right: 34px solid transparent;
+  display: block;
+  margin: 0 0 0 45px;
+}
+
+/* line 464, ../sass/main.scss */
+.box {
+  width: 35px;
+  height: 55px;
+  background: #759b2f;
+  display: block;
+  margin: -25px 62px 0;
+}
+
+/*NEW STUFF*/
+/*The biggest and badest stylesheet uyou have ever seen for Doxy.me*/
+/* line 488, ../sass/main.scss */
+#messages {
+  overflow: scroll;
+  background: none repeat scroll 0 0 #F9F9F9;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px 5px 0px 0px;
+  font: 300 18px/40px 'light','Helvetica Neue',Arial,Helvetica,sans-serif;
+  height: 400px;
+  letter-spacing: 1px;
+  margin-bottom: 0px;
+  padding: 5px 10px;
+  width: 255px;
+}
+
+/* line 501, ../sass/main.scss */
+span.chat-notification {
+  font-size: 25px;
+  margin-left: 5px;
+  color: black;
+}
+
+/* line 509, ../sass/main.scss */
+#dashboard {
+  height: 100px;
+  width: 100px;
+}
+
+/* line 514, ../sass/main.scss */
+#myPublisherDiv {
+  position: absolute;
+  top: 50px;
+  right: 0px;
+}
+
+/* line 521, ../sass/main.scss */
+#theirPublisherDiv .patient-video {
+  position: absolute;
+  top: 50px;
+  width: 500px;
+  height: 500px;
+}
+/* line 528, ../sass/main.scss */
+#theirPublisherDiv .patient-video.invisible {
+  left: -999999px;
+}
