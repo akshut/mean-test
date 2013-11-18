@@ -23,12 +23,27 @@ block content
     .col-lg-8
       form
         .errors
-        textarea.js-st-instance
+          textarea.js-st-instance(name="content")
+            //- Had to add name attribute to see in Post
+        button.submit(action='submit') Submit
+        //- Had to add Submit button
   #myPublisherDiv
   #theirPublisherDiv
   #active-chat
 
   script.
+    // Do I want to wrap this in a Self Closing Function?
     SirTrevor.DEBUG = true
-    new SirTrevor.Editor({ el: $('.js-st-instance'), blockTypes: ["Text", "Image", "Video"] })
- 
+    new SirTrevor.Editor({
+      el: $('.js-st-instance'), // The name of the instance
+      blockTypes: ["Text", "Image", "Video"], // What types are available to choose from
+      defaultType: "Text", // When the user opens something can be selected
+      required: ["Text"] // Make the Text field Required
+    })
+    SirTrevor.setDefaults({
+      uploadUrl: "/images" // Change the default upload URL
+    })
+    $('form').bind('submit', function(){
+      console.log(SirTrevor.instances[0].$el.val()) // This is the data. It will be captured in JSON format
+      return false; // This stops the form from being submitted
+    });
