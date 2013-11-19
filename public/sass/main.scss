@@ -392,6 +392,19 @@
     font-weight:500;
     display: inline;    
   }
+  .dash-arrow {
+    height:0;
+    width:0;
+    border-width: 1.8rem;
+    border-style:solid;
+    border-right-color:white;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    position:absolute;
+    top:4rem;
+    right:0;
+  }
   h4 {
     color:white;
     font-family:'freight-sans-pro';
