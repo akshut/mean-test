@@ -1,9 +1,12 @@
 extends ../layout
 
 block content
-  .col-lg-4.col-lg-offset-4
-        h1.logintitle.text-center Sign In
-        form.signin.form-horizontal(action="/i/signin", method="post")
+  .col-lg-4.col-lg-offset-4.tk-freight-sans-pro
+        #signin-logo
+          a(href='/')
+            img(src='/img/doxyme-logo-blk.png', alt='Doxy.me')
+        h1.logintitle.text-center.tk-freight-sans-pro Sign In
+        form.signin.form-horizontal.tk-freight-sans-pro(action="/i/signin", method="post")
           p.error= message
           input(type='hidden', name='_csrf', value=csrf_token)
           .form-group
@@ -21,5 +24,8 @@ block content
               p Remember Me
 
           button.btn.btn-signin(type='submit') Sign In
+
+          #forgot-password
+            a(href='#') Forgot Password?
           //- &nbsp;
           //- | or&nbsp;

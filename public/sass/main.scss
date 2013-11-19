@@ -278,6 +278,66 @@
 }
 
 
+/* SIGNIN */
+
+#signin-logo {
+  margin-top:4rem;
+  text-align:center;
+
+  img {
+    max-width:300px;
+  }
+}
+.logintitle {
+  font-weight:100;
+  text-transform:uppercase;
+  margin-top:4rem;
+}
+.signin {
+  margin-top:2rem;
+
+  label {
+    font-weight:200;
+    text-align:left;
+    display:none;
+  }
+
+  input {
+    padding:2.5rem;
+    /*border-radius:0;*/
+    margin-bottom:1rem;
+  }
+
+  #forgot-password {
+    text-decoration:underline;
+    font-size:1.6rem;
+    margin-top:1.5rem;
+    text-align:center;
+
+    a {
+      color:$green;
+      &:hover {
+        color:#414042;
+      }
+    }
+  }
+
+  p {
+    /*text-transform:uppercase;*/
+    font-size:1.8rem;
+    font-weight:100;
+    margin-top:-.35rem;
+  }
+
+  button {
+    width:100%;
+    /*border-radius: 0;*/
+    padding:1.5rem;
+    text-transform:uppercase;
+    margin-top:3rem;
+  }
+}
+
 
 /* DASHBOARD */
 
@@ -602,6 +662,10 @@
   background-color:#414042;
   height:100%;
   color:#fff;
+
+  ul {
+    list-style:none;
+  }
 }
 
 /*--- Begin Meeting Prompt Arrow styles ---*/
