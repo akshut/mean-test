@@ -277,7 +277,6 @@
   width: 100%;
 }
 
-/*SESSION*/
 
 
 /* DASHBOARD */
@@ -488,6 +487,122 @@
   }
 }
 
+/* ROOMS */
+
+/* Patient View */
+
+#video {
+  height:100%;
+
+  .name {
+    padding:.5rem;
+    border:1px solid #ccc;
+
+  }
+
+  .sendName {
+    padding:1rem 1rem 1rem 0;
+    border:none;
+    background-color:transparent;
+    color:$green;
+    float:right;
+  }
+  
+  .chat {
+        display:none;
+      }
+
+  .open {
+    display:block;
+    position:absolute;
+    bottom:0;
+    right:0;
+    transition: all ease-in;
+
+    .chat-box {
+      width: 240px;
+      border-top:1rem #ccc solid;
+      border-left:1px #ccc solid;
+
+      .messages {
+        height: 300px;
+        background: #f5f5f5;
+        overflow-y: scroll;
+        padding: .5rem 0 0;
+        margin: 0;
+        list-style: none;
+
+        li {
+          margin: 0;
+          padding: .5rem .8rem .2rem;
+          /*color:#58595b;*/  
+        }
+
+        .patient {
+          /*background-color: #fff;*/
+          text-align: right;
+          color:#58595b;
+        }
+
+        .doctor {
+          /*background-color: #bbb;*/
+          text-align: left;
+          color:$green;
+        }
+      }
+
+      .message-entry {
+        border-top:1px solid #ccc;
+
+        button {
+          padding:1rem 1rem 1rem 0;
+          border:none;
+          background-color:transparent;
+          color:$green;
+          float:right;
+          display:none;
+        }
+        input {
+          padding:1rem 0 1rem 1rem;
+          width:80%;
+          border:none;
+          background:transparent;
+          color:#444;
+          cursor:text;
+          -webkit-appearance:none;
+          &:focus {
+            border:none;
+            box-shadow:none;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            outline: none;
+          }
+        }
+        ::-webkit-input-placeholder {
+          color: #999;
+        }
+
+        :-moz-placeholder { /* Firefox 18- */
+          color: #999;  
+        }
+
+        ::-moz-placeholder {  /* Firefox 19+ */
+          color: #999;  
+        }
+
+        :-ms-input-placeholder {  
+          color: #999;  
+        }
+      }
+    }
+  }
+}
+
+.nav-help {
+  background-color:#414042;
+  height:100%;
+  color:#fff;
+}
 
 /*--- Begin Meeting Prompt Arrow styles ---*/
 @keyframes arrow {
