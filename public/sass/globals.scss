@@ -2,6 +2,7 @@
 
 $green: #759b2f;
 
+
 html {
   height:100%;
 }
@@ -14,8 +15,12 @@ a {
   text-decoration:none;
   transition:background-color 0.35s;
   -webkit-transition:background-color 0.35s;
-}
-a:hover {
-  color: #262523;
-  text-decoration:none;
+  &:hover {
+    color: #262523;
+    text-decoration:none;
+  }
+  &:focus {
+    color: #262523;
+    text-decoration:none;
+  }
 }

@@ -16,9 +16,31 @@
 .navbar-form {
   margin-top:0!important;
 }
+.nav {
+  .open {
+    a {
+      border-color:$green!important;
+      &:focus {
+        border-color:$green!important;
+      }
+    }
+  }
+}
 .caret {
   border-top-color:$green!important;
   border-bottom-color:$green!important;
+}
+.dropdown-menu {
+  border-radius:0;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+
+  a {
+    &:hover {
+      color:$green!important;
+      background-color:transparent!important;
+    }
+  }
 }
 .btn-signin {
   background:transparent;
@@ -318,11 +340,12 @@
     padding-bottom:.5rem;
     margin:2rem 0 0 2rem;
     display:inline-block;
+    letter-spacing: .1rem;
   }
   #waitingchev {
     display:inline;
     color:white;
-    margin:0 0 0 7rem;
+    margin:0 0 0 5.5rem;
   }
   ul {
     list-style: none;
@@ -334,11 +357,13 @@
       margin: 0 2rem 1.5rem;
 
       .name {
-        background-color:none;
+        background-color:transparent;
         color:white;
         float:left;
         padding:1.5rem 0 1rem;
         margin:0;
+        font-weight:200;
+        letter-spacing: .2rem;
       }
 
       img {
@@ -346,6 +371,14 @@
         display:inline;
         float:right;
         margin:0;
+        transition:all 0.25s;
+        -webkit-transition:all 0.25s;
+        &:hover {
+          cursor:pointer;
+          transform: scale(1.25);
+          -ms-transform: scale(1.25);
+          -webkit-transform: scale(1.25);
+        }
       }
 
       .chat-notification {
@@ -354,7 +387,7 @@
         margin:1rem 0 0 1rem;
         &:hover {
           cursor:pointer;
-          color:#ddd;
+          color:#ccc;
         }
 
         .fa-comment-o {
@@ -371,14 +404,15 @@
         position:absolute;
         bottom:0;
         right:-500%;
+        transition: all ease-in;
 
         .chat-box {
-          width: 282px;
+          width: 240px;
           border-top:1rem #ccc solid;
           border-left:1px #ccc solid;
 
           .messages {
-            height: 200px;
+            height: 300px;
             background: #f5f5f5;
             overflow-y: scroll;
             padding: .5rem 0 0;
@@ -406,6 +440,7 @@
           }
 
           .message-entry {
+            border-top:1px solid #ccc;
 
             button {
               padding:1rem 1rem 1rem 0;
@@ -413,6 +448,7 @@
               background-color:transparent;
               color:$green;
               float:right;
+              display:none;
             }
             input {
               padding:1rem 0 1rem 1rem;
@@ -427,7 +463,23 @@
                 box-shadow:none;
                 -webkit-box-shadow: none;
                 -moz-box-shadow: none;
+                outline: none;
               }
+            }
+            ::-webkit-input-placeholder {
+              color: #999;
+            }
+
+            :-moz-placeholder { /* Firefox 18- */
+              color: #999;  
+            }
+
+            ::-moz-placeholder {  /* Firefox 19+ */
+              color: #999;  
+            }
+
+            :-ms-input-placeholder {  
+              color: #999;  
             }
           }
         }

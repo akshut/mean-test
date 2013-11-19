@@ -6,7 +6,7 @@ mixin chat(type, session)
       li.patient
         p Everything hurts.
     .message-entry
-      input.entry(type="text")
+      input.entry(type="text", placeholder="Send a message...")
       button.send Send
     //- Kind of hack, store the chat session for later
     - window.chatSessions = window.chatSessions || {}

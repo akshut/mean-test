@@ -1,1 +1,28 @@
-html{height:100%}body{height:100%}a{color:#262523;text-decoration:none;transition:background-color 0.35s;-webkit-transition:background-color 0.35s}a:hover{color:#262523;text-decoration:none}
+/* GLOBALS */
+/* line 6, ../sass/globals.scss */
+html {
+  height: 100%;
+}
+
+/* line 9, ../sass/globals.scss */
+body {
+  height: 100%;
+}
+
+/* line 13, ../sass/globals.scss */
+a {
+  color: #262523;
+  text-decoration: none;
+  transition: background-color 0.35s;
+  -webkit-transition: background-color 0.35s;
+}
+/* line 18, ../sass/globals.scss */
+a:hover {
+  color: #262523;
+  text-decoration: none;
+}
+/* line 22, ../sass/globals.scss */
+a:focus {
+  color: #262523;
+  text-decoration: none;
+}

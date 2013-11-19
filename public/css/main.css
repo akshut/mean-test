@@ -1,26 +1,30 @@
 /*-- THE BIG CHEESE --*/
 /* _globals.scss */
 /* GLOBALS */
-/* line 5, ../sass/globals.scss */
+/* line 6, ../sass/globals.scss */
 html {
   height: 100%;
 }
 
-/* line 8, ../sass/globals.scss */
+/* line 9, ../sass/globals.scss */
 body {
   height: 100%;
 }
 
-/* line 12, ../sass/globals.scss */
+/* line 13, ../sass/globals.scss */
 a {
   color: #262523;
   text-decoration: none;
   transition: background-color 0.35s;
   -webkit-transition: background-color 0.35s;
 }
-
 /* line 18, ../sass/globals.scss */
 a:hover {
+  color: #262523;
+  text-decoration: none;
+}
+/* line 22, ../sass/globals.scss */
+a:focus {
   color: #262523;
   text-decoration: none;
 }
@@ -44,13 +48,34 @@ a:hover {
   margin-top: 0 !important;
 }
 
-/* line 19, ../sass/main.scss */
+/* line 21, ../sass/main.scss */
+.nav .open a {
+  border-color: #759b2f !important;
+}
+/* line 23, ../sass/main.scss */
+.nav .open a:focus {
+  border-color: #759b2f !important;
+}
+
+/* line 29, ../sass/main.scss */
 .caret {
   border-top-color: #759b2f !important;
   border-bottom-color: #759b2f !important;
 }
 
-/* line 23, ../sass/main.scss */
+/* line 33, ../sass/main.scss */
+.dropdown-menu {
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+/* line 39, ../sass/main.scss */
+.dropdown-menu a:hover {
+  color: #759b2f !important;
+  background-color: transparent !important;
+}
+
+/* line 45, ../sass/main.scss */
 .btn-signin {
   background: transparent;
   border: 1px solid #759b2f;
@@ -60,13 +85,13 @@ a:hover {
   font-size: 1.6rem;
 }
 
-/* line 31, ../sass/main.scss */
+/* line 53, ../sass/main.scss */
 .btn-signin:hover {
   background-color: #759b2f;
   color: #fff;
 }
 
-/* line 35, ../sass/main.scss */
+/* line 57, ../sass/main.scss */
 .form-control {
   box-shadow: none;
   -webkit-box-shadow: none;
@@ -75,36 +100,36 @@ a:hover {
   font-size: 1.6rem;
 }
 
-/* line 42, ../sass/main.scss */
+/* line 64, ../sass/main.scss */
 .form-group {
   margin: 0 0.5rem 0 0;
 }
 
 /* NAVBAR MUTHA FUCKA */
 /*Add these ids and adjust the html around them*/
-/* line 47, ../sass/main.scss */
+/* line 69, ../sass/main.scss */
 .help-links {
   float: right !important;
   padding: 0 0.625rem 0 0;
 }
-/* line 51, ../sass/main.scss */
+/* line 73, ../sass/main.scss */
 .help-links a {
   text-decoration: underline;
 }
 
-/* line 55, ../sass/main.scss */
+/* line 77, ../sass/main.scss */
 #forgot-link {
   font-size: 1.3rem;
   padding: 0 1rem 0 0;
 }
 
-/* line 59, ../sass/main.scss */
+/* line 81, ../sass/main.scss */
 #signup-link {
   font-size: 1.3rem;
 }
 
 /* Banner - the background img and Quick Meeting / schedule Meeting form */
-/* line 65, ../sass/main.scss */
+/* line 87, ../sass/main.scss */
 .banner {
   background: transparent url("/img/secure-doxy_bg2.png") 0 0 no-repeat fixed;
   text-align: center;
@@ -115,12 +140,12 @@ a:hover {
   margin-top: 0;
 }
 
-/* line 74, ../sass/main.scss */
+/* line 96, ../sass/main.scss */
 .banner-col {
   margin-left: 4.5rem;
 }
 
-/* line 77, ../sass/main.scss */
+/* line 99, ../sass/main.scss */
 .banner-head {
   color: #fff;
   font-size: 4rem;
@@ -130,13 +155,13 @@ a:hover {
   font-weight: 500;
 }
 
-/* line 85, ../sass/main.scss */
+/* line 107, ../sass/main.scss */
 .banner-row {
   margin-top: 8rem;
 }
 
 /*---index page styles---*/
-/* line 90, ../sass/main.scss */
+/* line 112, ../sass/main.scss */
 .introbox {
   padding: 3rem 1rem;
   background-color: rgba(255, 255, 255, 0.2);
@@ -145,19 +170,19 @@ a:hover {
   margin-left: 45px;
 }
 
-/* line 97, ../sass/main.scss */
+/* line 119, ../sass/main.scss */
 .introcol1 {
   margin: 25px;
   border-right: 1px #fff solid;
 }
 
-/* line 101, ../sass/main.scss */
+/* line 123, ../sass/main.scss */
 .introcol2 {
   padding: 0 0.5rem;
   font-size: 1.6rem;
 }
 
-/* line 105, ../sass/main.scss */
+/* line 127, ../sass/main.scss */
 .introcol2 > p {
   text-align: left;
   color: #fff;
@@ -167,7 +192,7 @@ a:hover {
   visibility: hidden;
 }
 
-/* line 113, ../sass/main.scss */
+/* line 135, ../sass/main.scss */
 #quickmeetingtext {
   color: #fff;
   font-size: 2rem;
@@ -175,7 +200,7 @@ a:hover {
   /*letter-spacing:0.1em;*/
 }
 
-/* line 119, ../sass/main.scss */
+/* line 141, ../sass/main.scss */
 .btn-quickmeet {
   width: 100%;
   color: #fff;
@@ -188,7 +213,7 @@ a:hover {
   transition: color 0.25s;
 }
 
-/* line 131, ../sass/main.scss */
+/* line 153, ../sass/main.scss */
 .btn-schedule {
   width: 100%;
   color: #000;
@@ -200,14 +225,14 @@ a:hover {
   margin: 1rem 0;
   transition: background-color 0.25s, color 0.25s;
 }
-/* line 141, ../sass/main.scss */
+/* line 163, ../sass/main.scss */
 .btn-schedule:hover {
   background-color: #759b2f;
   color: #fff;
 }
 
 /*Remove the 'Click here' part*/
-/* line 147, ../sass/main.scss */
+/* line 169, ../sass/main.scss */
 #meetingtext1 {
   color: #666;
   padding: 0;
@@ -216,14 +241,14 @@ a:hover {
   font-size: 1.4rem;
   transition: color 0.25s;
 }
-/* line 154, ../sass/main.scss */
+/* line 176, ../sass/main.scss */
 #meetingtext1:hover {
   color: #fff;
   text-decoration: none;
 }
 
 /* marketing blocks */
-/* line 161, ../sass/main.scss */
+/* line 183, ../sass/main.scss */
 .m-block {
   position: relative;
   top: -11rem;
@@ -233,17 +258,17 @@ a:hover {
   padding: 4rem 2rem 0;
   font-size: 1.7rem;
 }
-/* line 170, ../sass/main.scss */
+/* line 192, ../sass/main.scss */
 .m-block h2 {
   font-size: 4rem;
 }
 
-/* line 175, ../sass/main.scss */
+/* line 197, ../sass/main.scss */
 .bigp {
   text-align: left;
 }
 
-/* line 179, ../sass/main.scss */
+/* line 201, ../sass/main.scss */
 #promo {
   text-transform: uppercase;
   font-size: 2.5rem;
@@ -251,20 +276,20 @@ a:hover {
   margin: 0 0 1.5rem;
 }
 
-/* line 187, ../sass/main.scss */
+/* line 209, ../sass/main.scss */
 #footer a {
   padding: 0 1rem;
   font-weight: 300;
   text-transform: uppercase;
   font-size: 2rem;
 }
-/* line 192, ../sass/main.scss */
+/* line 214, ../sass/main.scss */
 #footer a:hover {
   background-color: #ddd;
   color: #444;
 }
 
-/* line 199, ../sass/main.scss */
+/* line 221, ../sass/main.scss */
 #copyright {
   font-weight: 300;
   font-size: 2rem;
@@ -272,7 +297,7 @@ a:hover {
 
 /*-- Dashbaord Styles yo --*/
 /*CHATBOX*/
-/* line 208, ../sass/main.scss */
+/* line 230, ../sass/main.scss */
 #hideShowMessages {
   background-color: #ddd;
   border: 1px solid #ccc;
@@ -285,14 +310,14 @@ a:hover {
   cursor: pointer;
   transition: background-color 0.25s, color 0.25s, border-color 0.25s;
 }
-/* line 219, ../sass/main.scss */
+/* line 241, ../sass/main.scss */
 #hideShowMessages:hover {
   background-color: #759b2f;
   color: #fff;
   border-color: #759b2f;
 }
 
-/* line 226, ../sass/main.scss */
+/* line 248, ../sass/main.scss */
 #chatbox {
   position: fixed;
   right: 0px;
@@ -301,7 +326,7 @@ a:hover {
   width: 18%;
 }
 
-/* line 233, ../sass/main.scss */
+/* line 255, ../sass/main.scss */
 #messages {
   display: none;
   overflow-y: scroll;
@@ -317,7 +342,7 @@ a:hover {
   font-weight: 300;
 }
 
-/* line 247, ../sass/main.scss */
+/* line 269, ../sass/main.scss */
 #chatinput {
   background: none repeat scroll 0 0 #F9F9F9;
   border: 1px solid #ddd;
@@ -332,31 +357,31 @@ a:hover {
 /*SESSION*/
 /* DASHBOARD */
 /* Doctor View */
-/* line 265, ../sass/main.scss */
+/* line 287, ../sass/main.scss */
 .dash {
   margin: -9.5rem 0 !important;
   height: 100%;
   padding-top: 7.6rem;
 }
 
-/* line 270, ../sass/main.scss */
+/* line 292, ../sass/main.scss */
 .droptop {
   margin: 2rem 0 0;
 }
 
-/* line 273, ../sass/main.scss */
+/* line 295, ../sass/main.scss */
 #rooms {
   /*margin:2rem 0 0;*/
   background-color: #414042;
   height: 100%;
   padding: 2rem 0 0;
 }
-/* line 279, ../sass/main.scss */
+/* line 301, ../sass/main.scss */
 #rooms .row {
   margin: 0;
 }
 
-/* line 283, ../sass/main.scss */
+/* line 305, ../sass/main.scss */
 .roomBox {
   border-right: 1px solid #ddd;
   text-align: center;
@@ -364,37 +389,37 @@ a:hover {
   padding-bottom: 1rem;
   transition: background-color 0.5s;
 }
-/* line 289, ../sass/main.scss */
+/* line 311, ../sass/main.scss */
 .roomBox:hover {
   background-color: #eee;
 }
 
-/* line 293, ../sass/main.scss */
+/* line 315, ../sass/main.scss */
 .drglyph {
   top: 0px !important;
   margin: 0 2rem 0 0 !important;
   font-size: 2rem !important;
 }
 
-/* line 299, ../sass/main.scss */
+/* line 321, ../sass/main.scss */
 .room .roomname {
   background-color: #759b2f;
   width: 100%;
   padding: 2rem;
 }
-/* line 304, ../sass/main.scss */
+/* line 326, ../sass/main.scss */
 .room #dricon {
   font-size: 2.3rem;
   margin: 0 1rem 0 0;
 }
-/* line 308, ../sass/main.scss */
+/* line 330, ../sass/main.scss */
 .room h2 {
   color: #231f20;
   font-family: 'freight-sans-pro';
   font-weight: 500;
   display: inline;
 }
-/* line 314, ../sass/main.scss */
+/* line 336, ../sass/main.scss */
 .room h4 {
   color: white;
   font-family: 'freight-sans-pro';
@@ -402,103 +427,121 @@ a:hover {
   padding-bottom: .5rem;
   margin: 2rem 0 0 2rem;
   display: inline-block;
+  letter-spacing: .1rem;
 }
-/* line 322, ../sass/main.scss */
+/* line 345, ../sass/main.scss */
 .room #waitingchev {
   display: inline;
   color: white;
-  margin: 0 0 0 7rem;
+  margin: 0 0 0 5.5rem;
 }
-/* line 327, ../sass/main.scss */
+/* line 350, ../sass/main.scss */
 .room ul {
   list-style: none;
   margin: 2rem 0 0;
   background-color: #58595b;
   padding: 1rem 0 4.5rem;
 }
-/* line 333, ../sass/main.scss */
+/* line 356, ../sass/main.scss */
 .room ul .session {
   margin: 0 2rem 1.5rem;
 }
-/* line 336, ../sass/main.scss */
+/* line 359, ../sass/main.scss */
 .room ul .session .name {
-  background-color: none;
+  background-color: transparent;
   color: white;
   float: left;
   padding: 1.5rem 0 1rem;
   margin: 0;
+  font-weight: 200;
+  letter-spacing: .2rem;
 }
-/* line 344, ../sass/main.scss */
+/* line 369, ../sass/main.scss */
 .room ul .session img {
   border-radius: 50%;
   display: inline;
   float: right;
   margin: 0;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
 }
-/* line 351, ../sass/main.scss */
+/* line 376, ../sass/main.scss */
+.room ul .session img:hover {
+  cursor: pointer;
+  transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  -webkit-transform: scale(1.25);
+}
+/* line 384, ../sass/main.scss */
 .room ul .session .chat-notification {
   color: white;
   float: right;
   margin: 1rem 0 0 1rem;
 }
-/* line 355, ../sass/main.scss */
+/* line 388, ../sass/main.scss */
 .room ul .session .chat-notification:hover {
   cursor: pointer;
-  color: #ddd;
+  color: #ccc;
 }
-/* line 365, ../sass/main.scss */
+/* line 398, ../sass/main.scss */
 .room ul .session .chat {
   display: none;
 }
-/* line 369, ../sass/main.scss */
+/* line 402, ../sass/main.scss */
 .room ul .session .open {
   display: block;
   position: absolute;
   bottom: 0;
   right: -500%;
+  transition: all ease-in;
 }
-/* line 375, ../sass/main.scss */
+/* line 409, ../sass/main.scss */
 .room ul .session .open .chat-box {
-  width: 282px;
+  width: 240px;
   border-top: 1rem #ccc solid;
   border-left: 1px #ccc solid;
 }
-/* line 380, ../sass/main.scss */
+/* line 414, ../sass/main.scss */
 .room ul .session .open .chat-box .messages {
-  height: 200px;
+  height: 300px;
   background: #f5f5f5;
   overflow-y: scroll;
   padding: .5rem 0 0;
   margin: 0;
   list-style: none;
 }
-/* line 388, ../sass/main.scss */
+/* line 422, ../sass/main.scss */
 .room ul .session .open .chat-box .messages li {
   margin: 0;
   padding: .5rem .8rem .2rem;
   /*color:#58595b;*/
 }
-/* line 395, ../sass/main.scss */
+/* line 429, ../sass/main.scss */
 .room ul .session .open .chat-box .messages .patient {
   /*background-color: #fff;*/
   text-align: right;
   color: #58595b;
 }
-/* line 401, ../sass/main.scss */
+/* line 435, ../sass/main.scss */
 .room ul .session .open .chat-box .messages .doctor {
   /*background-color: #bbb;*/
   text-align: left;
   color: #759b2f;
 }
-/* line 410, ../sass/main.scss */
+/* line 442, ../sass/main.scss */
+.room ul .session .open .chat-box .message-entry {
+  border-top: 1px solid #ccc;
+}
+/* line 445, ../sass/main.scss */
 .room ul .session .open .chat-box .message-entry button {
   padding: 1rem 1rem 1rem 0;
   border: none;
   background-color: transparent;
   color: #759b2f;
   float: right;
+  display: none;
 }
-/* line 417, ../sass/main.scss */
+/* line 453, ../sass/main.scss */
 .room ul .session .open .chat-box .message-entry input {
   padding: 1rem 0 1rem 1rem;
   width: 80%;
@@ -508,50 +551,69 @@ a:hover {
   cursor: text;
   -webkit-appearance: none;
 }
-/* line 425, ../sass/main.scss */
+/* line 461, ../sass/main.scss */
 .room ul .session .open .chat-box .message-entry input:focus {
   border: none;
   box-shadow: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
+  outline: none;
+}
+/* line 469, ../sass/main.scss */
+.room ul .session .open .chat-box .message-entry ::-webkit-input-placeholder {
+  color: #999;
+}
+/* line 473, ../sass/main.scss */
+.room ul .session .open .chat-box .message-entry :-moz-placeholder {
+  /* Firefox 18- */
+  color: #999;
+}
+/* line 477, ../sass/main.scss */
+.room ul .session .open .chat-box .message-entry ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #999;
+}
+/* line 481, ../sass/main.scss */
+.room ul .session .open .chat-box .message-entry :-ms-input-placeholder {
+  color: #999;
 }
 
 /*--- Begin Meeting Prompt Arrow styles ---*/
 @keyframes arrow {
-  /* line 442, ../sass/main.scss */
+  /* line 494, ../sass/main.scss */
   0% {
     top: 0;
   }
 
-  /* line 443, ../sass/main.scss */
+  /* line 495, ../sass/main.scss */
   50% {
     top: 10px;
   }
 
-  /* line 444, ../sass/main.scss */
+  /* line 496, ../sass/main.scss */
   100% {
     top: 0;
   }
 }
 
 @-webkit-keyframes arrow {
-  /* line 447, ../sass/main.scss */
+  /* line 499, ../sass/main.scss */
   0% {
     top: 0;
   }
 
-  /* line 448, ../sass/main.scss */
+  /* line 500, ../sass/main.scss */
   50% {
     top: 10px;
   }
 
-  /* line 449, ../sass/main.scss */
+  /* line 501, ../sass/main.scss */
   100% {
     top: 0;
   }
 }
 
-/* line 451, ../sass/main.scss */
+/* line 503, ../sass/main.scss */
 #promptArrow {
   margin: 0 auto;
   position: absolute;
@@ -563,14 +625,14 @@ a:hover {
   z-index: 1100000001;
 }
 
-/* line 461, ../sass/main.scss */
+/* line 513, ../sass/main.scss */
 .promptContainer {
   background: none;
   width: 70px;
   height: 70px;
   margin: 0 35px !important;
 }
-/* line 467, ../sass/main.scss */
+/* line 519, ../sass/main.scss */
 .promptContainer p {
   text-align: center;
   margin: 0 0 0 20px;
@@ -579,7 +641,7 @@ a:hover {
   border-radius: .25em;
 }
 
-/* line 475, ../sass/main.scss */
+/* line 527, ../sass/main.scss */
 .triangle {
   background: none;
   width: 0;
@@ -591,7 +653,7 @@ a:hover {
   margin: 0 0 0 45px;
 }
 
-/* line 485, ../sass/main.scss */
+/* line 537, ../sass/main.scss */
 .box {
   width: 35px;
   height: 55px;
@@ -602,7 +664,7 @@ a:hover {
 
 /*NEW STUFF*/
 /*The biggest and badest stylesheet uyou have ever seen for Doxy.me*/
-/* line 509, ../sass/main.scss */
+/* line 561, ../sass/main.scss */
 #messages {
   overflow: scroll;
   background: none repeat scroll 0 0 #F9F9F9;
@@ -616,38 +678,38 @@ a:hover {
   width: 255px;
 }
 
-/* line 522, ../sass/main.scss */
+/* line 574, ../sass/main.scss */
 span.chat-notification {
   font-size: 25px;
   /*margin-left: 5px;*/
   /*color: black;*/
 }
 
-/* line 530, ../sass/main.scss */
+/* line 582, ../sass/main.scss */
 #dashboard {
   height: 100px;
   width: 100px;
 }
 
-/* line 535, ../sass/main.scss */
+/* line 587, ../sass/main.scss */
 #myPublisherDiv {
   position: absolute;
   top: 7.6rem;
   right: 0rem;
 }
-/* line 540, ../sass/main.scss */
+/* line 592, ../sass/main.scss */
 #myPublisherDiv .OT_publisher {
   border: .3rem solid #ddd;
 }
 
-/* line 546, ../sass/main.scss */
+/* line 598, ../sass/main.scss */
 #theirPublisherDiv .patient-video {
   position: absolute;
   top: 7.6rem;
   width: 50rem;
   height: 50rem;
 }
-/* line 553, ../sass/main.scss */
+/* line 605, ../sass/main.scss */
 #theirPublisherDiv .patient-video.invisible {
   left: -999999px;
 }
