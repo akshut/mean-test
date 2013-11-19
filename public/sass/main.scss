@@ -421,28 +421,35 @@
   }
   ul {
     list-style: none;
-    margin: 2rem 0 0;
-    background-color:#58595b;
-    padding:1rem 0 4.5rem;
+    margin: 2rem 0 0 -4rem;
+    /*background-color:#58595b;*/
+    /*padding:1rem 0 4.5rem;*/
     
     .session {
-      margin: 0 2rem 1.5rem;
+      margin: 0 0 1.5rem;
+      background-color:#58595b;
+      padding: 1rem 2rem;
+      width:100%;
+      &:hover {
+        background-color:#ccc;
+      }
 
       .name {
         background-color:transparent;
         color:white;
-        float:left;
-        padding:1.5rem 0 1rem;
+        /*float:left;*/
+        /*padding:1.5rem 0 1rem;*/
         margin:0;
         font-weight:200;
         letter-spacing: .2rem;
+        display: inline-block;
       }
 
       img {
         border-radius: 50%;
-        display:inline;
-        float:right;
-        margin:0;
+        display:inline-block;
+        /*float:right;*/
+        margin:0 0 0 .9rem;
         transition:all 0.25s;
         -webkit-transition:all 0.25s;
         &:hover {
@@ -455,8 +462,10 @@
 
       .chat-notification {
         color:white;
-        float:right;
-        margin:1rem 0 0 1rem;
+        /*float:right;*/
+        margin:0 0 0 6rem;
+        padding:0;
+        display: inline-block;
         &:hover {
           cursor:pointer;
           color:#ccc;
