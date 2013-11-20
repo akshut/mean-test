@@ -343,6 +343,38 @@
 
 /* Doctor View */
 
+.dash-arrow-open {
+    height:0;
+    width:0;
+    border-width: 1.8rem;
+    border-style:solid;
+    border-right-color:white;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    position:absolute;
+    top:4rem;
+    left:6rem;
+    z-index:1000;
+    transistion: all 0.5s;
+    -webkit-transistion: all 0.5s;
+  }
+.dash-arrow-closed {
+    height:0;
+    width:0;
+    border-width: 1.8rem;
+    border-style:solid;
+    border-right-color:black;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    position:absolute;
+    top:4rem;
+    left:0;
+    transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+  }
+
 .dash {
   margin:0!important;
   height: 100%;
@@ -391,36 +423,6 @@
     font-family:'freight-sans-pro';
     font-weight:500;
     display: inline;    
-  }
-  #dash-arrow {
-    height:0;
-    width:0;
-    border-width: 1.8rem;
-    border-style:solid;
-    border-right-color:white;
-    border-top-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-    position:absolute;
-    top:4rem;
-    right:0;
-    transistion: all 0.5s;
-    -webkit-transistion: all 0.5s;
-  }
-  #dash-arrow-closed {
-    height:0;
-    width:0;
-    border-width: 1.8rem;
-    border-style:solid;
-    border-right-color:black;
-    border-top-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-    position:absolute;
-    top:4rem;
-    right:-3.6rem;
-    transform:rotate(180deg);
-    -webkit-transform:rotate(180deg);
   }
   h4 {
     color:white;

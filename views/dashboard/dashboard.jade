@@ -4,10 +4,9 @@ include ./session
 block content
   - isDemo = isDemo || false
   script(src="/js/dashboard.js")
-  script.
-    document.ready(function() {
-     $("#dash-arrow").click(function() { $(".dash").addClass(".dash-closed"); }); });
-
+  
+  #dash-button
+    #dash-arrow.dash-arrow-open
   .row.dash
     #rooms.col-lg-2.droptop
       for room in rooms
@@ -16,8 +15,6 @@ block content
             .roomname
               i.glyphicon.glyphicon-user#dricon
               h2= room.name
-            #dash-button
-              #dash-arrow
             h4 Waiting Patients
             i.glyphicon.glyphicon-chevron-down#waitingchev
             ul.session-list
@@ -35,6 +32,12 @@ block content
   #active-chat
 
   script.
+    $("#dash-arrow").on('click', function() { 
+      $(".dash").addClass("dash-closed");
+      $("#dash-arrow").addClass("dash-arrow-closed");
+      $("#dash-arrow").removeClass("dash-arrow-open");
+      console.log("clicked");
+    });
     SirTrevor.DEBUG = true
     new SirTrevor.Editor({ el: $('.js-st-instance'), blockTypes: ["Text", "Image", "Video"] })
  
