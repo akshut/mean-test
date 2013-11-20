@@ -442,7 +442,7 @@
     .session {
       margin: 0 0 1.5rem;
       background-color:#58595b;
-      padding: 1rem 2rem;
+      padding: 1rem 2rem 2.5rem;
       width:100%;
       &:hover {
         background-color:#777;
@@ -462,7 +462,7 @@
       img {
         border-radius: 50%;
         display:inline-block;
-        /*float:right;*/
+        float:right;
         margin:0 0 0 .9rem;
         transition:all 0.25s;
         -webkit-transition:all 0.25s;
@@ -514,8 +514,8 @@
             padding: .5rem 0 0;
             margin: 0;
             list-style: none;
-            animation: chat-open 0.75s ease-out;
-            -webkit-animation: chat-open 0.75s ease-out;
+            animation: chat-open 0.5s ease-out;
+            -webkit-animation: chat-open 0.5s ease-out;
             
 
             li {
@@ -805,8 +805,8 @@ span.chat-notification {
 
 #myPublisherDiv {
   position: absolute;
-  top: 7.6rem;
-  right: 0rem;
+  top: 0;
+  right: 0;
 
   .OT_publisher {
     border:.3rem solid #ddd;
@@ -816,9 +816,11 @@ span.chat-notification {
 #theirPublisherDiv {
   .patient-video {
     position: absolute;
-    top: 7.6rem;
-    width:50rem;
-    height: 50rem;
+    top: 0;
+    left: 0;
+    width: 100%!important;
+    height: 100%!important;
+    z-index: -100000000;
   }
 
   .patient-video.invisible {
