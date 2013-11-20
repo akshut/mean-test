@@ -797,18 +797,23 @@ a:focus {
   color: #999;
 }
 
+/* line 630, ../sass/main.scss */
+.trevor {
+  z-index: -10;
+}
+
 /* ROOMS */
 /* Patient View */
-/* line 634, ../sass/main.scss */
+/* line 638, ../sass/main.scss */
 #video {
   height: 100%;
 }
-/* line 637, ../sass/main.scss */
+/* line 641, ../sass/main.scss */
 #video .name {
   padding: .5rem;
   border: 1px solid #ccc;
 }
-/* line 643, ../sass/main.scss */
+/* line 647, ../sass/main.scss */
 #video .sendName {
   padding: 1rem 1rem 1rem 0;
   border: none;
@@ -816,11 +821,11 @@ a:focus {
   color: #759b2f;
   float: right;
 }
-/* line 651, ../sass/main.scss */
+/* line 655, ../sass/main.scss */
 #video .chat {
   display: none;
 }
-/* line 655, ../sass/main.scss */
+/* line 659, ../sass/main.scss */
 #video .open {
   display: block;
   position: absolute;
@@ -828,13 +833,13 @@ a:focus {
   right: 0;
   transition: all ease-in;
 }
-/* line 662, ../sass/main.scss */
+/* line 666, ../sass/main.scss */
 #video .open .chat-box {
   width: 240px;
   border-top: 1rem #ccc solid;
   border-left: 1px #ccc solid;
 }
-/* line 667, ../sass/main.scss */
+/* line 671, ../sass/main.scss */
 #video .open .chat-box .messages {
   height: 300px;
   background: #f5f5f5;
@@ -843,29 +848,29 @@ a:focus {
   margin: 0;
   list-style: none;
 }
-/* line 675, ../sass/main.scss */
+/* line 679, ../sass/main.scss */
 #video .open .chat-box .messages li {
   margin: 0;
   padding: .5rem .8rem .2rem;
   /*color:#58595b;*/
 }
-/* line 681, ../sass/main.scss */
+/* line 685, ../sass/main.scss */
 #video .open .chat-box .messages .patient {
   /*background-color: #fff;*/
   text-align: right;
   color: #58595b;
 }
-/* line 687, ../sass/main.scss */
+/* line 691, ../sass/main.scss */
 #video .open .chat-box .messages .doctor {
   /*background-color: #bbb;*/
   text-align: left;
   color: #759b2f;
 }
-/* line 694, ../sass/main.scss */
+/* line 698, ../sass/main.scss */
 #video .open .chat-box .message-entry {
   border-top: 1px solid #ccc;
 }
-/* line 697, ../sass/main.scss */
+/* line 701, ../sass/main.scss */
 #video .open .chat-box .message-entry button {
   padding: 1rem 1rem 1rem 0;
   border: none;
@@ -874,7 +879,7 @@ a:focus {
   float: right;
   display: none;
 }
-/* line 705, ../sass/main.scss */
+/* line 709, ../sass/main.scss */
 #video .open .chat-box .message-entry input {
   padding: 1rem 0 1rem 1rem;
   width: 80%;
@@ -884,7 +889,7 @@ a:focus {
   cursor: text;
   -webkit-appearance: none;
 }
-/* line 713, ../sass/main.scss */
+/* line 717, ../sass/main.scss */
 #video .open .chat-box .message-entry input:focus {
   border: none;
   box-shadow: none;
@@ -892,72 +897,72 @@ a:focus {
   -moz-box-shadow: none;
   outline: none;
 }
-/* line 721, ../sass/main.scss */
+/* line 725, ../sass/main.scss */
 #video .open .chat-box .message-entry ::-webkit-input-placeholder {
   color: #999;
 }
-/* line 725, ../sass/main.scss */
+/* line 729, ../sass/main.scss */
 #video .open .chat-box .message-entry :-moz-placeholder {
   /* Firefox 18- */
   color: #999;
 }
-/* line 729, ../sass/main.scss */
+/* line 733, ../sass/main.scss */
 #video .open .chat-box .message-entry ::-moz-placeholder {
   /* Firefox 19+ */
   color: #999;
 }
-/* line 733, ../sass/main.scss */
+/* line 737, ../sass/main.scss */
 #video .open .chat-box .message-entry :-ms-input-placeholder {
   color: #999;
 }
 
-/* line 741, ../sass/main.scss */
+/* line 745, ../sass/main.scss */
 .nav-help {
   background-color: #414042;
   height: 100%;
   color: #fff;
 }
-/* line 746, ../sass/main.scss */
+/* line 750, ../sass/main.scss */
 .nav-help ul {
   list-style: none;
 }
 
 /*--- Begin Meeting Prompt Arrow styles ---*/
 @keyframes arrow {
-  /* line 753, ../sass/main.scss */
+  /* line 757, ../sass/main.scss */
   0% {
     top: 0;
   }
 
-  /* line 754, ../sass/main.scss */
+  /* line 758, ../sass/main.scss */
   50% {
     top: 10px;
   }
 
-  /* line 755, ../sass/main.scss */
+  /* line 759, ../sass/main.scss */
   100% {
     top: 0;
   }
 }
 
 @-webkit-keyframes arrow {
-  /* line 758, ../sass/main.scss */
+  /* line 762, ../sass/main.scss */
   0% {
     top: 0;
   }
 
-  /* line 759, ../sass/main.scss */
+  /* line 763, ../sass/main.scss */
   50% {
     top: 10px;
   }
 
-  /* line 760, ../sass/main.scss */
+  /* line 764, ../sass/main.scss */
   100% {
     top: 0;
   }
 }
 
-/* line 762, ../sass/main.scss */
+/* line 766, ../sass/main.scss */
 #promptArrow {
   margin: 0 auto;
   position: absolute;
@@ -969,14 +974,14 @@ a:focus {
   z-index: 1100000001;
 }
 
-/* line 772, ../sass/main.scss */
+/* line 776, ../sass/main.scss */
 .promptContainer {
   background: none;
   width: 70px;
   height: 70px;
   margin: 0 35px !important;
 }
-/* line 778, ../sass/main.scss */
+/* line 782, ../sass/main.scss */
 .promptContainer p {
   text-align: center;
   margin: 0 0 0 20px;
@@ -985,7 +990,7 @@ a:focus {
   border-radius: .25em;
 }
 
-/* line 786, ../sass/main.scss */
+/* line 790, ../sass/main.scss */
 .triangle {
   background: none;
   width: 0;
@@ -997,7 +1002,7 @@ a:focus {
   margin: 0 0 0 45px;
 }
 
-/* line 796, ../sass/main.scss */
+/* line 800, ../sass/main.scss */
 .box {
   width: 35px;
   height: 55px;
@@ -1008,7 +1013,7 @@ a:focus {
 
 /*NEW STUFF*/
 /*The biggest and badest stylesheet uyou have ever seen for Doxy.me*/
-/* line 820, ../sass/main.scss */
+/* line 824, ../sass/main.scss */
 #messages {
   overflow: scroll;
   background: none repeat scroll 0 0 #F9F9F9;
@@ -1022,40 +1027,40 @@ a:focus {
   width: 255px;
 }
 
-/* line 833, ../sass/main.scss */
+/* line 837, ../sass/main.scss */
 span.chat-notification {
   font-size: 25px;
   /*margin-left: 5px;*/
   /*color: black;*/
 }
 
-/* line 841, ../sass/main.scss */
+/* line 845, ../sass/main.scss */
 #dashboard {
   height: 100px;
   width: 100px;
 }
 
-/* line 846, ../sass/main.scss */
+/* line 850, ../sass/main.scss */
 #myPublisherDiv {
   position: absolute;
   top: 0;
   right: 0;
 }
-/* line 851, ../sass/main.scss */
+/* line 855, ../sass/main.scss */
 #myPublisherDiv .OT_publisher {
   border: .3rem solid #ddd;
 }
 
-/* line 857, ../sass/main.scss */
+/* line 861, ../sass/main.scss */
 #theirPublisherDiv .patient-video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100% !important;
   height: 100% !important;
-  z-index: -100000000;
+  z-index: -1;
 }
-/* line 866, ../sass/main.scss */
+/* line 870, ../sass/main.scss */
 #theirPublisherDiv .patient-video.invisible {
   left: -999999px;
 }
