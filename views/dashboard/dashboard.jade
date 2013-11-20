@@ -11,6 +11,9 @@ block content
     #rooms.col-lg-2.droptop.side-dash.dash-open
       for room in rooms
         .row
+          .logotab
+            a(href='/')
+              img(src='/img/doxyme-logo-blk.png', height='40', alt='Doxy.me')
           .room(id=room.slug)
             .roomname
               i.glyphicon.glyphicon-user#dricon
