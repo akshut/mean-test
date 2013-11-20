@@ -4,6 +4,9 @@ include ./session
 block content
   - isDemo = isDemo || false
   script(src="/js/dashboard.js")
+  script.
+    document.ready(function() {
+     $("#dash-arrow").click(function() { $(".dash").addClass(".dash-closed"); }); });
 
   .row.dash
     #rooms.col-lg-2.droptop

@@ -348,6 +348,9 @@
   height: 100%;
   padding-top:0;
 }
+.dash-closed {
+  display:none;
+}
 #rooms {
   /*margin:2rem 0 0;*/
   background-color:#414042;
@@ -463,7 +466,7 @@
         border-radius: 50%;
         display:inline-block;
         float:right;
-        margin:0 0 0 .9rem;
+        /*margin:0 0 0 .9rem;*/
         transition:all 0.25s;
         -webkit-transition:all 0.25s;
         &:hover {
