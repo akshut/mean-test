@@ -343,35 +343,38 @@
 
 /* Doctor View */
 
+#dash-button {
+  
+  z-index: 1000;
+}
+
 .dash-arrow-open {
     height:0;
     width:0;
-    border-width: 1.8rem;
+    border-width: 2.5rem;
     border-style:solid;
     border-right-color:white;
     border-top-color: transparent;
     border-bottom-color: transparent;
     border-left-color: transparent;
-    position:absolute;
-    top:4rem;
-    // The position was all wierd so I changed it. probably
-    // not what you want
-    left:19.5rem;
+    position: absolute;
+    top: 3rem;
+    left: 13.2%;
     z-index:1000;
-    transistion: all 0.5s;
-    -webkit-transistion: all 0.5s;
+    transition: all 0.6s ease;
+    -webkit-transition: all 0.6s ease;
   }
 .dash-arrow-closed {
     height:0;
     width:0;
-    border-width: 1.8rem;
+    border-width: 2.5rem;
     border-style:solid;
     border-right-color:black;
     border-top-color: transparent;
     border-bottom-color: transparent;
     border-left-color: transparent;
     position:absolute;
-    top:4rem;
+    top:3rem;
     left:0;
     transform:rotate(180deg);
     -webkit-transform:rotate(180deg);
@@ -383,13 +386,27 @@
   padding-top:0;
 }
 .dash-closed {
-  display:none;
+  /*display:none;*/
+  position:absolute;
+  top:0;
+  animation: dash-hide 1s ease 0 forwards;
+  -webkit-animation: dash-hide 1s ease 0 forwards;
 }
+.dash-open {
+  /*display:none;*/
+  /*position:absolute;*/
+  /*top:0;*/
+  animation: dash-show 1s ease 0 forwards;
+  -webkit-animation: dash-show 1s ease 0 forwards;
+}
+
 #rooms {
   /*margin:2rem 0 0;*/
   background-color:#414042;
   height:100%;
   padding:2rem 0 0;
+  /*animation: dash-show 1s ease 0 forwards;
+  -webkit-animation: dash-show 1s ease 0 forwards;*/
 
   .row {
     margin:0;

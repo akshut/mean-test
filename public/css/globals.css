@@ -23,30 +23,78 @@
   }
 }
 
-/* line 15, ../sass/globals.scss */
+@keyframes dash-hide {
+  /* line 16, ../sass/globals.scss */
+  from {
+    left: 0;
+  }
+
+  /* line 17, ../sass/globals.scss */
+  to {
+    left: -300px;
+  }
+}
+
+@-webkit-keyframes dash-hide {
+  /* line 21, ../sass/globals.scss */
+  from {
+    left: 0;
+  }
+
+  /* line 22, ../sass/globals.scss */
+  to {
+    left: -300px;
+  }
+}
+
+@keyframes dash-show {
+  /* line 26, ../sass/globals.scss */
+  from {
+    left: -300px;
+  }
+
+  /* line 27, ../sass/globals.scss */
+  to {
+    left: 0;
+  }
+}
+
+@-webkit-keyframes dash-show {
+  /* line 31, ../sass/globals.scss */
+  from {
+    left: -300px;
+  }
+
+  /* line 32, ../sass/globals.scss */
+  to {
+    left: 0;
+  }
+}
+
+/* line 35, ../sass/globals.scss */
 html {
   height: 100%;
   overflow-x: hidden;
 }
 
-/* line 19, ../sass/globals.scss */
+/* line 39, ../sass/globals.scss */
 body {
   height: 100%;
 }
 
-/* line 23, ../sass/globals.scss */
+/* line 43, ../sass/globals.scss */
 a {
   color: #262523;
   text-decoration: none;
   transition: background-color 0.35s;
   -webkit-transition: background-color 0.35s;
 }
-/* line 28, ../sass/globals.scss */
+/* line 48, ../sass/globals.scss */
 a:hover {
   color: #262523;
   text-decoration: none;
 }
-/* line 32, ../sass/globals.scss */
+/* line 52, ../sass/globals.scss */
 a:focus {
   color: #262523;
   text-decoration: none;

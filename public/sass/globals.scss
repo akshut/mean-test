@@ -12,6 +12,26 @@ $green: #759b2f;
         to {height:300px;}
       }
 
+@keyframes dash-hide {
+  from {left:0;}
+  to {left:-300px;}
+}
+
+@-webkit-keyframes dash-hide {
+  from {left:0;}
+  to {left:-300px;}
+}
+
+@keyframes dash-show {
+  from {left:-300px;}
+  to {left:0;}
+}
+
+@-webkit-keyframes dash-show {
+  from {left:-300px;}
+  to {left:0;}
+}
+
 html {
   height:100%;
   overflow-x:hidden;

@@ -5,10 +5,10 @@ block content
   - isDemo = isDemo || false
   script(src="/js/dashboard.js")
 
-  #dash-button
-    #dash-arrow.dash-arrow-open
   .row.dash
-    #rooms.col-lg-2.droptop
+    #dash-button
+      #dash-arrow.dash-arrow-open
+    #rooms.col-lg-2.droptop.side-dash.dash-open
       for room in rooms
         .row
           .room(id=room.slug)
@@ -33,7 +33,7 @@ block content
 
   script.
     $("#dash-arrow").on('click', function() {
-      $(".dash").toggleClass("dash-closed");
+      $(".side-dash").toggleClass("dash-closed dash-open");
       $("#dash-arrow").toggleClass("dash-arrow-closed");
     });
     SirTrevor.DEBUG = true
