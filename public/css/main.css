@@ -921,48 +921,87 @@ a:focus {
   background-color: #414042;
   height: 100%;
   color: #fff;
+  padding: 0;
 }
-/* line 750, ../sass/main.scss */
+/* line 751, ../sass/main.scss */
+.nav-help .logotab {
+  text-align: center;
+  margin: 0 0 2rem;
+  background-color: white;
+  padding: 2rem 0;
+}
+/* line 757, ../sass/main.scss */
+.nav-help .logotab img {
+  width: 90%;
+  height: 90%;
+}
+/* line 763, ../sass/main.scss */
 .nav-help ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 768, ../sass/main.scss */
+.nav-help ul li {
+  /*background-color:#777;*/
+  margin: 0;
+  padding: 2rem;
+}
+/* line 772, ../sass/main.scss */
+.nav-help ul li:hover {
+  background-color: #777;
+}
+/* line 776, ../sass/main.scss */
+.nav-help ul li a {
+  color: white;
+  text-decoration: none;
+  background-color: transparent;
+  font-size: 1.6rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+}
+/* line 786, ../sass/main.scss */
+.nav-help ul li a i {
+  margin: 0 1rem;
 }
 
 /*--- Begin Meeting Prompt Arrow styles ---*/
 @keyframes arrow {
-  /* line 757, ../sass/main.scss */
+  /* line 796, ../sass/main.scss */
   0% {
     top: 0;
   }
 
-  /* line 758, ../sass/main.scss */
+  /* line 797, ../sass/main.scss */
   50% {
     top: 10px;
   }
 
-  /* line 759, ../sass/main.scss */
+  /* line 798, ../sass/main.scss */
   100% {
     top: 0;
   }
 }
 
 @-webkit-keyframes arrow {
-  /* line 762, ../sass/main.scss */
+  /* line 801, ../sass/main.scss */
   0% {
     top: 0;
   }
 
-  /* line 763, ../sass/main.scss */
+  /* line 802, ../sass/main.scss */
   50% {
     top: 10px;
   }
 
-  /* line 764, ../sass/main.scss */
+  /* line 803, ../sass/main.scss */
   100% {
     top: 0;
   }
 }
 
-/* line 766, ../sass/main.scss */
+/* line 805, ../sass/main.scss */
 #promptArrow {
   margin: 0 auto;
   position: absolute;
@@ -974,14 +1013,14 @@ a:focus {
   z-index: 1100000001;
 }
 
-/* line 776, ../sass/main.scss */
+/* line 815, ../sass/main.scss */
 .promptContainer {
   background: none;
   width: 70px;
   height: 70px;
   margin: 0 35px !important;
 }
-/* line 782, ../sass/main.scss */
+/* line 821, ../sass/main.scss */
 .promptContainer p {
   text-align: center;
   margin: 0 0 0 20px;
@@ -990,7 +1029,7 @@ a:focus {
   border-radius: .25em;
 }
 
-/* line 790, ../sass/main.scss */
+/* line 829, ../sass/main.scss */
 .triangle {
   background: none;
   width: 0;
@@ -1002,7 +1041,7 @@ a:focus {
   margin: 0 0 0 45px;
 }
 
-/* line 800, ../sass/main.scss */
+/* line 839, ../sass/main.scss */
 .box {
   width: 35px;
   height: 55px;
@@ -1013,7 +1052,7 @@ a:focus {
 
 /*NEW STUFF*/
 /*The biggest and badest stylesheet uyou have ever seen for Doxy.me*/
-/* line 824, ../sass/main.scss */
+/* line 863, ../sass/main.scss */
 #messages {
   overflow: scroll;
   background: none repeat scroll 0 0 #F9F9F9;
@@ -1027,31 +1066,31 @@ a:focus {
   width: 255px;
 }
 
-/* line 837, ../sass/main.scss */
+/* line 876, ../sass/main.scss */
 span.chat-notification {
   font-size: 25px;
   /*margin-left: 5px;*/
   /*color: black;*/
 }
 
-/* line 845, ../sass/main.scss */
+/* line 884, ../sass/main.scss */
 #dashboard {
   height: 100px;
   width: 100px;
 }
 
-/* line 850, ../sass/main.scss */
+/* line 889, ../sass/main.scss */
 #myPublisherDiv {
   position: absolute;
   top: 0;
   right: 0;
 }
-/* line 855, ../sass/main.scss */
+/* line 894, ../sass/main.scss */
 #myPublisherDiv .OT_publisher {
   border: .3rem solid #ddd;
 }
 
-/* line 861, ../sass/main.scss */
+/* line 900, ../sass/main.scss */
 #theirPublisherDiv .patient-video {
   position: absolute;
   top: 0;
@@ -1060,7 +1099,7 @@ span.chat-notification {
   height: 100% !important;
   z-index: -1;
 }
-/* line 870, ../sass/main.scss */
+/* line 909, ../sass/main.scss */
 #theirPublisherDiv .patient-video.invisible {
   left: -999999px;
 }

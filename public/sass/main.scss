@@ -746,9 +746,48 @@
   background-color:#414042;
   height:100%;
   color:#fff;
+  padding:0;
+
+  .logotab {
+    text-align:center;
+    margin:0 0 2rem;
+    background-color: white;
+    padding:2rem 0;
+
+    img {
+      width:90%;
+      height:90%;
+    }
+  }
 
   ul {
     list-style:none;
+    margin:0;
+    padding:0;
+
+    li {
+      /*background-color:#777;*/
+      margin:0;
+      padding:2rem;
+      &:hover {
+        background-color:#777;
+      }
+
+      a {
+        color:white;
+        text-decoration: none;
+        background-color: transparent;
+        font-size:1.6rem;
+        font-weight:300;
+        text-transform: uppercase;
+        letter-spacing: .1rem;
+
+
+        i {
+          margin:0 1rem;
+        }
+      }
+    }
   }
 }
 
