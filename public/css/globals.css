@@ -1,28 +1,52 @@
 /* GLOBALS */
-/* line 6, ../sass/globals.scss */
+@keyframes chat-open {
+  /* line 6, ../sass/globals.scss */
+  from {
+    height: 0px;
+  }
+
+  /* line 7, ../sass/globals.scss */
+  to {
+    height: 300px;
+  }
+}
+
+@-webkit-keyframes chat-open {
+  /* line 11, ../sass/globals.scss */
+  from {
+    height: 0px;
+  }
+
+  /* line 12, ../sass/globals.scss */
+  to {
+    height: 300px;
+  }
+}
+
+/* line 15, ../sass/globals.scss */
 html {
   height: 100%;
   overflow-x: hidden;
 }
 
-/* line 10, ../sass/globals.scss */
+/* line 19, ../sass/globals.scss */
 body {
   height: 100%;
 }
 
-/* line 14, ../sass/globals.scss */
+/* line 23, ../sass/globals.scss */
 a {
   color: #262523;
   text-decoration: none;
   transition: background-color 0.35s;
   -webkit-transition: background-color 0.35s;
 }
-/* line 19, ../sass/globals.scss */
+/* line 28, ../sass/globals.scss */
 a:hover {
   color: #262523;
   text-decoration: none;
 }
-/* line 23, ../sass/globals.scss */
+/* line 32, ../sass/globals.scss */
 a:focus {
   color: #262523;
   text-decoration: none;

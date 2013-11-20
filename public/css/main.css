@@ -1,30 +1,54 @@
 /*-- THE BIG CHEESE --*/
 /* _globals.scss */
 /* GLOBALS */
-/* line 6, ../sass/globals.scss */
+@keyframes chat-open {
+  /* line 6, ../sass/globals.scss */
+  from {
+    height: 0px;
+  }
+
+  /* line 7, ../sass/globals.scss */
+  to {
+    height: 300px;
+  }
+}
+
+@-webkit-keyframes chat-open {
+  /* line 11, ../sass/globals.scss */
+  from {
+    height: 0px;
+  }
+
+  /* line 12, ../sass/globals.scss */
+  to {
+    height: 300px;
+  }
+}
+
+/* line 15, ../sass/globals.scss */
 html {
   height: 100%;
   overflow-x: hidden;
 }
 
-/* line 10, ../sass/globals.scss */
+/* line 19, ../sass/globals.scss */
 body {
   height: 100%;
 }
 
-/* line 14, ../sass/globals.scss */
+/* line 23, ../sass/globals.scss */
 a {
   color: #262523;
   text-decoration: none;
   transition: background-color 0.35s;
   -webkit-transition: background-color 0.35s;
 }
-/* line 19, ../sass/globals.scss */
+/* line 28, ../sass/globals.scss */
 a:hover {
   color: #262523;
   text-decoration: none;
 }
-/* line 23, ../sass/globals.scss */
+/* line 32, ../sass/globals.scss */
 a:focus {
   color: #262523;
   text-decoration: none;
@@ -424,29 +448,24 @@ a:focus {
 /* Doctor View */
 /* line 346, ../sass/main.scss */
 .dash {
-  margin: -9.5rem 0 !important;
+  margin: 0 !important;
   height: 100%;
-  padding-top: 7.6rem;
+  padding-top: 0;
 }
 
 /* line 351, ../sass/main.scss */
-.droptop {
-  margin: 2rem 0 0;
-}
-
-/* line 354, ../sass/main.scss */
 #rooms {
   /*margin:2rem 0 0;*/
   background-color: #414042;
   height: 100%;
   padding: 2rem 0 0;
 }
-/* line 360, ../sass/main.scss */
+/* line 357, ../sass/main.scss */
 #rooms .row {
   margin: 0;
 }
 
-/* line 364, ../sass/main.scss */
+/* line 361, ../sass/main.scss */
 .roomBox {
   border-right: 1px solid #ddd;
   text-align: center;
@@ -454,38 +473,38 @@ a:focus {
   padding-bottom: 1rem;
   transition: background-color 0.5s;
 }
-/* line 370, ../sass/main.scss */
+/* line 367, ../sass/main.scss */
 .roomBox:hover {
   background-color: #eee;
 }
 
-/* line 374, ../sass/main.scss */
+/* line 371, ../sass/main.scss */
 .drglyph {
   top: 0px !important;
   margin: 0 2rem 0 0 !important;
   font-size: 2rem !important;
 }
 
-/* line 380, ../sass/main.scss */
+/* line 377, ../sass/main.scss */
 .room .roomname {
   background-color: #759b2f;
   width: 100%;
   padding: 2rem;
 }
-/* line 385, ../sass/main.scss */
+/* line 382, ../sass/main.scss */
 .room #dricon {
   font-size: 2.3rem;
   margin: 0 1rem 0 0;
 }
-/* line 389, ../sass/main.scss */
+/* line 386, ../sass/main.scss */
 .room h2 {
   color: #231f20;
   font-family: 'freight-sans-pro';
   font-weight: 500;
   display: inline;
 }
-/* line 395, ../sass/main.scss */
-.room .dash-arrow {
+/* line 392, ../sass/main.scss */
+.room #dash-arrow {
   height: 0;
   width: 0;
   border-width: 1.8rem;
@@ -497,8 +516,26 @@ a:focus {
   position: absolute;
   top: 4rem;
   right: 0;
+  transistion: all 0.5s;
+  -webkit-transistion: all 0.5s;
 }
-/* line 408, ../sass/main.scss */
+/* line 407, ../sass/main.scss */
+.room #dash-arrow-closed {
+  height: 0;
+  width: 0;
+  border-width: 1.8rem;
+  border-style: solid;
+  border-right-color: black;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  position: absolute;
+  top: 4rem;
+  right: -3.6rem;
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+}
+/* line 422, ../sass/main.scss */
 .room h4 {
   color: white;
   font-family: 'freight-sans-pro';
@@ -508,31 +545,31 @@ a:focus {
   display: inline-block;
   letter-spacing: .1rem;
 }
-/* line 417, ../sass/main.scss */
+/* line 431, ../sass/main.scss */
 .room #waitingchev {
   display: inline;
   color: white;
   margin: 0 0 0 5.5rem;
 }
-/* line 422, ../sass/main.scss */
+/* line 436, ../sass/main.scss */
 .room ul {
   list-style: none;
   margin: 2rem 0 0 -4rem;
   /*background-color:#58595b;*/
   /*padding:1rem 0 4.5rem;*/
 }
-/* line 428, ../sass/main.scss */
+/* line 442, ../sass/main.scss */
 .room ul .session {
   margin: 0 0 1.5rem;
   background-color: #58595b;
   padding: 1rem 2rem;
   width: 100%;
 }
-/* line 433, ../sass/main.scss */
+/* line 447, ../sass/main.scss */
 .room ul .session:hover {
-  background-color: #ccc;
+  background-color: #777;
 }
-/* line 437, ../sass/main.scss */
+/* line 451, ../sass/main.scss */
 .room ul .session .name {
   background-color: transparent;
   color: white;
@@ -543,7 +580,7 @@ a:focus {
   letter-spacing: .2rem;
   display: inline-block;
 }
-/* line 448, ../sass/main.scss */
+/* line 462, ../sass/main.scss */
 .room ul .session img {
   border-radius: 50%;
   display: inline-block;
@@ -552,45 +589,46 @@ a:focus {
   transition: all 0.25s;
   -webkit-transition: all 0.25s;
 }
-/* line 455, ../sass/main.scss */
+/* line 469, ../sass/main.scss */
 .room ul .session img:hover {
   cursor: pointer;
   transform: scale(1.25);
   -ms-transform: scale(1.25);
   -webkit-transform: scale(1.25);
 }
-/* line 463, ../sass/main.scss */
+/* line 477, ../sass/main.scss */
 .room ul .session .chat-notification {
   color: white;
   /*float:right;*/
   margin: 0 0 0 6rem;
   padding: 0;
   display: inline-block;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+  -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
 }
-/* line 469, ../sass/main.scss */
+/* line 485, ../sass/main.scss */
 .room ul .session .chat-notification:hover {
   cursor: pointer;
   color: #ccc;
 }
-/* line 479, ../sass/main.scss */
+/* line 495, ../sass/main.scss */
 .room ul .session .chat {
   display: none;
 }
-/* line 483, ../sass/main.scss */
+/* line 499, ../sass/main.scss */
 .room ul .session .open {
   display: block;
   position: absolute;
   bottom: 0;
   right: -500%;
-  transition: all ease-in;
 }
-/* line 490, ../sass/main.scss */
+/* line 505, ../sass/main.scss */
 .room ul .session .open .chat-box {
   width: 240px;
   border-top: 1rem #ccc solid;
   border-left: 1px #ccc solid;
 }
-/* line 495, ../sass/main.scss */
+/* line 510, ../sass/main.scss */
 .room ul .session .open .chat-box .messages {
   height: 300px;
   background: #f5f5f5;
@@ -598,30 +636,32 @@ a:focus {
   padding: .5rem 0 0;
   margin: 0;
   list-style: none;
+  animation: chat-open 0.75s ease-out;
+  -webkit-animation: chat-open 0.75s ease-out;
 }
-/* line 503, ../sass/main.scss */
+/* line 521, ../sass/main.scss */
 .room ul .session .open .chat-box .messages li {
   margin: 0;
   padding: .5rem .8rem .2rem;
   /*color:#58595b;*/
 }
-/* line 510, ../sass/main.scss */
+/* line 528, ../sass/main.scss */
 .room ul .session .open .chat-box .messages .patient {
   /*background-color: #fff;*/
   text-align: right;
   color: #58595b;
 }
-/* line 516, ../sass/main.scss */
+/* line 534, ../sass/main.scss */
 .room ul .session .open .chat-box .messages .doctor {
   /*background-color: #bbb;*/
   text-align: left;
   color: #759b2f;
 }
-/* line 523, ../sass/main.scss */
+/* line 541, ../sass/main.scss */
 .room ul .session .open .chat-box .message-entry {
   border-top: 1px solid #ccc;
 }
-/* line 526, ../sass/main.scss */
+/* line 544, ../sass/main.scss */
 .room ul .session .open .chat-box .message-entry button {
   padding: 1rem 1rem 1rem 0;
   border: none;
@@ -630,7 +670,7 @@ a:focus {
   float: right;
   display: none;
 }
-/* line 534, ../sass/main.scss */
+/* line 552, ../sass/main.scss */
 .room ul .session .open .chat-box .message-entry input {
   padding: 1rem 0 1rem 1rem;
   width: 80%;
@@ -640,7 +680,7 @@ a:focus {
   cursor: text;
   -webkit-appearance: none;
 }
-/* line 542, ../sass/main.scss */
+/* line 560, ../sass/main.scss */
 .room ul .session .open .chat-box .message-entry input:focus {
   border: none;
   box-shadow: none;
@@ -648,37 +688,37 @@ a:focus {
   -moz-box-shadow: none;
   outline: none;
 }
-/* line 550, ../sass/main.scss */
+/* line 568, ../sass/main.scss */
 .room ul .session .open .chat-box .message-entry ::-webkit-input-placeholder {
   color: #999;
 }
-/* line 554, ../sass/main.scss */
+/* line 572, ../sass/main.scss */
 .room ul .session .open .chat-box .message-entry :-moz-placeholder {
   /* Firefox 18- */
   color: #999;
 }
-/* line 558, ../sass/main.scss */
+/* line 576, ../sass/main.scss */
 .room ul .session .open .chat-box .message-entry ::-moz-placeholder {
   /* Firefox 19+ */
   color: #999;
 }
-/* line 562, ../sass/main.scss */
+/* line 580, ../sass/main.scss */
 .room ul .session .open .chat-box .message-entry :-ms-input-placeholder {
   color: #999;
 }
 
 /* ROOMS */
 /* Patient View */
-/* line 576, ../sass/main.scss */
+/* line 594, ../sass/main.scss */
 #video {
   height: 100%;
 }
-/* line 579, ../sass/main.scss */
+/* line 597, ../sass/main.scss */
 #video .name {
   padding: .5rem;
   border: 1px solid #ccc;
 }
-/* line 585, ../sass/main.scss */
+/* line 603, ../sass/main.scss */
 #video .sendName {
   padding: 1rem 1rem 1rem 0;
   border: none;
@@ -686,11 +726,11 @@ a:focus {
   color: #759b2f;
   float: right;
 }
-/* line 593, ../sass/main.scss */
+/* line 611, ../sass/main.scss */
 #video .chat {
   display: none;
 }
-/* line 597, ../sass/main.scss */
+/* line 615, ../sass/main.scss */
 #video .open {
   display: block;
   position: absolute;
@@ -698,13 +738,13 @@ a:focus {
   right: 0;
   transition: all ease-in;
 }
-/* line 604, ../sass/main.scss */
+/* line 622, ../sass/main.scss */
 #video .open .chat-box {
   width: 240px;
   border-top: 1rem #ccc solid;
   border-left: 1px #ccc solid;
 }
-/* line 609, ../sass/main.scss */
+/* line 627, ../sass/main.scss */
 #video .open .chat-box .messages {
   height: 300px;
   background: #f5f5f5;
@@ -713,29 +753,29 @@ a:focus {
   margin: 0;
   list-style: none;
 }
-/* line 617, ../sass/main.scss */
+/* line 635, ../sass/main.scss */
 #video .open .chat-box .messages li {
   margin: 0;
   padding: .5rem .8rem .2rem;
   /*color:#58595b;*/
 }
-/* line 623, ../sass/main.scss */
+/* line 641, ../sass/main.scss */
 #video .open .chat-box .messages .patient {
   /*background-color: #fff;*/
   text-align: right;
   color: #58595b;
 }
-/* line 629, ../sass/main.scss */
+/* line 647, ../sass/main.scss */
 #video .open .chat-box .messages .doctor {
   /*background-color: #bbb;*/
   text-align: left;
   color: #759b2f;
 }
-/* line 636, ../sass/main.scss */
+/* line 654, ../sass/main.scss */
 #video .open .chat-box .message-entry {
   border-top: 1px solid #ccc;
 }
-/* line 639, ../sass/main.scss */
+/* line 657, ../sass/main.scss */
 #video .open .chat-box .message-entry button {
   padding: 1rem 1rem 1rem 0;
   border: none;
@@ -744,7 +784,7 @@ a:focus {
   float: right;
   display: none;
 }
-/* line 647, ../sass/main.scss */
+/* line 665, ../sass/main.scss */
 #video .open .chat-box .message-entry input {
   padding: 1rem 0 1rem 1rem;
   width: 80%;
@@ -754,7 +794,7 @@ a:focus {
   cursor: text;
   -webkit-appearance: none;
 }
-/* line 655, ../sass/main.scss */
+/* line 673, ../sass/main.scss */
 #video .open .chat-box .message-entry input:focus {
   border: none;
   box-shadow: none;
@@ -762,72 +802,72 @@ a:focus {
   -moz-box-shadow: none;
   outline: none;
 }
-/* line 663, ../sass/main.scss */
+/* line 681, ../sass/main.scss */
 #video .open .chat-box .message-entry ::-webkit-input-placeholder {
   color: #999;
 }
-/* line 667, ../sass/main.scss */
+/* line 685, ../sass/main.scss */
 #video .open .chat-box .message-entry :-moz-placeholder {
   /* Firefox 18- */
   color: #999;
 }
-/* line 671, ../sass/main.scss */
+/* line 689, ../sass/main.scss */
 #video .open .chat-box .message-entry ::-moz-placeholder {
   /* Firefox 19+ */
   color: #999;
 }
-/* line 675, ../sass/main.scss */
+/* line 693, ../sass/main.scss */
 #video .open .chat-box .message-entry :-ms-input-placeholder {
   color: #999;
 }
 
-/* line 683, ../sass/main.scss */
+/* line 701, ../sass/main.scss */
 .nav-help {
   background-color: #414042;
   height: 100%;
   color: #fff;
 }
-/* line 688, ../sass/main.scss */
+/* line 706, ../sass/main.scss */
 .nav-help ul {
   list-style: none;
 }
 
 /*--- Begin Meeting Prompt Arrow styles ---*/
 @keyframes arrow {
-  /* line 695, ../sass/main.scss */
+  /* line 713, ../sass/main.scss */
   0% {
     top: 0;
   }
 
-  /* line 696, ../sass/main.scss */
+  /* line 714, ../sass/main.scss */
   50% {
     top: 10px;
   }
 
-  /* line 697, ../sass/main.scss */
+  /* line 715, ../sass/main.scss */
   100% {
     top: 0;
   }
 }
 
 @-webkit-keyframes arrow {
-  /* line 700, ../sass/main.scss */
+  /* line 718, ../sass/main.scss */
   0% {
     top: 0;
   }
 
-  /* line 701, ../sass/main.scss */
+  /* line 719, ../sass/main.scss */
   50% {
     top: 10px;
   }
 
-  /* line 702, ../sass/main.scss */
+  /* line 720, ../sass/main.scss */
   100% {
     top: 0;
   }
 }
 
-/* line 704, ../sass/main.scss */
+/* line 722, ../sass/main.scss */
 #promptArrow {
   margin: 0 auto;
   position: absolute;
@@ -839,14 +879,14 @@ a:focus {
   z-index: 1100000001;
 }
 
-/* line 714, ../sass/main.scss */
+/* line 732, ../sass/main.scss */
 .promptContainer {
   background: none;
   width: 70px;
   height: 70px;
   margin: 0 35px !important;
 }
-/* line 720, ../sass/main.scss */
+/* line 738, ../sass/main.scss */
 .promptContainer p {
   text-align: center;
   margin: 0 0 0 20px;
@@ -855,7 +895,7 @@ a:focus {
   border-radius: .25em;
 }
 
-/* line 728, ../sass/main.scss */
+/* line 746, ../sass/main.scss */
 .triangle {
   background: none;
   width: 0;
@@ -867,7 +907,7 @@ a:focus {
   margin: 0 0 0 45px;
 }
 
-/* line 738, ../sass/main.scss */
+/* line 756, ../sass/main.scss */
 .box {
   width: 35px;
   height: 55px;
@@ -878,7 +918,7 @@ a:focus {
 
 /*NEW STUFF*/
 /*The biggest and badest stylesheet uyou have ever seen for Doxy.me*/
-/* line 762, ../sass/main.scss */
+/* line 780, ../sass/main.scss */
 #messages {
   overflow: scroll;
   background: none repeat scroll 0 0 #F9F9F9;
@@ -892,38 +932,38 @@ a:focus {
   width: 255px;
 }
 
-/* line 775, ../sass/main.scss */
+/* line 793, ../sass/main.scss */
 span.chat-notification {
   font-size: 25px;
   /*margin-left: 5px;*/
   /*color: black;*/
 }
 
-/* line 783, ../sass/main.scss */
+/* line 801, ../sass/main.scss */
 #dashboard {
   height: 100px;
   width: 100px;
 }
 
-/* line 788, ../sass/main.scss */
+/* line 806, ../sass/main.scss */
 #myPublisherDiv {
   position: absolute;
   top: 7.6rem;
   right: 0rem;
 }
-/* line 793, ../sass/main.scss */
+/* line 811, ../sass/main.scss */
 #myPublisherDiv .OT_publisher {
   border: .3rem solid #ddd;
 }
 
-/* line 799, ../sass/main.scss */
+/* line 817, ../sass/main.scss */
 #theirPublisherDiv .patient-video {
   position: absolute;
   top: 7.6rem;
   width: 50rem;
   height: 50rem;
 }
-/* line 806, ../sass/main.scss */
+/* line 824, ../sass/main.scss */
 #theirPublisherDiv .patient-video.invisible {
   left: -999999px;
 }

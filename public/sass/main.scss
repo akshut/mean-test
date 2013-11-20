@@ -344,12 +344,9 @@
 /* Doctor View */
 
 .dash {
-  margin:-9.5rem 0!important;
+  margin:0!important;
   height: 100%;
-  padding-top:7.6rem;
-}
-.droptop {
-  margin:2rem 0 0;
+  padding-top:0;
 }
 #rooms {
   /*margin:2rem 0 0;*/
@@ -392,7 +389,7 @@
     font-weight:500;
     display: inline;    
   }
-  .dash-arrow {
+  #dash-arrow {
     height:0;
     width:0;
     border-width: 1.8rem;
@@ -404,6 +401,23 @@
     position:absolute;
     top:4rem;
     right:0;
+    transistion: all 0.5s;
+    -webkit-transistion: all 0.5s;
+  }
+  #dash-arrow-closed {
+    height:0;
+    width:0;
+    border-width: 1.8rem;
+    border-style:solid;
+    border-right-color:black;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    position:absolute;
+    top:4rem;
+    right:-3.6rem;
+    transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
   }
   h4 {
     color:white;
@@ -431,7 +445,7 @@
       padding: 1rem 2rem;
       width:100%;
       &:hover {
-        background-color:#ccc;
+        background-color:#777;
       }
 
       .name {
@@ -466,6 +480,8 @@
         margin:0 0 0 6rem;
         padding:0;
         display: inline-block;
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+        -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
         &:hover {
           cursor:pointer;
           color:#ccc;
@@ -485,7 +501,6 @@
         position:absolute;
         bottom:0;
         right:-500%;
-        transition: all ease-in;
 
         .chat-box {
           width: 240px;
@@ -499,6 +514,9 @@
             padding: .5rem 0 0;
             margin: 0;
             list-style: none;
+            animation: chat-open 0.75s ease-out;
+            -webkit-animation: chat-open 0.75s ease-out;
+            
 
             li {
                 margin: 0;

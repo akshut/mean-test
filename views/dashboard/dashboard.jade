@@ -3,7 +3,6 @@ include ./session
 
 block content
   - isDemo = isDemo || false
-  include ../includes/navbar
   script(src="/js/dashboard.js")
 
   .row.dash
@@ -14,7 +13,7 @@ block content
             .roomname
               i.glyphicon.glyphicon-user#dricon
               h2= room.name
-            .dash-arrow
+            #dash-arrow
             h4 Waiting Patients
             i.glyphicon.glyphicon-chevron-down#waitingchev
             ul.session-list

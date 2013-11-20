@@ -2,6 +2,15 @@
 
 $green: #759b2f;
 
+@keyframes chat-open {
+        from {height:0px;}
+        to {height:300px;}
+      }
+
+@-webkit-keyframes chat-open {
+        from {height:0px;}
+        to {height:300px;}
+      }
 
 html {
   height:100%;
