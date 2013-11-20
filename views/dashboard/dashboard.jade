@@ -4,7 +4,7 @@ include ./session
 block content
   - isDemo = isDemo || false
   script(src="/js/dashboard.js")
-  
+
   #dash-button
     #dash-arrow.dash-arrow-open
   .row.dash
@@ -32,12 +32,10 @@ block content
   #active-chat
 
   script.
-    $("#dash-arrow").on('click', function() { 
-      $(".dash").addClass("dash-closed");
-      $("#dash-arrow").addClass("dash-arrow-closed");
-      $("#dash-arrow").removeClass("dash-arrow-open");
-      console.log("clicked");
+    $("#dash-arrow").on('click', function() {
+      $(".dash").toggleClass("dash-closed");
+      $("#dash-arrow").toggleClass("dash-arrow-closed");
     });
     SirTrevor.DEBUG = true
     new SirTrevor.Editor({ el: $('.js-st-instance'), blockTypes: ["Text", "Image", "Video"] })
- 
+

@@ -458,13 +458,13 @@ a:focus {
   border-left-color: transparent;
   position: absolute;
   top: 4rem;
-  left: 6rem;
+  left: 19.5rem;
   z-index: 1000;
   transistion: all 0.5s;
   -webkit-transistion: all 0.5s;
 }
 
-/* line 362, ../sass/main.scss */
+/* line 364, ../sass/main.scss */
 .dash-arrow-closed {
   height: 0;
   width: 0;
@@ -481,31 +481,31 @@ a:focus {
   -webkit-transform: rotate(180deg);
 }
 
-/* line 378, ../sass/main.scss */
+/* line 380, ../sass/main.scss */
 .dash {
   margin: 0 !important;
   height: 100%;
   padding-top: 0;
 }
 
-/* line 383, ../sass/main.scss */
+/* line 385, ../sass/main.scss */
 .dash-closed {
   display: none;
 }
 
-/* line 386, ../sass/main.scss */
+/* line 388, ../sass/main.scss */
 #rooms {
   /*margin:2rem 0 0;*/
   background-color: #414042;
   height: 100%;
   padding: 2rem 0 0;
 }
-/* line 392, ../sass/main.scss */
+/* line 394, ../sass/main.scss */
 #rooms .row {
   margin: 0;
 }
 
-/* line 396, ../sass/main.scss */
+/* line 398, ../sass/main.scss */
 .roomBox {
   border-right: 1px solid #ddd;
   text-align: center;
@@ -513,37 +513,37 @@ a:focus {
   padding-bottom: 1rem;
   transition: background-color 0.5s;
 }
-/* line 402, ../sass/main.scss */
+/* line 404, ../sass/main.scss */
 .roomBox:hover {
   background-color: #eee;
 }
 
-/* line 406, ../sass/main.scss */
+/* line 408, ../sass/main.scss */
 .drglyph {
   top: 0px !important;
   margin: 0 2rem 0 0 !important;
   font-size: 2rem !important;
 }
 
-/* line 412, ../sass/main.scss */
+/* line 414, ../sass/main.scss */
 .room .roomname {
   background-color: #759b2f;
   width: 100%;
   padding: 2rem;
 }
-/* line 417, ../sass/main.scss */
+/* line 419, ../sass/main.scss */
 .room #dricon {
   font-size: 2.3rem;
   margin: 0 1rem 0 0;
 }
-/* line 421, ../sass/main.scss */
+/* line 423, ../sass/main.scss */
 .room h2 {
   color: #231f20;
   font-family: 'freight-sans-pro';
   font-weight: 500;
   display: inline;
 }
-/* line 427, ../sass/main.scss */
+/* line 429, ../sass/main.scss */
 .room h4 {
   color: white;
   font-family: 'freight-sans-pro';
@@ -553,31 +553,31 @@ a:focus {
   display: inline-block;
   letter-spacing: .1rem;
 }
-/* line 436, ../sass/main.scss */
+/* line 438, ../sass/main.scss */
 .room #waitingchev {
   display: inline;
   color: white;
   margin: 0 0 0 5.5rem;
 }
-/* line 441, ../sass/main.scss */
+/* line 443, ../sass/main.scss */
 .room ul {
   list-style: none;
-  margin: 2rem 0 0 -4rem;
+  margin: 2rem 0 0 -5rem;
   /*background-color:#58595b;*/
   /*padding:1rem 0 4.5rem;*/
 }
-/* line 447, ../sass/main.scss */
+/* line 449, ../sass/main.scss */
 .room ul .session {
   margin: 0 0 1.5rem;
   background-color: #58595b;
   padding: 1rem 2rem 2.5rem;
   width: 100%;
 }
-/* line 452, ../sass/main.scss */
+/* line 454, ../sass/main.scss */
 .room ul .session:hover {
   background-color: #777;
 }
-/* line 456, ../sass/main.scss */
+/* line 458, ../sass/main.scss */
 .room ul .session .name {
   background-color: transparent;
   color: white;
@@ -588,7 +588,7 @@ a:focus {
   letter-spacing: .2rem;
   display: inline-block;
 }
-/* line 467, ../sass/main.scss */
+/* line 469, ../sass/main.scss */
 .room ul .session img {
   border-radius: 50%;
   display: inline-block;
@@ -597,14 +597,14 @@ a:focus {
   transition: all 0.25s;
   -webkit-transition: all 0.25s;
 }
-/* line 474, ../sass/main.scss */
+/* line 476, ../sass/main.scss */
 .room ul .session img:hover {
   cursor: pointer;
   transform: scale(1.25);
   -ms-transform: scale(1.25);
   -webkit-transform: scale(1.25);
 }
-/* line 482, ../sass/main.scss */
+/* line 484, ../sass/main.scss */
 .room ul .session .chat-notification {
   color: white;
   /*float:right;*/
@@ -614,29 +614,29 @@ a:focus {
   transform: matrix(-1, 0, 0, 1, 0, 0);
   -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
 }
-/* line 490, ../sass/main.scss */
+/* line 492, ../sass/main.scss */
 .room ul .session .chat-notification:hover {
   cursor: pointer;
   color: #ccc;
 }
-/* line 500, ../sass/main.scss */
+/* line 502, ../sass/main.scss */
 .room ul .session .chat {
   display: none;
 }
-/* line 504, ../sass/main.scss */
+/* line 506, ../sass/main.scss */
 .room ul .session .open {
   display: block;
   position: absolute;
   bottom: 0;
   right: -500%;
 }
-/* line 510, ../sass/main.scss */
+/* line 512, ../sass/main.scss */
 .room ul .session .open .chat-box {
   width: 240px;
   border-top: 1rem #ccc solid;
   border-left: 1px #ccc solid;
 }
-/* line 515, ../sass/main.scss */
+/* line 517, ../sass/main.scss */
 .room ul .session .open .chat-box .messages {
   height: 300px;
   background: #f5f5f5;
@@ -647,29 +647,29 @@ a:focus {
   animation: chat-open 0.5s ease-out;
   -webkit-animation: chat-open 0.5s ease-out;
 }
-/* line 526, ../sass/main.scss */
+/* line 528, ../sass/main.scss */
 .room ul .session .open .chat-box .messages li {
   margin: 0;
   padding: .5rem .8rem .2rem;
   /*color:#58595b;*/
 }
-/* line 533, ../sass/main.scss */
+/* line 535, ../sass/main.scss */
 .room ul .session .open .chat-box .messages .patient {
   /*background-color: #fff;*/
   text-align: right;
   color: #58595b;
 }
-/* line 539, ../sass/main.scss */
+/* line 541, ../sass/main.scss */
 .room ul .session .open .chat-box .messages .doctor {
   /*background-color: #bbb;*/
   text-align: left;
   color: #759b2f;
 }
-/* line 546, ../sass/main.scss */
+/* line 548, ../sass/main.scss */
 .room ul .session .open .chat-box .message-entry {
   border-top: 1px solid #ccc;
 }
-/* line 549, ../sass/main.scss */
+/* line 551, ../sass/main.scss */
 .room ul .session .open .chat-box .message-entry button {
   padding: 1rem 1rem 1rem 0;
   border: none;
@@ -678,7 +678,7 @@ a:focus {
   float: right;
   display: none;
 }
-/* line 557, ../sass/main.scss */
+/* line 559, ../sass/main.scss */
 .room ul .session .open .chat-box .message-entry input {
   padding: 1rem 0 1rem 1rem;
   width: 80%;
@@ -688,7 +688,7 @@ a:focus {
   cursor: text;
   -webkit-appearance: none;
 }
-/* line 565, ../sass/main.scss */
+/* line 567, ../sass/main.scss */
 .room ul .session .open .chat-box .message-entry input:focus {
   border: none;
   box-shadow: none;
@@ -696,37 +696,37 @@ a:focus {
   -moz-box-shadow: none;
   outline: none;
 }
-/* line 573, ../sass/main.scss */
+/* line 575, ../sass/main.scss */
 .room ul .session .open .chat-box .message-entry ::-webkit-input-placeholder {
   color: #999;
 }
-/* line 577, ../sass/main.scss */
+/* line 579, ../sass/main.scss */
 .room ul .session .open .chat-box .message-entry :-moz-placeholder {
   /* Firefox 18- */
   color: #999;
 }
-/* line 581, ../sass/main.scss */
+/* line 583, ../sass/main.scss */
 .room ul .session .open .chat-box .message-entry ::-moz-placeholder {
   /* Firefox 19+ */
   color: #999;
 }
-/* line 585, ../sass/main.scss */
+/* line 587, ../sass/main.scss */
 .room ul .session .open .chat-box .message-entry :-ms-input-placeholder {
   color: #999;
 }
 
 /* ROOMS */
 /* Patient View */
-/* line 599, ../sass/main.scss */
+/* line 601, ../sass/main.scss */
 #video {
   height: 100%;
 }
-/* line 602, ../sass/main.scss */
+/* line 604, ../sass/main.scss */
 #video .name {
   padding: .5rem;
   border: 1px solid #ccc;
 }
-/* line 608, ../sass/main.scss */
+/* line 610, ../sass/main.scss */
 #video .sendName {
   padding: 1rem 1rem 1rem 0;
   border: none;
@@ -734,11 +734,11 @@ a:focus {
   color: #759b2f;
   float: right;
 }
-/* line 616, ../sass/main.scss */
+/* line 618, ../sass/main.scss */
 #video .chat {
   display: none;
 }
-/* line 620, ../sass/main.scss */
+/* line 622, ../sass/main.scss */
 #video .open {
   display: block;
   position: absolute;
@@ -746,13 +746,13 @@ a:focus {
   right: 0;
   transition: all ease-in;
 }
-/* line 627, ../sass/main.scss */
+/* line 629, ../sass/main.scss */
 #video .open .chat-box {
   width: 240px;
   border-top: 1rem #ccc solid;
   border-left: 1px #ccc solid;
 }
-/* line 632, ../sass/main.scss */
+/* line 634, ../sass/main.scss */
 #video .open .chat-box .messages {
   height: 300px;
   background: #f5f5f5;
@@ -761,29 +761,29 @@ a:focus {
   margin: 0;
   list-style: none;
 }
-/* line 640, ../sass/main.scss */
+/* line 642, ../sass/main.scss */
 #video .open .chat-box .messages li {
   margin: 0;
   padding: .5rem .8rem .2rem;
   /*color:#58595b;*/
 }
-/* line 646, ../sass/main.scss */
+/* line 648, ../sass/main.scss */
 #video .open .chat-box .messages .patient {
   /*background-color: #fff;*/
   text-align: right;
   color: #58595b;
 }
-/* line 652, ../sass/main.scss */
+/* line 654, ../sass/main.scss */
 #video .open .chat-box .messages .doctor {
   /*background-color: #bbb;*/
   text-align: left;
   color: #759b2f;
 }
-/* line 659, ../sass/main.scss */
+/* line 661, ../sass/main.scss */
 #video .open .chat-box .message-entry {
   border-top: 1px solid #ccc;
 }
-/* line 662, ../sass/main.scss */
+/* line 664, ../sass/main.scss */
 #video .open .chat-box .message-entry button {
   padding: 1rem 1rem 1rem 0;
   border: none;
@@ -792,7 +792,7 @@ a:focus {
   float: right;
   display: none;
 }
-/* line 670, ../sass/main.scss */
+/* line 672, ../sass/main.scss */
 #video .open .chat-box .message-entry input {
   padding: 1rem 0 1rem 1rem;
   width: 80%;
@@ -802,7 +802,7 @@ a:focus {
   cursor: text;
   -webkit-appearance: none;
 }
-/* line 678, ../sass/main.scss */
+/* line 680, ../sass/main.scss */
 #video .open .chat-box .message-entry input:focus {
   border: none;
   box-shadow: none;
@@ -810,72 +810,72 @@ a:focus {
   -moz-box-shadow: none;
   outline: none;
 }
-/* line 686, ../sass/main.scss */
+/* line 688, ../sass/main.scss */
 #video .open .chat-box .message-entry ::-webkit-input-placeholder {
   color: #999;
 }
-/* line 690, ../sass/main.scss */
+/* line 692, ../sass/main.scss */
 #video .open .chat-box .message-entry :-moz-placeholder {
   /* Firefox 18- */
   color: #999;
 }
-/* line 694, ../sass/main.scss */
+/* line 696, ../sass/main.scss */
 #video .open .chat-box .message-entry ::-moz-placeholder {
   /* Firefox 19+ */
   color: #999;
 }
-/* line 698, ../sass/main.scss */
+/* line 700, ../sass/main.scss */
 #video .open .chat-box .message-entry :-ms-input-placeholder {
   color: #999;
 }
 
-/* line 706, ../sass/main.scss */
+/* line 708, ../sass/main.scss */
 .nav-help {
   background-color: #414042;
   height: 100%;
   color: #fff;
 }
-/* line 711, ../sass/main.scss */
+/* line 713, ../sass/main.scss */
 .nav-help ul {
   list-style: none;
 }
 
 /*--- Begin Meeting Prompt Arrow styles ---*/
 @keyframes arrow {
-  /* line 718, ../sass/main.scss */
+  /* line 720, ../sass/main.scss */
   0% {
     top: 0;
   }
 
-  /* line 719, ../sass/main.scss */
+  /* line 721, ../sass/main.scss */
   50% {
     top: 10px;
   }
 
-  /* line 720, ../sass/main.scss */
+  /* line 722, ../sass/main.scss */
   100% {
     top: 0;
   }
 }
 
 @-webkit-keyframes arrow {
-  /* line 723, ../sass/main.scss */
+  /* line 725, ../sass/main.scss */
   0% {
     top: 0;
   }
 
-  /* line 724, ../sass/main.scss */
+  /* line 726, ../sass/main.scss */
   50% {
     top: 10px;
   }
 
-  /* line 725, ../sass/main.scss */
+  /* line 727, ../sass/main.scss */
   100% {
     top: 0;
   }
 }
 
-/* line 727, ../sass/main.scss */
+/* line 729, ../sass/main.scss */
 #promptArrow {
   margin: 0 auto;
   position: absolute;
@@ -887,14 +887,14 @@ a:focus {
   z-index: 1100000001;
 }
 
-/* line 737, ../sass/main.scss */
+/* line 739, ../sass/main.scss */
 .promptContainer {
   background: none;
   width: 70px;
   height: 70px;
   margin: 0 35px !important;
 }
-/* line 743, ../sass/main.scss */
+/* line 745, ../sass/main.scss */
 .promptContainer p {
   text-align: center;
   margin: 0 0 0 20px;
@@ -903,7 +903,7 @@ a:focus {
   border-radius: .25em;
 }
 
-/* line 751, ../sass/main.scss */
+/* line 753, ../sass/main.scss */
 .triangle {
   background: none;
   width: 0;
@@ -915,7 +915,7 @@ a:focus {
   margin: 0 0 0 45px;
 }
 
-/* line 761, ../sass/main.scss */
+/* line 763, ../sass/main.scss */
 .box {
   width: 35px;
   height: 55px;
@@ -926,7 +926,7 @@ a:focus {
 
 /*NEW STUFF*/
 /*The biggest and badest stylesheet uyou have ever seen for Doxy.me*/
-/* line 785, ../sass/main.scss */
+/* line 787, ../sass/main.scss */
 #messages {
   overflow: scroll;
   background: none repeat scroll 0 0 #F9F9F9;
@@ -940,31 +940,31 @@ a:focus {
   width: 255px;
 }
 
-/* line 798, ../sass/main.scss */
+/* line 800, ../sass/main.scss */
 span.chat-notification {
   font-size: 25px;
   /*margin-left: 5px;*/
   /*color: black;*/
 }
 
-/* line 806, ../sass/main.scss */
+/* line 808, ../sass/main.scss */
 #dashboard {
   height: 100px;
   width: 100px;
 }
 
-/* line 811, ../sass/main.scss */
+/* line 813, ../sass/main.scss */
 #myPublisherDiv {
   position: absolute;
   top: 0;
   right: 0;
 }
-/* line 816, ../sass/main.scss */
+/* line 818, ../sass/main.scss */
 #myPublisherDiv .OT_publisher {
   border: .3rem solid #ddd;
 }
 
-/* line 822, ../sass/main.scss */
+/* line 824, ../sass/main.scss */
 #theirPublisherDiv .patient-video {
   position: absolute;
   top: 0;
@@ -973,7 +973,7 @@ span.chat-notification {
   height: 100% !important;
   z-index: -100000000;
 }
-/* line 831, ../sass/main.scss */
+/* line 833, ../sass/main.scss */
 #theirPublisherDiv .patient-video.invisible {
   left: -999999px;
 }

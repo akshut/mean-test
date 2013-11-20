@@ -69,7 +69,7 @@
 .help-links {
   float:right!important;
   padding:0 0.625rem 0 0;
-  
+
   a {
     text-decoration:underline;
   }
@@ -354,7 +354,9 @@
     border-left-color: transparent;
     position:absolute;
     top:4rem;
-    left:6rem;
+    // The position was all wierd so I changed it. probably
+    // not what you want
+    left:19.5rem;
     z-index:1000;
     transistion: all 0.5s;
     -webkit-transistion: all 0.5s;
@@ -422,7 +424,7 @@
     color:#231f20;
     font-family:'freight-sans-pro';
     font-weight:500;
-    display: inline;    
+    display: inline;
   }
   h4 {
     color:white;
@@ -440,10 +442,10 @@
   }
   ul {
     list-style: none;
-    margin: 2rem 0 0 -4rem;
+    margin: 2rem 0 0 -5rem;
     /*background-color:#58595b;*/
     /*padding:1rem 0 4.5rem;*/
-    
+
     .session {
       margin: 0 0 1.5rem;
       background-color:#58595b;
@@ -493,7 +495,7 @@
         }
 
         .fa-comment-o {
-          
+
         }
       }
 
@@ -521,13 +523,13 @@
             list-style: none;
             animation: chat-open 0.5s ease-out;
             -webkit-animation: chat-open 0.5s ease-out;
-            
+
 
             li {
                 margin: 0;
                 padding: .5rem .8rem .2rem;
                 /*color:#58595b;*/
-              
+
             }
 
             .patient {
@@ -575,15 +577,15 @@
             }
 
             :-moz-placeholder { /* Firefox 18- */
-              color: #999;  
+              color: #999;
             }
 
             ::-moz-placeholder {  /* Firefox 19+ */
-              color: #999;  
+              color: #999;
             }
 
-            :-ms-input-placeholder {  
-              color: #999;  
+            :-ms-input-placeholder {
+              color: #999;
             }
           }
         }
@@ -612,7 +614,7 @@
     color:$green;
     float:right;
   }
-  
+
   .chat {
         display:none;
       }
@@ -640,7 +642,7 @@
         li {
           margin: 0;
           padding: .5rem .8rem .2rem;
-          /*color:#58595b;*/  
+          /*color:#58595b;*/
         }
 
         .patient {
@@ -688,15 +690,15 @@
         }
 
         :-moz-placeholder { /* Firefox 18- */
-          color: #999;  
+          color: #999;
         }
 
         ::-moz-placeholder {  /* Firefox 19+ */
-          color: #999;  
+          color: #999;
         }
 
-        :-ms-input-placeholder {  
-          color: #999;  
+        :-ms-input-placeholder {
+          color: #999;
         }
       }
     }
@@ -752,8 +754,8 @@
   background: none;
   width: 0;
   height: 0;
-  border-bottom: 60px solid #759b2f; 
-  border-left: 34px solid transparent; 
+  border-bottom: 60px solid #759b2f;
+  border-left: 34px solid transparent;
   border-right: 34px solid transparent;
   display:block;
   margin:0 0 0 45px;
