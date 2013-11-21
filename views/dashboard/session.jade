@@ -1,9 +1,9 @@
 mixin session(session)
   li.session(id=session._id)
     p.name Patient
+    img.avatar(src="//lorempixel.com/125/125", alt="patient", width="50", height="50", title="Begin Meeting")
     span.chat-notification
       i.glyphicon.glyphicon-comment(title="Begin Chat")
-    img.avatar(src="//lorempixel.com/125/125", alt="patient", width="50", height="50", title="Begin Meeting")
     .chat
 
     script.

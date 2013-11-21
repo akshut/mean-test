@@ -14,7 +14,9 @@ block content
       span.triangle
       span.box
     p Hit "Allow" to continue.
-  .nav-help.col-lg-2.tk-freight-sans-pro
+  #dash-button
+      #nav-arrow.nav-arrow-open
+  .nav-help.col-lg-2.tk-freight-sans-pro.nav-open
     .logotab
           a(href='/')
             img(src='/img/doxyme-logo-blk.png', height='40', alt='Doxy.me')
@@ -62,3 +64,8 @@ block content
     })
 
     new EventSource('/session/!{_id}')
+
+    $("#nav-arrow").on('click', function() {
+      $(".nav-help").toggleClass("nav-closed nav-open");
+      $("#nav-arrow").toggleClass("nav-arrow-closed");
+    });

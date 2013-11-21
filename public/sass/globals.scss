@@ -32,6 +32,27 @@ $green: #759b2f;
   to {left:0;}
 }
 
+@keyframes nav-hide {
+  from {margin-left:0;}
+  to {margin-left:-300px;}
+}
+
+@-webkit-keyframes nav-hide {
+  from {margin-left:0;}
+  to {margin-left:-300px;}
+}
+
+@keyframes nav-show {
+  from {margin-left:-300px;}
+  to {margin-left:0;}
+}
+
+@-webkit-keyframes nav-show {
+  from {margin-left:-300px;}
+  to {margin-left:0;}
+}
+
+
 html {
   height:100%;
   overflow-x:hidden;
