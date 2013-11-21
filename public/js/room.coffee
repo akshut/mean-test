@@ -1,6 +1,6 @@
 TB = window.TB
 
-window.callDoctor = (sessionId, token, API_KEY, mirror, doctor, cb) ->
+window.callDoctor = (sessionId, token, API_KEY, mirror, theirPublisherDiv, cb) ->
   TB.setLogLevel(0)
   publisher = TB.initPublisher API_KEY, mirror
   session = TB.initSession sessionId
@@ -10,7 +10,12 @@ window.callDoctor = (sessionId, token, API_KEY, mirror, doctor, cb) ->
   subscribeToStreams = (streams) ->
     streams.forEach (stream) ->
       if stream.connection.connectionId isnt session.connection.connectionId
-        session.subscribe stream
+        div = document.createElement("div")
+        div.setAttribute "class", "patient-video"
+        div.setAttribute "id", "stream" + session._id
+        dr = document.getElementById("theirPublisherDiv")
+        dr.appendChild div
+        session.subscribe stream, div, width: "100%", height: "100%"
 
   streamCreatedHandler = (event) ->
     subscribeToStreams event.streams
