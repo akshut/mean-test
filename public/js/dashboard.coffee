@@ -45,7 +45,7 @@ window.listenForSessionsOnRoom = (room, isDemo) ->
       oldSessionIds.forEach (id) -> removeSession id
 
 window.activateSession = (tokSession, $patientVideo, subscriber, publisher) ->
-  $patientVideo.css('width', '600px').css('height', '450px')
+  $patientVideo.css('width', '100%').css('height', '100%')
   $patientVideo.css('left', '0px')
   $patientVideo.removeClass('invisible')
   tokSession.publish(publisher)
