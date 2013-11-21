@@ -359,7 +359,7 @@
     border-left-color: transparent;
     position: absolute;
     top:11.5rem;
-    left: 13.02%;
+    left: 13.16%;
     z-index:1000;
     transition: all 0.6s ease, border-right-color 0.5s ease 0.6s;
     -webkit-transition: all 0.6s ease, border-right-color 0.5s ease 0.6s;
@@ -662,7 +662,7 @@
     border-left:1px solid #ccc;
     border-top:none;
     border-right:none;
-    background-color:transparent;
+    background-color:#fff;
     color:$green;
     float:right;
     &:focus {
@@ -735,7 +735,7 @@
           padding:1rem 0 1rem 1rem;
           width:80%;
           border:none;
-          background:transparent;
+          background:#fff;
           color:#444;
           cursor:text;
           -webkit-appearance:none;
@@ -782,7 +782,7 @@
     border-left-color: transparent;
     position: absolute;
     top:11rem;
-    left: 13.02%;
+    left: 13.16%;
     z-index:1000;
     transition: all 0.6s ease, border-right-color 0.5s ease 0.6s;
     -webkit-transition: all 0.6s ease, border-right-color 0.5s ease 0.6s;
