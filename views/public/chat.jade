@@ -1,10 +1,6 @@
 mixin chat(type, session)
   .chat-box(class="session-" + session.id)
-    ul.messages
-      li.doctor
-        p What seems to be the problem?
-      li.patient
-        p Everything hurts.
+    .messages
     .message-entry
       input.entry(type="text", placeholder="Send a message...")
       button.send Send
@@ -17,7 +13,7 @@ mixin chat(type, session)
         var me = '!{type}'
           , them = (me === 'patient') ? 'doctor' : 'patient'
           , $chatBox = $('.chat-box.session-' + session.id)
-          , $messages = $chatBox.find('ul.messages')
+          , $messages = $chatBox.find('.messages')
           , $chatButton = $chatBox.find('button.send')
           , $input = $chatBox.find('input.entry')
           , entities = {
@@ -28,7 +24,9 @@ mixin chat(type, session)
 
         function addMessage(message, role) {
           message = message.replace(/[<>&]/g, function (m) { return entities[m]; })
-          $messages.prepend('<li class="' + role + '">' + message + '</li>')
+          msg = '<span class="' + role + '">' + message + '</span>'
+          $messages.append(msg + '<br>')
+          $messages.scrollTop(10000)
         }
 
         session.on('signal:chat-' + them, function(e) {
