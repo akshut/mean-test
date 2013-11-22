@@ -571,12 +571,14 @@
               /*background-color: #fff;*/
               text-align: right;
               color:#58595b;
+              margin-right:1rem;
             }
 
             .doctor {
               /*background-color: #bbb;*/
               text-align: left;
               color:$green;
+              margin-right:1rem;
             }
           }
 
@@ -593,9 +595,9 @@
             }
             input {
               padding:1rem 0 1rem 1rem;
-              width:80%;
+              width:100%;
               border:none;
-              background:transparent;
+              background:#fff;
               color:#444;
               cursor:text;
               -webkit-appearance:none;
@@ -711,12 +713,14 @@
           /*background-color: #fff;*/
           text-align: right;
           color:#58595b;
+          margin-right:1rem;
         }
 
         .doctor {
           /*background-color: #bbb;*/
           text-align: left;
           color:$green;
+          margin-right:1rem;
         }
       }
 
@@ -733,7 +737,7 @@
         }
         input {
           padding:1rem 0 1rem 1rem;
-          width:80%;
+          width:100%;
           border:none;
           background:#fff;
           color:#444;
