@@ -24,7 +24,7 @@ mixin chat(type, session)
 
         function addMessage(message, role) {
           message = message.replace(/[<>&]/g, function (m) { return entities[m]; })
-          msg = '<span class="' + role + '">' + message + '</span>'
+          msg = '<span class="' + role + '">' + role + ':  ' + message + '</span>'
           $messages.append(msg + '<br>')
           $messages.scrollTop(10000)
         }

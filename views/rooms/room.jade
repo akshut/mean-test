@@ -52,10 +52,19 @@ block content
     , 'theirPublisherDiv'
     , function(sendAvatar, sendName, session) {
 
+      $('input.name').keyup(function(e) {
+        if(e.which === 13)
+          sendStuff()
+      })
+      sendStuff = function() {
+        sendName($('input.name').val());
+        sendAvatar();
+      }
       $('button.sendName').click(function() {
         sendName($('input.name').val());
         sendAvatar();
       })
+
 
       var chatTemplate = templatizer.public.chat.chat('patient', session)
       
