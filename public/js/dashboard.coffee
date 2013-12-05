@@ -43,6 +43,7 @@ window.listenForSessionsOnRoom = (room, isDemo) ->
 
     if oldSessionIds.length
       oldSessionIds.forEach (id) -> removeSession id
+      return
 
 window.activateSession = (tokSession, $patientVideo, subscriber, publisher) ->
   $patientVideo.css('width', '100%').css('height', '100%')
