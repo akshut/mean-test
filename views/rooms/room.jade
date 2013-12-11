@@ -1,10 +1,18 @@
 extends ../layout
 
 block content
+  #checkin-bg
+
   #video.pull-right
-    #mirror
-    input.name(type="text", placeholder="Enter your name here")
-    button.sendName Check in
+    #checkin
+      #checkin-text
+        h4 Welcome! {Dr. Someone} will be with you shortly
+        p Please check in and let the doctor know you are here:
+      #previewtext
+        p webcam preview
+      input.name(type="text", placeholder="Enter your name here...")
+      button.sendName Check In
+      #mirror
     .chat.open
 
   #theirPublisherDiv
@@ -14,6 +22,7 @@ block content
       span.triangle
       span.box
     p Hit "Allow" to continue.
+
   #dash-button
       #nav-arrow.nav-arrow-open
   .nav-help.col-lg-2.tk-freight-sans-pro.nav-open

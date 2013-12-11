@@ -857,10 +857,73 @@ a:focus {
 /* ROOMS */
 /* Patient View */
 /* line 642, ../sass/main.scss */
+#checkin-bg {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100000;
+}
+
+/* line 652, ../sass/main.scss */
+#checkin {
+  background-color: white;
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  width: 500px;
+  z-index: 10101010;
+}
+
+/*#checkin-text {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  z-index: 1010100;
+}*/
+/* line 668, ../sass/main.scss */
+#mirror {
+  /*position: absolute;
+  top: 60%;
+  left: 50%;
+  /*border-radius: 150px;
+  z-index: 110100;*/
+}
+
+/* line 677, ../sass/main.scss */
+#video #previewtext {
+  /*position:absolute;
+  top: 60%;
+  left: 40%;
+  z-index: 1010100;*/
+}
+/* line 682, ../sass/main.scss */
+#video #previewtext p {
+  text-transform: uppercase;
+}
+/* line 687, ../sass/main.scss */
+#video .name {
+  width: 20% !important;
+  /*position: absolute;
+  top: 45%;
+  left: 40%;
+  z-index: 1010100;*/
+}
+/* line 694, ../sass/main.scss */
+#video .sendName {
+  /*position: absolute;
+  top: 45%;
+  left: 62%;
+  z-index: 1010100;*/
+}
+
+/* line 702, ../sass/main.scss */
 #video {
   height: 100%;
 }
-/* line 645, ../sass/main.scss */
+/* line 705, ../sass/main.scss */
 #video .name {
   padding: 1rem;
   border-top: none;
@@ -869,14 +932,14 @@ a:focus {
   border-bottom: 1px solid #ccc;
   width: 70%;
 }
-/* line 652, ../sass/main.scss */
+/* line 712, ../sass/main.scss */
 #video .name:focus {
   box-shadow: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   outline: none;
 }
-/* line 661, ../sass/main.scss */
+/* line 721, ../sass/main.scss */
 #video .sendName {
   padding: 1rem;
   border-bottom: 1px solid #ccc;
@@ -887,7 +950,7 @@ a:focus {
   color: #759b2f;
   float: right;
 }
-/* line 670, ../sass/main.scss */
+/* line 730, ../sass/main.scss */
 #video .sendName:focus {
   border: none;
   box-shadow: none;
@@ -895,15 +958,15 @@ a:focus {
   -moz-box-shadow: none;
   outline: none;
 }
-/* line 677, ../sass/main.scss */
+/* line 737, ../sass/main.scss */
 #video .sendName:hover {
   background-color: #eee;
 }
-/* line 682, ../sass/main.scss */
+/* line 742, ../sass/main.scss */
 #video .chat {
   display: none;
 }
-/* line 686, ../sass/main.scss */
+/* line 746, ../sass/main.scss */
 #video .open {
   display: block;
   position: absolute;
@@ -911,13 +974,13 @@ a:focus {
   right: 0;
   transition: all ease-in;
 }
-/* line 693, ../sass/main.scss */
+/* line 753, ../sass/main.scss */
 #video .open .chat-box {
   width: 240px;
   border-top: 1rem #ccc solid;
   border-left: 1px #ccc solid;
 }
-/* line 698, ../sass/main.scss */
+/* line 758, ../sass/main.scss */
 #video .open .chat-box .messages {
   height: 300px;
   background: #f5f5f5;
@@ -926,31 +989,31 @@ a:focus {
   margin: 0;
   list-style: none;
 }
-/* line 706, ../sass/main.scss */
+/* line 766, ../sass/main.scss */
 #video .open .chat-box .messages li {
   margin: 0;
   padding: .5rem .8rem .2rem;
   /*color:#58595b;*/
 }
-/* line 712, ../sass/main.scss */
+/* line 772, ../sass/main.scss */
 #video .open .chat-box .messages .patient {
   /*background-color: #fff;*/
   text-align: right;
   color: #58595b;
   margin-right: 1rem;
 }
-/* line 719, ../sass/main.scss */
+/* line 779, ../sass/main.scss */
 #video .open .chat-box .messages .doctor {
   /*background-color: #bbb;*/
   text-align: left;
   color: #759b2f;
   margin-right: 1rem;
 }
-/* line 727, ../sass/main.scss */
+/* line 787, ../sass/main.scss */
 #video .open .chat-box .message-entry {
   border-top: 1px solid #ccc;
 }
-/* line 730, ../sass/main.scss */
+/* line 790, ../sass/main.scss */
 #video .open .chat-box .message-entry button {
   padding: 1rem 1rem 1rem 0;
   border: none;
@@ -959,7 +1022,7 @@ a:focus {
   float: right;
   display: none;
 }
-/* line 738, ../sass/main.scss */
+/* line 798, ../sass/main.scss */
 #video .open .chat-box .message-entry input {
   padding: 1rem 0 1rem 1rem;
   width: 100%;
@@ -969,7 +1032,7 @@ a:focus {
   cursor: text;
   -webkit-appearance: none;
 }
-/* line 746, ../sass/main.scss */
+/* line 806, ../sass/main.scss */
 #video .open .chat-box .message-entry input:focus {
   border: none;
   box-shadow: none;
@@ -977,31 +1040,31 @@ a:focus {
   -moz-box-shadow: none;
   outline: none;
 }
-/* line 754, ../sass/main.scss */
+/* line 814, ../sass/main.scss */
 #video .open .chat-box .message-entry ::-webkit-input-placeholder {
   color: #999;
 }
-/* line 758, ../sass/main.scss */
+/* line 818, ../sass/main.scss */
 #video .open .chat-box .message-entry :-moz-placeholder {
   /* Firefox 18- */
   color: #999;
 }
-/* line 762, ../sass/main.scss */
+/* line 822, ../sass/main.scss */
 #video .open .chat-box .message-entry ::-moz-placeholder {
   /* Firefox 19+ */
   color: #999;
 }
-/* line 766, ../sass/main.scss */
+/* line 826, ../sass/main.scss */
 #video .open .chat-box .message-entry :-ms-input-placeholder {
   color: #999;
 }
 
-/* line 774, ../sass/main.scss */
+/* line 834, ../sass/main.scss */
 #nav-button {
   z-index: 1000;
 }
 
-/* line 778, ../sass/main.scss */
+/* line 838, ../sass/main.scss */
 .nav-arrow-open {
   height: 0;
   width: 0;
@@ -1020,7 +1083,7 @@ a:focus {
   cursor: w-resize;
 }
 
-/* line 795, ../sass/main.scss */
+/* line 855, ../sass/main.scss */
 .nav-arrow-closed {
   height: 0;
   width: 0;
@@ -1038,54 +1101,54 @@ a:focus {
   cursor: e-resize;
 }
 
-/* line 812, ../sass/main.scss */
+/* line 872, ../sass/main.scss */
 .nav-closed {
   animation: nav-hide 1s ease 0 forwards;
   -webkit-animation: dash-hide 1s ease 0 forwards;
 }
 
-/* line 816, ../sass/main.scss */
+/* line 876, ../sass/main.scss */
 .nav-open {
   animation: nav-show 1s ease 0 forwards;
   -webkit-animation: dash-show 1s ease 0 forwards;
 }
 
-/* line 821, ../sass/main.scss */
+/* line 881, ../sass/main.scss */
 .nav-help {
   background-color: #414042;
   height: 100%;
   color: #fff;
   padding: 0;
 }
-/* line 827, ../sass/main.scss */
+/* line 887, ../sass/main.scss */
 .nav-help .logotab {
   text-align: center;
   margin: 0 0 2rem;
   background-color: white;
   padding: 2rem 0;
 }
-/* line 833, ../sass/main.scss */
+/* line 893, ../sass/main.scss */
 .nav-help .logotab img {
   width: 90%;
   height: 90%;
 }
-/* line 839, ../sass/main.scss */
+/* line 899, ../sass/main.scss */
 .nav-help ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 844, ../sass/main.scss */
+/* line 904, ../sass/main.scss */
 .nav-help ul li {
   /*background-color:#777;*/
   margin: 0;
   padding: 2rem;
 }
-/* line 848, ../sass/main.scss */
+/* line 908, ../sass/main.scss */
 .nav-help ul li:hover {
   background-color: #777;
 }
-/* line 852, ../sass/main.scss */
+/* line 912, ../sass/main.scss */
 .nav-help ul li a {
   color: white;
   text-decoration: none;
@@ -1095,47 +1158,47 @@ a:focus {
   text-transform: uppercase;
   letter-spacing: .1rem;
 }
-/* line 862, ../sass/main.scss */
+/* line 922, ../sass/main.scss */
 .nav-help ul li a i {
   margin: 0 1rem;
 }
 
 /*--- Begin Meeting Prompt Arrow styles ---*/
 @keyframes arrow {
-  /* line 872, ../sass/main.scss */
+  /* line 932, ../sass/main.scss */
   0% {
     top: 0;
   }
 
-  /* line 873, ../sass/main.scss */
+  /* line 933, ../sass/main.scss */
   50% {
     top: 10px;
   }
 
-  /* line 874, ../sass/main.scss */
+  /* line 934, ../sass/main.scss */
   100% {
     top: 0;
   }
 }
 
 @-webkit-keyframes arrow {
-  /* line 877, ../sass/main.scss */
+  /* line 937, ../sass/main.scss */
   0% {
     top: 0;
   }
 
-  /* line 878, ../sass/main.scss */
+  /* line 938, ../sass/main.scss */
   50% {
     top: 10px;
   }
 
-  /* line 879, ../sass/main.scss */
+  /* line 939, ../sass/main.scss */
   100% {
     top: 0;
   }
 }
 
-/* line 881, ../sass/main.scss */
+/* line 941, ../sass/main.scss */
 #promptArrow {
   margin: 0 auto;
   position: absolute;
@@ -1147,14 +1210,14 @@ a:focus {
   z-index: 1100000001;
 }
 
-/* line 891, ../sass/main.scss */
+/* line 951, ../sass/main.scss */
 .promptContainer {
   background: none;
   width: 70px;
   height: 70px;
   margin: 0 35px !important;
 }
-/* line 897, ../sass/main.scss */
+/* line 957, ../sass/main.scss */
 .promptContainer p {
   text-align: center;
   margin: 0 0 0 20px;
@@ -1163,7 +1226,7 @@ a:focus {
   border-radius: .25em;
 }
 
-/* line 905, ../sass/main.scss */
+/* line 965, ../sass/main.scss */
 .triangle {
   background: none;
   width: 0;
@@ -1175,7 +1238,7 @@ a:focus {
   margin: 0 0 0 45px;
 }
 
-/* line 915, ../sass/main.scss */
+/* line 975, ../sass/main.scss */
 .box {
   width: 35px;
   height: 55px;
@@ -1186,7 +1249,7 @@ a:focus {
 
 /*NEW STUFF*/
 /*The biggest and badest stylesheet uyou have ever seen for Doxy.me*/
-/* line 939, ../sass/main.scss */
+/* line 999, ../sass/main.scss */
 #messages {
   overflow: scroll;
   background: none repeat scroll 0 0 #F9F9F9;
@@ -1200,20 +1263,20 @@ a:focus {
   width: 255px;
 }
 
-/* line 952, ../sass/main.scss */
+/* line 1012, ../sass/main.scss */
 span.chat-notification {
   font-size: 25px;
   /*margin-left: 5px;*/
   /*color: black;*/
 }
 
-/* line 960, ../sass/main.scss */
+/* line 1020, ../sass/main.scss */
 #dashboard {
   height: 100px;
   width: 100px;
 }
 
-/* line 965, ../sass/main.scss */
+/* line 1025, ../sass/main.scss */
 #myPublisherDiv {
   position: absolute;
   top: 0;
@@ -1221,14 +1284,14 @@ span.chat-notification {
   border: .3rem solid #ddd;
 }
 
-/* line 974, ../sass/main.scss */
+/* line 1034, ../sass/main.scss */
 #theirPublisherDiv .patient-video {
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
 }
-/* line 983, ../sass/main.scss */
+/* line 1043, ../sass/main.scss */
 #theirPublisherDiv .patient-video.invisible {
   left: -999999px;
 }
