@@ -645,57 +645,46 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.75);
   z-index: 100000;
 }
 
 #checkin {
-  background-color: rgba(255,255,255,1);
+  background-color:#ccc;
   position: absolute;
   top: 20%;
-  left: 40%;
+  left: 35%;
   width: 500px;
   z-index: 10101010;
+  padding:4rem;
 }
 
-/*#checkin-text {
-  position: absolute;
-  top: 30%;
-  left: 40%;
-  z-index: 1010100;
-}*/
+#checkin-text {
+  h4 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+    padding:0 2rem;
+  }
+  p {
+    font-size:1.8rem;
+  }
+}
 
 #mirror {
-  /*position: absolute;
-  top: 60%;
-  left: 50%;
-  /*border-radius: 150px;
-  z-index: 110100;*/
+  float:right;
+  margin:2rem 0 0;
 }
 
 #video {
   #previewtext {
-    /*position:absolute;
-    top: 60%;
-    left: 40%;
-    z-index: 1010100;*/
+    float:left;
+    margin:4rem 0 0 5rem;
+    border-right:3px solid #666;
     p {
       text-transform:uppercase;
 
     }
-  }
-  .name {
-    width: 20%!important;
-    /*position: absolute;
-    top: 45%;
-    left: 40%;
-    z-index: 1010100;*/
-  }
-  .sendName {
-    /*position: absolute;
-    top: 45%;
-    left: 62%;
-    z-index: 1010100;*/
   }
 }
 
@@ -708,7 +697,7 @@
     border-right:1px solid transparent;
     border-left:none;
     border-bottom:1px solid #ccc;
-    width:70%;
+    width:76%;
     &:focus {
                 box-shadow:none;
                 -webkit-box-shadow: none;
@@ -720,13 +709,11 @@
 
   .sendName {
     padding:1rem;
-    border-bottom:1px solid #ccc;
-    border-left:1px solid #ccc;
-    border-top:none;
-    border-right:none;
-    background-color:#fff;
-    color:$green;
+    border:none;
+    background-color:$green;
+    color:#fff;
     float:right;
+    text-transform:uppercase;
     &:focus {
       border:none;
       box-shadow:none;
@@ -947,13 +934,6 @@
   right:0;
   width:140px;
   z-index:1100000001;
-}
-.promptContainer {
-  background: none;
-  width: 70px;
-  height: 70px;
-  margin:0 35px!important;
-
   p {
   text-align:center;
   margin:0 0 0 20px;
@@ -962,11 +942,18 @@
   border-radius:.25em;
   }
 }
+.promptContainer {
+  background: none;
+  width: 70px;
+  height: 70px;
+  margin:0 35px!important;
+}
+
 .triangle {
   background: none;
   width: 0;
   height: 0;
-  border-bottom: 60px solid #759b2f;
+  border-bottom: 60px solid #fff;
   border-left: 34px solid transparent;
   border-right: 34px solid transparent;
   display:block;
@@ -975,7 +962,7 @@
 .box {
   width: 35px;
   height: 55px;
-  background: #759b2f;
+  background: #fff;
   display:block;
   margin:-25px 62px 0;
 }

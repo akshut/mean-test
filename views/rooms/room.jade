@@ -5,13 +5,13 @@ block content
 
   #video.pull-right
     #checkin
-      #checkin-text
+      #checkin-text.tk-freight-sans-pro
         h4 Welcome! {Dr. Someone} will be with you shortly
         p Please check in and let the doctor know you are here:
-      #previewtext
-        p webcam preview
       input.name(type="text", placeholder="Enter your name here...")
       button.sendName Check In
+      #previewtext
+        p webcam <br> preview
       #mirror
     .chat.open
 
@@ -31,16 +31,12 @@ block content
             img(src='/img/doxyme-logo-blk.png', height='40', alt='Doxy.me')
     ul
       li
-        a.nav-help(href='mailto:recipient@example.com?Subject=Doxy.me%20meeting%20invitation&Body=Hi%20there!%0D%0DYou\'ve%20been%20invited%20to%20a%20Doxy.me%20meeting!%0D%0DGo%20to%20https://origin/drclark room%0D%0DWe%20hope%20you%20have%20a%20wonderful%20experience%20using%20Doxy.me.%20If%20you%20get%20a%20chance,%20please%20let%20us%20know%20how%20it%20worked%20for%20you:%20http://tiny.cc/0g5iyw', target='_blank')
-          | Email this link
-          i.glyphicon.glyphicon-envelope
-      li
         a.nav-help(href='http://tokbox.com/user-diagnostic/', target='_blank')
-          | Diagnostic Tool
+          | Troubleshooter
           i.glyphicon.glyphicon-wrench
       li
         a#toggle.nav-help(href='#', onclick='return false')
-          | Fullscreen
+          | Toggle Fullscreen
           i.glyphicon.glyphicon-fullscreen
       // li
       //   a.nav-help(href='/quick/meeting')
