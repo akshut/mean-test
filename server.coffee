@@ -74,7 +74,10 @@ config.resolve (user, room, DB_URL, PORT, passport, REDIS_HOST, REDIS_PORT, REDI
 
   # Home page
   app.get '/', (req, res, next) ->
-    res.render 'index'
+    if req.user
+      res.redirect("/i/dashboard")
+    else
+      res.render 'index'
 
 
   # When user goes to meeting directory, redirect them to a room (timestamp)
