@@ -8,7 +8,7 @@ module.exports = (db, API_KEY, SECRET, Session) ->
 
   RoomSchema = new Schema
 
-    created:
+    createdAt:
       type: Date
       default: Date.now
 

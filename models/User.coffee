@@ -48,7 +48,7 @@ module.exports = (db, SALT, Room, activeSessions) ->
       return cb err if err
       return cb new Error("Room already exists and is in use") if room
 
-      Room.findOneAndUpdate {slug: roomSlug}, {$set: {slug: roomSlug, name: roomSlug, acl: ['*']}}, {multi: false, upsert: true}, (err, room) ->
+      Room.findOneAndUpdate {slug: roomSlug}, {$set: {createdAt: Date.now(), slug: roomSlug, expires: 60 * 15, name: roomSlug, acl: ['*']}}, {multi: false, upsert: true}, (err, room) ->
         cb err, [room]
 
   db.model 'User', UserSchema
