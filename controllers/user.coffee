@@ -1,6 +1,6 @@
 async = require 'async'
 
-module.exports = (User) ->
+module.exports = (User, Room) ->
 
   signUp: (req, res, next) ->
     res.render 'users/signup', title: 'Sign up'
@@ -20,6 +20,18 @@ module.exports = (User) ->
 
   create: (req, res, next) ->
     user = new User req.body
+    console.log req.body
+    example =
+      acl: [user.email]
+      slug: req.body.slug
+      name: user.firstName + ' ' + user.lastName
+    room = new Room example
+    room.save (err) ->
+      if err
+        return res.render 'users/signup', errors: err.errors, user: user
+      console.log "done"
+
+    console.log room
     user.save (err) ->
       if err
         return res.render 'users/signup', errors: err.errors, user: user

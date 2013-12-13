@@ -101,7 +101,7 @@ config.resolve (user, room, DB_URL, PORT, passport, REDIS_HOST, REDIS_PORT, REDI
   ###
   # Sign-up flow
   ###
-  app.get '/e4125f1c0b5e409fc667a7b3b34add9b3a1357ff', user.signUp
+  app.get '/i/signup', user.signUp
 
   app.get '/i/signin', user.signIn
   app.get '/i/request', user.request

@@ -1,16 +1,30 @@
 extends ../layout
 
 block content
-  h1 Sign Up
+  .col-lg-4.col-lg-offset-4
+    h1.logintitle.text-center Signup
+    p
+      | Thank you for signing up with Doxy.me
+      | Choose the name of your room.
+      | Patients will access it with doxy.me/drwelch
 
-  form(name="signup", action="/i/users", method="post")
-    input(type='hidden', name='_csrf', value=csrf_token)
-    label First Name:
-    input(type="text", name="firstName")
-    label Last Name:
-    input(type="text", name="lastName")
-    label Email:
-    input(type="text", name="email")
-    label Password:
-    input(type="password", name="password")
-    input(type="submit", value="Create Account")
+      form.signin.form-horizontal(name="signup", action="/i/users", method="post")
+        p.error= message
+        input(type='hidden', name='_csrf', value=csrf_token)
+        .form-group
+          label.control-label.col-lg-2 First Name:
+          .col-lg-12
+            input#email.form-control(type="text", name="firstName", placeholder="First Name")
+          label.control-label.col-lg-2 Last Name:
+          .col-lg-12
+            input.form-control(type="text", name="lastName", placeholder="Last Name")
+          label.control-label.col-lg-2 Email
+          .col-lg-12
+            input.form-control(type="text", name="email", placeholder="Email")
+          label.control-label.col-lg-2 Password
+          .col-lg-12
+            input.form-control(type="password", name="password", placeholder="Password")
+          label.control-label.col-lg-2 Room
+          .col-lg-12
+            input.form-control(type="text", name="slug", placeholder="Room Name   Example: DrWelch")
+        button.btn.btn-signin(type="submit", value="Create Account") Sign Up

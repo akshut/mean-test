@@ -43,4 +43,11 @@ module.exports = (db, API_KEY, SECRET, Session) ->
         session.save (err) ->
           cb err, session
 
+  RoomSchema.statics.createRoom = (slug, acl, cb) ->
+      # Room.findOneAndUpdate {slug: roomSlug}, {$set: {slug: roomSlug, name: roomSlug, acl: ['*']}}, {multi: false, upsert: true}, (err, room) ->
+      #   cb err, [room]
+    @findOne {slug}, (err, room) ->
+      return cb err if err
+    console.log slug, acl, cb
+
   db.model 'Room', RoomSchema

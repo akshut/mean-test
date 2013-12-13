@@ -13,7 +13,7 @@ module.exports = (db, SALT, Room, activeSessions) ->
     lastName: type: String, required: true
     email: type: String, required: true
     password: type: String, required: true, set: encryptPassword
-    #rooms: type: Array, lowercase: true, trim: true, required: true
+    # rooms: type: Array, lowercase: true, trim: true, required: true
 
   UserSchema.virtual('fullName').get -> "#{firstName} #{lastName}"
 
@@ -34,6 +34,14 @@ module.exports = (db, SALT, Room, activeSessions) ->
           room.sessions = sessions
           cb null, room
       , cb
+
+  UserSchema.statics.getRoom = (roomSlug, cb) ->
+    Room.findOne({slug: roomSlug, acl: {$ne: '*'}}).exec (err, room) ->
+      return cb err if err
+      return cb new Error("Room already exists and is in use") if room
+
+      Room.findOneAndUpdate {slug: roomSlug}, {$set: {slug: roomSlug, name: roomSlug, acl: ['*']}}, {multi: false, upsert: true}, (err, room) ->
+        cb err, [room]
 
   UserSchema.statics.getDemoRoom = (roomSlug, cb) ->
     Room.findOne({slug: roomSlug, acl: {$ne: '*'}}).exec (err, room) ->
