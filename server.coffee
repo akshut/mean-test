@@ -4,6 +4,7 @@ express       = require 'express'
 config        = require './config'
 helpers       = require 'view-helpers'
 sse           = require 'connect-sse'
+flash         = require 'connect-flash'
 RedisStore    = require('connect-redis')(express)
 app           = express()
 loginRequired = require './middleware/requires-login'
@@ -46,6 +47,7 @@ config.resolve (user, room, DB_URL, PORT, passport, REDIS_HOST, REDIS_PORT, REDI
     app.use express.session
       secret: 'doxy'
       store: new RedisStore host: REDIS_HOST, port: REDIS_PORT, pass: REDIS_PASS
+    app.use flash()
     app.use express.csrf()
 
     app.use (req, res, next) ->
@@ -107,9 +109,10 @@ config.resolve (user, room, DB_URL, PORT, passport, REDIS_HOST, REDIS_PORT, REDI
   app.get '/i/request', user.request
 
   app.post '/i/signin', passport.authenticate('local',
-      failureRedirect: '/i/signin'
-      failurFlash: 'Invalid email or password'
-    ), user.logIn
+    failureRedirect: '/i/signin'
+    failureFlash: true
+    successRedirect: '/i/dashboard'
+  )
 
   app.get '/i/signout', user.signOut
 

@@ -6,7 +6,7 @@ module.exports = (User, Room) ->
     res.render 'users/signup', title: 'Sign up'
 
   signIn: (req, res, next) ->
-    res.render 'users/signin', title: 'Sign in'
+    res.render 'users/signin', title: 'Sign in', data: req.flash()
 
   request: (req, res, next) ->
     res.render 'users/request', title: 'Request'

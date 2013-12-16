@@ -7,7 +7,9 @@ block content
             img(src='/img/doxyme-logo-blk.png', alt='Doxy.me')
         h1.logintitle.text-center.tk-freight-sans-pro Sign In
         form.signin.form-horizontal.tk-freight-sans-pro(action="/i/signin", method="post")
-          p.error= message
+          if data
+            for dat in data
+              p.alert.alert-danger= dat
           input(type='hidden', name='_csrf', value=csrf_token)
           .form-group
             label.control-label.col-lg-2(for='email') Email
