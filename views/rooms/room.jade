@@ -59,17 +59,16 @@ block content
 
       $('input.name').keyup(function(e) {
         if(e.which === 13)
-          sendStuff()
+          try {
+            sendStuff()
+          }
+          catch (e) {
+            alert("must hit allow button")
+          }
       })
       sendStuff = function() {
         sendName($('input.name').val());
         sendAvatar();
-      }
-      $('button.sendName').click(function() {
-        //- sendStuff()
-        // Pat This is where the javascript goes
-        // $('.class').remove('classYouWantRemoved')
-        // $('#id').hide()
         $("#checkin-text").hide('1000');
         $(".name").hide('1000');
         $(".sendName").hide('1000');
@@ -77,6 +76,9 @@ block content
         $("#mirror").addClass("mirrorSide");
         $("#checkin").toggleClass("checkinDone checkin");
         $("#checkin-bg").addClass('checkin-bgDone');
+      }
+      $('button.sendName').click(function() {
+        sendStuff()
       });
 
 
