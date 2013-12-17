@@ -119,30 +119,64 @@
   }
 }
 
-/* line 56, ../sass/globals.scss */
+@keyframes fade {
+  /* line 56, ../sass/globals.scss */
+  0% {
+    opacity: 100%;
+  }
+
+  /* line 57, ../sass/globals.scss */
+  50% {
+    opacity: 0%;
+  }
+
+  /* line 58, ../sass/globals.scss */
+  100% {
+    display: hidden;
+  }
+}
+
+@-webkit-keyframes fade {
+  /* line 62, ../sass/globals.scss */
+  0% {
+    opacity: 100%;
+  }
+
+  /* line 63, ../sass/globals.scss */
+  50% {
+    opacity: 0%;
+  }
+
+  /* line 64, ../sass/globals.scss */
+  100% {
+    display: hidden;
+  }
+}
+
+/* line 68, ../sass/globals.scss */
 html {
   height: 100%;
   overflow-x: hidden;
 }
 
-/* line 60, ../sass/globals.scss */
+/* line 72, ../sass/globals.scss */
 body {
   height: 100%;
 }
 
-/* line 64, ../sass/globals.scss */
+/* line 76, ../sass/globals.scss */
 a {
   color: #262523;
   text-decoration: none;
   transition: background-color 0.35s;
   -webkit-transition: background-color 0.35s;
 }
-/* line 69, ../sass/globals.scss */
+/* line 81, ../sass/globals.scss */
 a:hover {
   color: #262523;
   text-decoration: none;
 }
-/* line 73, ../sass/globals.scss */
+/* line 85, ../sass/globals.scss */
 a:focus {
   color: #262523;
   text-decoration: none;

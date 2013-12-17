@@ -1,10 +1,10 @@
 extends ../layout
 
 block content
-  #checkin-bg
+  #checkin-bg.checkin-bg
 
   #video.pull-right
-    #checkin
+    #checkin.checkin
       #checkin-text.tk-freight-sans-pro
         h4 Welcome! {Dr. Someone} will be with you shortly
         p Please check in and let the doctor know you are here:
@@ -12,7 +12,7 @@ block content
       button.sendName Check In
       #previewtext
         p webcam <br> preview
-      #mirror
+      #mirror.mirror
     .chat.open
 
   #theirPublisherDiv
@@ -66,11 +66,18 @@ block content
         sendAvatar();
       }
       $('button.sendName').click(function() {
-        sendStuff()
+        //- sendStuff()
         // Pat This is where the javascript goes
         // $('.class').remove('classYouWantRemoved')
         // $('#id').hide()
-      })
+        $("#checkin-text").hide('1000');
+        $(".name").hide('1000');
+        $(".sendName").hide('1000');
+        $("#previewtext").hide('1000');
+        $("#mirror").addClass("mirrorSide");
+        $("#checkin").toggleClass("checkinDone checkin");
+        $("#checkin-bg").addClass('checkin-bgDone');
+      });
 
 
       var chatTemplate = templatizer.public.chat.chat('patient', session)
@@ -85,3 +92,5 @@ block content
       $(".nav-help").toggleClass("nav-closed nav-open");
       $("#nav-arrow").toggleClass("nav-arrow-closed");
     });
+
+

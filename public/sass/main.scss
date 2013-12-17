@@ -639,7 +639,7 @@
 
 /* Patient View */
 
-#checkin-bg {
+.checkin-bg {
   height: 100%;
   position: absolute;
   top: 0;
@@ -648,8 +648,13 @@
   background-color: rgba(0,0,0,0.75);
   z-index: 100000;
 }
+.checkin-bgDone {
+  transition:display 1s;
+  -webkit-transition:display 1s;
+  display:none!important;
+}
 
-#checkin {
+.checkin {
   background-color:#ccc;
   position: absolute;
   top: 20%;
@@ -657,6 +662,14 @@
   width: 500px;
   z-index: 10101010;
   padding:4rem;
+}
+.checkinDone {
+  background-color:none;
+  top:0!important;
+  right:0!important;
+  width:inherit!important;
+  padding:0;
+  z-index: 10101010;
 }
 
 #checkin-text {
@@ -671,9 +684,13 @@
   }
 }
 
-#mirror {
+.mirror {
   float:right;
-  margin:2rem 0 0;
+  margin:2rem 0 0!important;
+}
+.mirrorSide {
+  margin:0!important;
+  
 }
 
 #video {

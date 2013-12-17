@@ -52,6 +52,18 @@ $green: #759b2f;
   to {margin-left:0;}
 }
 
+@keyframes fade {
+  0% {opacity:100%;}
+  50% {opacity:0%;}
+  100% {display:hidden;}
+}
+
+@-webkit-keyframes fade {
+  0% {opacity:100%;}
+  50% {opacity:0%;}
+  100% {display:hidden;}
+}
+
 
 html {
   height:100%;
