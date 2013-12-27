@@ -27,18 +27,104 @@ block content
             script.
               listenForSessionsOnRoom(!{JSON.stringify(room)}, !{isDemo})
     .col-lg-8.trevor
-      form
+      button#put_in_s3 Save data to S3
+      #message
+      form#editor_form
         .errors
-        textarea.js-st-instance
+          //m ake this hidden as we now init editor after s3 hit, so it shows till then
+         textarea#editor.sir-trevor(name='content', style='display: none;')
   #myPublisherDiv
   #theirPublisherDiv
   #active-chat
 
   script.
+    something="#{rooms[0].name}"
     $("#dash-arrow").on('click', function() {
       $(".side-dash").toggleClass("dash-closed dash-open");
       $("#dash-arrow").toggleClass("dash-arrow-closed");
     });
-    SirTrevor.DEBUG = true
-    new SirTrevor.Editor({ el: $('.js-st-instance'), blockTypes: ["Text", "Image", "Video"] })
+    $(function(){
+      // extract the last segment of href
+      var url_segments  = location.href.split('/');
+      var guid2 = url_segments[url_segments.length - 2];
+      var guid="#{rooms[0].name}"
+
+      // create the path os s3 bucket
+      var uploadPath = '//xdoxy.s3.amazonaws.com/' + guid + ".json";
+      console.log(uploadPath);
+
+      // init sir-trevoe editor
+      function init_editor(){
+          SirTrevor.DEBUG = true;
+          SirTrevor.LANGUAGE = "en";
+
+          var editor = new SirTrevor.Editor({
+            el: $('#editor'),
+            blockTypes: [
+              "Text",
+              "Image",
+              "Video"
+            ]
+          });
+      }
+      // prepares editor data & then PUT's that data in s3 bucket
+      // with the last segment as key
+      function put_in_s3(){
+        $('#message').html("Saving Data to S3 ...");
+        console.log('put_in_s3');
+          if(SirTrevor.onBeforeSubmit() == 0){ // no validation errors
+            var data = $('#editor').val();
+            console.log(data);
+            $.ajax({
+                type: "PUT",
+                url: uploadPath,
+                dataType: 'json',
+                data: JSON.stringify(data)
+            }).complete(function (data){
+              if(data.statusText == "OK"){
+                 $('#message').html("Data has been saved");
+              }else{
+                $('#message').html("Error : Try Again!!!");
+              }
+            });
+          }
+      }
+
+      // Gets data from s3 for the last segment as key
+      // Inits the editor blabk or with data
+      function get_from_s3(){
+        $('#message').html("Getting data .... ");
+        console.log('get_from_s3');
+         $.ajax({
+              url: uploadPath,
+              dataType: 'json'
+          }).fail(function (data) {
+              $('#message').html("This is a new page .... ");
+              console.log("Data for this key not found",data);
+              init_editor();
+          }).done(function (data) {
+              $('#message').html("");
+              console.log(data);
+              // set data to the textarea.
+              $("#editor").val(data);
+              init_editor();
+          });
+      }
+
+      // bind to a button click
+      $('#put_in_s3').on("click", function() {
+          put_in_s3();
+      });
+      // OR
+      // bind to form submit
+      $('#editor_form').bind('submit', function(){
+        put_in_s3();
+        return false;
+      });
+
+      // init editor with data from s3, if no data is found then editor
+      // will get init in blank state else it will pull from s3 and then
+      // show the values
+      var result = get_from_s3();
+    });
 
