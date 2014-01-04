@@ -29,6 +29,7 @@ module.exports = (paramsValid, Room, API_KEY, SECRET, activeSessions) ->
 
     interval = setInterval ->
       activeSessions.getSessionsForRoom slug, (err, sessions) ->
+        return err if err
         res.json {sessions, err}
     , 3000
 
