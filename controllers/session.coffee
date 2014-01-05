@@ -13,7 +13,7 @@ module.exports = (activeSessions, Session) ->
       interval = setInterval ->
         console.log "Session.findOne Called " + session
         res.json {ping: "ping"}
-      , 100000
+      , 20000
 
       req.on 'close', ->
         clearInterval interval
