@@ -12,9 +12,9 @@ module.exports = (activeSessions, Session) ->
 
 
       req.on 'close', ->
-        activeSessions.removeSession session, (err) -> console.log err if err
         clearInterval interval
         console.log "cleared intercal removed session"
+        activeSessions.removeSession session, (err) -> console.log err if err
 
     interval = setInterval ->
       console.log "Session.findOne Called "
