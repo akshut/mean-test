@@ -16,5 +16,6 @@ module.exports = (activeSessions, Session) ->
       , 20000
 
       req.on 'close', ->
-        clearInterval interval
         activeSessions.removeSession session, (err) -> console.log err if err
+        clearInterval interval
+        console.log "cleared intercal removed session"

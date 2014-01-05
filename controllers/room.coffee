@@ -34,6 +34,5 @@ module.exports = (paramsValid, Room, API_KEY, SECRET, activeSessions) ->
     , 3000
 
     req.on 'close', ->
-      console.log "on closed was called"
-      activeSessions.getSessionsForRoom slug, (err, sessions) ->
-        res.json {sessions, err}
+      clearInterval interval
+      console.log "cleared on Doctor side"
