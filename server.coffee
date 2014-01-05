@@ -6,8 +6,10 @@ helpers       = require 'view-helpers'
 sse           = require 'connect-sse'
 flash         = require 'connect-flash'
 RedisStore    = require('connect-redis')(express)
+connectTimeout= require 'connect-timeout'
 app           = express()
 loginRequired = require './middleware/requires-login'
+timeout       = connectTimeout({ time: 15000 })
 
 config.resolve (user, room, DB_URL, PORT, passport, REDIS_HOST, REDIS_PORT, REDIS_PASS, session, Room) ->
 
@@ -135,7 +137,7 @@ config.resolve (user, room, DB_URL, PORT, passport, REDIS_HOST, REDIS_PORT, REDI
   # This route must always stay as low as possible, to catch any possible room
   app.get '/:roomName', room.joinRoomByName
 
-  app.get '/:roomSlug/sessions', loginRequired, roomExists, sse(), room.openSessions
+  app.get '/:roomSlug/sessions', timeout, loginRequired, roomExists, sse(), room.openSessions
 
   # 404 route
   app.get '*', (req, res, next) ->

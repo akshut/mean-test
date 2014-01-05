@@ -27,17 +27,13 @@ module.exports = (paramsValid, Room, API_KEY, SECRET, activeSessions) ->
   openSessions: (req, res, next) ->
     slug = req.param('roomSlug').toLowerCase()
 
-    count = 0
-
     interval = setInterval ->
       activeSessions.getSessionsForRoom slug, (err, sessions) ->
-        if not sessions and count < 1
-          count++
-          console.log count, "IF not sessions and count"
-        else
-          res.json {sessions, err}
-          count = 0
-          console.log sessions, count, "else!!!!!!"
+        console.log "getSessionsForRoom was called with " + sessions
+        res.json {sessions, err}
     , 3000
 
-    req.on 'close', -> clearInterval interval
+    req.on 'close', ->
+      console.log "on closed was called"
+      activeSessions.getSessionsForRoom slug, (err, sessions) ->
+        res.json {sessions, err}

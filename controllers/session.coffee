@@ -10,5 +10,11 @@ module.exports = (activeSessions, Session) ->
       activeSessions.addSession session, (err) ->
         return next err if err
 
+      interval = setInterval ->
+        console.log "Session.findOne Called " + session
+        res.json {ping: "ping"}
+      , 100000
+
       req.on 'close', ->
+        clearInterval interval
         activeSessions.removeSession session, (err) -> console.log err if err

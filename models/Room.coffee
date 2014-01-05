@@ -41,6 +41,7 @@ module.exports = (db, API_KEY, SECRET, Session) ->
 
         session = new Session {sessionId, token, roomSlug: slug, API_KEY}
         session.save (err) ->
+          console.log "joinByName saved with " + session
           cb err, session
 
   RoomSchema.statics.createRoom = (slug, acl, cb) ->
