@@ -10,13 +10,13 @@ module.exports = (activeSessions, Session) ->
       activeSessions.addSession session, (err) ->
         return next err if err
 
+
       req.on 'close', ->
         activeSessions.removeSession session, (err) -> console.log err if err
         clearInterval interval
         console.log "cleared intercal removed session"
 
-      interval = setInterval ->
-        console.log "Session.findOne Called " + session
-        res.json {ping: "ping"}
-      , 20000
-
+    interval = setInterval ->
+      console.log "Session.findOne Called "
+      res.json {ping: "ping"}
+    , 20000
