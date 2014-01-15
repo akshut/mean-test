@@ -33,7 +33,8 @@ window.callDoctor = (sessionId, token, API_KEY, mirror, theirPublisherDiv, cb) -
 
     sendAvatar =  ->
       imgData = publisher.getImgData()
-      imgLength = imgData.length
+      if imgData
+        imgLength = imgData.length
       numOfChunks = Math.ceil(imgLength / 500)
 
       imgChunks = []

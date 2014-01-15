@@ -23,29 +23,32 @@ block content
       span.box
     p Hit "Allow" to continue.
 
-  #dash-button
+  .row.dash
+    #dash-button
       #nav-arrow.nav-arrow-open
-  .nav-help.col-lg-2.tk-freight-sans-pro.nav-open
-    .logotab
-          a(href='/')
-            img(src='/img/doxyme-logo-blk.png', height='40', alt='Doxy.me')
-    ul
-      li
-        a.nav-help(href='http://tokbox.com/user-diagnostic/', target='_blank')
-          | Troubleshooter
-          i.glyphicon.glyphicon-wrench
-      li
-        a#toggle.nav-help(href='#', onclick='return false')
-          | Toggle Fullscreen
-          i.glyphicon.glyphicon-fullscreen
-      // li
-      //   a.nav-help(href='/quick/meeting')
-      //     | Quick Meeting
-      //     i.iconHidden &#128101;
-      // li
-      //   a.nav-help(href='/#/about')
-      //     | About
-      //     i.iconHidden &#59170;
+    .nav-help.col-lg-2.tk-freight-sans-pro.nav-open
+      .logotab
+            a(href='/')
+              img(src='/img/doxyme-logo-blk.png', height='40', alt='Doxy.me')
+      ul
+        li
+          a.nav-help(href='http://tokbox.com/user-diagnostic/', target='_blank')
+            | Troubleshooter
+            i.glyphicon.glyphicon-wrench
+        li
+          a#toggle.nav-help(href='#', onclick='return false')
+            | Toggle Fullscreen
+            i.glyphicon.glyphicon-fullscreen
+        // li
+        //   a.nav-help(href='/quick/meeting')
+        //     | Quick Meeting
+        //     i.iconHidden &#128101;
+        // li
+        //   a.nav-help(href='/#/about')
+        //     | About
+        //     i.iconHidden &#59170;
+    .col-lg-6.trevor
+      #parse-view
 
   script(src='/js/room.js')
   script.
@@ -94,5 +97,137 @@ block content
       $(".nav-help").toggleClass("nav-closed nav-open");
       $("#nav-arrow").toggleClass("nav-arrow-closed");
     });
+  script.
+    $(function(){
 
+      function parse(data){
+        console.log('parse this data',data);
+        var html = "";
+        $.each(data.data, function(i,v){
+            console.log('value',v);
+            if(v.type=="text"){
+                html += "<div class='st_text'> "+ mardowntoHTML(v.data.text,"Text") + "</div>";
+            }else if(v.type == "image"){
+                html += "<div class='st_img'> <img src='" + v.data.file.url + "'/></div>";
+            }else if(v.type=="video"){
+                html += "<div class='st_video'>" + embed_video(v.data) + "</div>";
+            }
+            console.log(v.type, html);
+        });
+        return html;
+    }
+
+    function embed_video(data,width){
+        width = width || 600;
+        var providers = {
+            vimeo: {
+              regex: /(?:http[s]?:\/\/)?(?:www.)?vimeo.com\/(.+)/,
+              html: "<iframe src=\"{{protocol}}//player.vimeo.com/video/{{remote_id}}?title=0&byline=0\" width=\"580\" height=\"320\" frameborder=\"0\"></iframe>"
+            },
+            youtube: {
+              regex: /(?:http[s]?:\/\/)?(?:www.)?(?:(?:youtube.com\/watch\?(?:.*)(?:v=))|(?:youtu.be\/))([^&].+)/,
+              html: "<iframe src=\"{{protocol}}//www.youtube.com/embed/{{remote_id}}\" width=\"580\" height=\"320\" frameborder=\"0\" allowfullscreen></iframe>"
+            }
+        };
+        var embed_string = providers[data.source].html
+          .replace('{{protocol}}', window.location.protocol)
+          .replace('{{remote_id}}', data.remote_id)
+          .replace('{{width}}', width); // for videos that can't resize automatically like vine
+
+        return embed_string;
+
+    }
+
+    _.mixin({
+      reverse: function(str) {
+        return str.split("").reverse().join("");
+      }
+    });
+
+    function mardowntoHTML(markdown, type) {
+      var html = markdown;
+          shouldWrap = type === "Text";
+
+      if(_.isUndefined(shouldWrap)) { shouldWrap = false; }
+
+      if (shouldWrap) {
+        html = "<div>" + html;
+      }
+
+      html = html.replace(/\[([^\]]+)\]\(([^\)]+)\)/gm,function(match, p1, p2){
+        return "<a href='"+p2+"'>"+p1.replace(/\n/g, '')+"</a>";
+      });
+
+      html = _.reverse(
+               _.reverse(html)
+               .replace(/_(?!\\)((_\\|[^_])*)_(?=$|[^\\])/gm, function(match, p1) {
+                  return ">i/<"+ p1.replace(/\n/g, '').replace(/[\s]+$/,'') +">i<";
+               })
+               .replace(/\*\*(?!\\)((\*\*\\|[^\*\*])*)\*\*(?=$|[^\\])/gm, function(match, p1){
+                  return ">b/<"+ p1.replace(/\n/g, '').replace(/[\s]+$/,'') +">b<";
+               })
+              );
+
+      html =  html.replace(/^\> (.+)$/mg,"$1");
+
+      if (shouldWrap) {
+        html = html.replace(/\n\n/gm, "</div><div><br></div><div>");
+        html = html.replace(/\n/gm, "</div><div>");
+      }
+
+      html = html.replace(/\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;")
+                 .replace(/\n/g, "<br>")
+                 .replace(/\*\*/, "")
+                 .replace(/__/, "");  // Cleanup any markdown characters left
+
+      // Replace escaped
+      html = html.replace(/\\\*/g, "*")
+                 .replace(/\\\[/g, "[")
+                 .replace(/\\\]/g, "]")
+                 .replace(/\\\_/g, "_")
+                 .replace(/\\\(/g, "(")
+                 .replace(/\\\)/g, ")")
+                 .replace(/\\\-/g, "-");
+
+      if (shouldWrap) {
+        html += "</div>";
+      }
+
+      return html;
+    }
+    // extract the last segment of href
+    var url_segments  = location.href.split('/');
+    var guid = url_segments[url_segments.length - 2];
+
+    // create the path os s3 bucket
+    var uploadPath = '//xdoxy.s3.amazonaws.com/' + guid + ".json";
+    console.log(uploadPath);
+
+    // Gets data from s3 for the last segment as key
+    // Inits the editor blabk or with data
+    function parse_from_s3(){
+      $('#message').html("Getting data .... ");
+      console.log('get_from_s3');
+       $.ajax({
+            url: uploadPath,
+            dataType: 'json'
+        }).fail(function (data) {
+            $('#message').html("This is a new page .... ");
+            console.log("Data for this key not found",data);
+        }).done(function (data) {
+            console.log('data',data);
+            var str = JSON.parse(data);
+            console.log('str',str);
+
+            // set data to the textarea.
+            var p = parse(str);
+            $("#parse-view").html(p);
+        });
+    }
+
+    // init editor with data from s3, if no data is found then editor
+    // will get init in blank state else it will pull from s3 and then
+    // show the values
+    var result = parse_from_s3();
+    });
 
